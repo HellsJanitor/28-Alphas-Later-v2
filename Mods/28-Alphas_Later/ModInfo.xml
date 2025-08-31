@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xml>
-<Name value="28AL-Harmony"/>
-<DisplayName value="28AL-Harmony"/>
-<Description value="Harmony patches for 28 Alphas Later"/>
+<Name value="28AlphasLater"/>
+<DisplayName value="28 Alphas Later"/>
+<Description value="28 Alphas Later overhaul mod"/>
 <Author value="HellsJanitor"/>
-<Version value="1.0"/>
+<Version value="2.3.0.0"/>
 </xml>
