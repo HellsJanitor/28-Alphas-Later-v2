@@ -1,0 +1,23 @@
+<HellsJanitor>
+	<append xpath="/controls">
+		<ingredient_row_narrow>
+			<rect controller="IngredientEntry">
+				<rect depth="2">
+					<sprite depth="1" size="66,43" pos="0,0" color="[mediumGrey]" type="sliced"/>
+					<sprite depth="2" size="71,47" pos="-3,2" color="[black]" type="sliced" sprite="menu_empty3px" fillcenter="false"/>
+					<sprite depth="3" size="38,38" pos="33,-22" color="{itemicontint}" pivot="center" atlas="ItemIconAtlas" sprite="{itemicon}" foregroundlayer="true"/>
+				</rect>
+				<rect depth="2" pos="68,0">
+					<sprite depth="1" size="236,43" pos="0,0" color="[mediumGrey]" type="sliced"/>
+					<sprite depth="2" size="242,47" pos="-3,2" color="[black]" type="sliced" sprite="menu_empty3px" fillcenter="false"/>
+					<label depth="3" size="230,26" pos="117,-23" color="[labelColor]" pivot="center" justify="center" font_size="26" text="{itemname}"/>
+				</rect>
+				<rect depth="2" pos="307,0">
+					<sprite depth="1" size="140,43" pos="0,0" color="[mediumGrey]" type="sliced"/>
+					<sprite depth="2" size="146,47" pos="-3,2" color="[black]" type="sliced" sprite="menu_empty3px" fillcenter="false"/>
+					<label depth="3" size="120,26" pos="70,-23" color="[labelColor]" pivot="center" justify="center" font_size="26" text="{haveneedcount}"/>
+				</rect>
+			</rect>
+		</ingredient_row_narrow>
+	</append>
+</HellsJanitor>
