@@ -5,6 +5,26 @@ The idea behind this mod is to slow progression, make traders less powerful, and
 
 31/08/25 - mod version 2.3.0.0, Updated for v2.3 of 7 Days to Die
 
+> [!NOTE]
+> 04/09/25 mod version 2.3.0.1, changelog:
+
+> Plague Spitters spawn frequency, movement speed, health and ranged attack cooldown all lowered
+> reduced the wellness penalty for sham sandwiches to -1 (was -5)
+> added stats window in the UI for despair meds
+> added correct eating meshes and animations for cooked cans and honeycomb
+> increased duration for Yucca Smoothie buffs (doubled in duration)
+> changed the screen effect for envenomed debuff
+> lowered loot probabilites for soldiers to drop weapons
+> added antivenom as a rare medical item in loot
+> removed Lumberjacks from 'general' entity spawns
+> added a buff check for boiled water while a helmet filter is equipped
+> increased hyperthermal resistance from Yucca Juice (was 5, is now 10)
+> re-added the Better Barter perk including trader stock bonus from Daring Adventurer
+> Dirt bike now unlocks correctly
+> changed unlock level for the sawmill so it unlocks with the workbench
+> removed wasteland zombies from biome night spawns
+> changed spawn cooldown between biome spawns for biome spawns during the day
+
 # FEATURES 
 
 ## GENERAL GAMEPLAY
@@ -58,7 +78,7 @@ Despair is dynamically affected by various different factors, including:
 
  - The cement mixer now requires gasoline to work.
 
- - The sawmill. Unlocked at the same level as the forge, use this workbench to craft wood logs into wood planks. Wrench a tablesaw for a sawblade, or purchase a sawblade from a trader.
+ - The sawmill. Unlocked at the same level as the workbench, use the sawmill to craft wood logs into wood planks. Wrench a tablesaw for a sawblade, or purchase a sawblade from a trader.
 
  - If you have the required book, existing ammo can be crafted into stacks.
 

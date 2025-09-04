@@ -1010,6 +1010,8 @@
 					<requirement name="ProgressionLevel" progression_name="lbu_Bartering" operation="GT" value="110"/> <!--never fires but shows heal speed increase-->
 				</passive_effect>
 				
+				<passive_effect name="TraderStage" operation="base_add" level="1,5" value="10,50"/>
+				
 			</effect_group>			
 		</perk>
 		<!-- end Bartering Learn By Use (lbu)-->

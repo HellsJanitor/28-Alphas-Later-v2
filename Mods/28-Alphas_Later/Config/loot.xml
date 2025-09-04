@@ -38,11 +38,11 @@
 	
 	<!-- *** adds empty jars to loot -->
 	<append xpath="/lootcontainers/lootgroup[@name='groupDrinksCommon']">
-		<item name="drinkJarEmpty"/>
+		<item name="drinkJarEmpty" loot_prob_template="veryLow"/>
 	</append>
 	
 	<append xpath="/lootcontainers/lootgroup[@name='groupCupboard01']">
-		<item name="drinkJarEmpty" loot_prob_template="low"/>
+		<item name="drinkJarEmpty" loot_prob_template="veryLow"/>
 	</append>
 	
 	<!-- *** cooling mesh and insulated liners -->
@@ -103,7 +103,7 @@
 		<item name="modGunBrassCatcher" loot_prob_template="veryLowDelayed"/>
 	</append>
 	
-	<!-- *** despair meds in loot -->
+	<!-- *** despair meds and antivenom in loot -->
 	<append xpath="//lootgroup[@name='groupMedicalUncommon']">
 		<item name="drugStJohnsWort" loot_prob_template="veryLow"/>
 		<item name="drugLavenderOil" loot_prob_template="low"/>
@@ -111,10 +111,15 @@
 	
 	<append xpath="//lootgroup[@name='groupMedicalRare']">
 		<item name="drugLithium" loot_prob_template="veryLow"/>
+		<item name="antivenom" loot_prob_template="veryLow"/>
 	</append>
 	
 	<append xpath="//lootgroup[@name='groupMedicalCommon']">
 		<item name="resourceCropLavender" count="5,10"/>
+	</append>
+	
+	<append xpath="/lootcontainers/lootgroup[@name='survivalMedical']">
+		<item name="antivenom" count="1" loot_prob_template="low"/>
 	</append>
 	
 	<!-- *** food/drinks in loot -->
@@ -346,7 +351,7 @@
 		</lootgroup>
 		
 		<lootgroup name="groupToolsUtilityWorker" count="1">
-			<item group="ToolsGroup" loot_prob_template="medLow" force_prob="true"/>
+			<item group="ToolsGroup" loot_prob_template="med" force_prob="true"/>
 			<!-- <item group="groupToolsT1"/> -->
 			<!-- <item group="groupToolsT2" loot_prob_template="medLow" force_prob="true"/> -->
 		</lootgroup>
@@ -394,7 +399,7 @@
 		</lootgroup>
 		
 		<lootgroup name="groupZpackSoldierCorpses" count="all">
-			<item group="FirearmPostApocRareGroup" loot_prob_template="med" force_prob="true"/>
+			<item group="FirearmPostApocRareGroup" loot_prob_template="medLow" force_prob="true"/>
 			<item group="groupZpackSoldier" prob=".03" force_prob="true"/>
 		</lootgroup>
 		

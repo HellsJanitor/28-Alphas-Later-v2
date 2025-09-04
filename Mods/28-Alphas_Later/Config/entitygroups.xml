@@ -28,6 +28,63 @@
 	none, 75
 	</set>
 	
+	<!-- *** remove Lumberjacks from 'ZombiesAll' -->
+	<set xpath="/entitygroups/entitygroup[@name='ZombiesAll']">
+		zombieBoe
+		zombieJoe
+		zombieSteve
+		zombieTomClark
+		zombieMoe
+		zombieYo
+		zombieBusinessMan
+		zombieArlene
+		zombieDarlene
+		zombieMarlene
+		zombieSkateboarder
+		zombieBiker, .3
+		zombiePartyGirl, .3
+		zombieUtilityWorker, .3
+		zombieJanitor, .2
+		zombieNurse, .3
+		zombieSteveCrawler
+		zombieFatHawaiian, .3
+		zombieBowler, .3
+	</set>
+	
+	<set xpath="/entitygroups/entitygroup[@name='ZombiesAll']">
+		zombieSpider
+		zombieSpiderFeral, .25
+		zombieBoe
+		zombieBoeFeral, .25
+		zombieJoe
+		zombieJoeFeral, .25
+		zombieSteve
+		zombieTomClark
+		zombieSteveFeral, .25
+		zombieTomClarkFeral, .25
+		zombieMoe
+		zombieMoeFeral, .25
+		zombieYo
+		zombieYoFeral, .25
+		zombieBusinessMan
+		zombieBusinessManFeral, .25
+		zombieArlene
+		zombieArleneFeral, .25
+		zombieDarlene
+		zombieDarleneFeral, .25
+		zombieMarlene
+		zombieMarleneFeral, .25
+		zombieNurse
+		zombieNurseFeral, .25
+		animalZombieDog, .05
+		animalDireWolf, .01
+		zombieSteveCrawler
+		zombieFatHawaiian
+		zombieFatHawaiianFeral, .25
+		zombieBowler, .1
+		zombieBowlerFeral, .1
+	</set>
+	
 	<!-- *** adds bears, wolves and direwolves to the forest biome -->
 	<remove xpath="//entitygroup[@name='EnemyAnimalsForest']"/>
 	<remove xpath="//entitygroup[@name='WildGameForestNight']"/>

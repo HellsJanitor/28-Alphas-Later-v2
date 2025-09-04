@@ -773,7 +773,7 @@
 			</effect_group>
 
 			<effect_group>
-				<passive_effect name="HyperthermalResist" operation="base_add" value="5"/>
+				<passive_effect name="HyperthermalResist" operation="base_add" value="10"/>
 			</effect_group>
 		</buff>
 		
@@ -2342,8 +2342,8 @@
 				<!-- Blinks the display -->
 				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,4" tags="buffInjuryPoison"/>
 				<!-- Handlers for screen effects -->
-				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="0.3" fade="1" effect_name="Posterize"/>
-				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="Posterize"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="1" fade="1" effect_name="Infected"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="Infected"/>
 				<!-- Handlers for sounds -->
 				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="buff_bleeding" play_in_head="true"/>
 				<triggered_effect trigger="onSelfEnteredGame" action="PlaySound" sound="buff_bleeding" play_in_head="true"/>
@@ -2936,14 +2936,25 @@
 		</buff>
 		
 		<!-- *** Negative Wellness Buff -->
-		<buff name="buffWellnessNegative" hidden="true" remove_on_death="true">
+		<buff name="buffWellnessNegativeOne" hidden="true" remove_on_death="true">
+			<stack_type value="replace"/>
+			<duration value="1"/>
+			<effect_group>
+				<requirement name="!HasBuff" buff="buffDrugVitamins"/>
+				<requirement name="CVarCompare" cvar="wellness" operation="GTE" value="80"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="wellness" operation="add" value="-1"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveBuff" buff="buffWellnessNegativeOne"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffWellnessNegativeTwo" hidden="true" remove_on_death="true">
 			<stack_type value="replace"/>
 			<duration value="1"/>
 			<effect_group>
 				<requirement name="!HasBuff" buff="buffDrugVitamins"/>
 				<requirement name="CVarCompare" cvar="wellness" operation="GTE" value="80"/>
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="wellness" operation="add" value="-5"/>
-				<triggered_effect trigger="onSelfBuffFinish" action="RemoveBuff" buff="buffWellnessNegative"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveBuff" buff="buffWellnessNegativeTwo"/>
 			</effect_group>
 		</buff>
 		
@@ -3374,7 +3385,7 @@
 			<duration value=".1"/>
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="NightVision"/>
-				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" effect_name="NightVision" intensity="0" fade="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" effect_name="VibrantDeSat" intensity="0" fade="0"/>
 				<triggered_effect trigger="onSelfBuffStart" action="SetPartActive" part="HeadLightTPV" active="false"/>
 				<triggered_effect trigger="onSelfBuffStart" action="SetPartActive" part="HeadLightFPV" active="false"/>
 			</effect_group>
@@ -3389,7 +3400,7 @@
 			<display_value_key value="NVG: {0:0}%"/>
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffNightVision"/>
-				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" effect_name="NightVision" intensity="0.75" fade="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" effect_name="VibrantDeSat" intensity="1" fade="0"/>
 				<triggered_effect trigger="onSelfBuffStart" action="SetPartActive" part="HeadLightTPV" active="@!.IsFPV"/>
 				<triggered_effect trigger="onSelfBuffStart" action="SetPartActive" part="HeadLightFPV" active="@.IsFPV"/>
 				
@@ -3405,7 +3416,7 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffNVGReload">
 					<requirement name="CVarCompare" cvar="batteryNVG" operation="LT" value="0"/>
 				</triggered_effect>
-				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" effect_name="NightVision" intensity="0" fade="0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" effect_name="VibrantDeSat" intensity="0" fade="0"/>
 				<triggered_effect trigger="onSelfBuffRemove" action="SetPartActive" part="HeadLightTPV" active="false"/>
 				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffNightVision"/>
 			</effect_group>
@@ -3426,7 +3437,7 @@
 			<duration value=".1"/>
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffNVGActive"/>
-				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" effect_name="NightVision" intensity="0" fade="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" effect_name="VibrantDeSat" intensity="0" fade="0"/>
 				<triggered_effect trigger="onSelfBuffStart" action="SetPartActive" part="HeadLightTPV" active="false"/>
 				<triggered_effect trigger="onSelfBuffStart" action="SetPartActive" part="HeadLightFPV" active="false"/>
 				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="removeNVGBattery" allow_client_call="true">

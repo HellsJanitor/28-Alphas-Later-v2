@@ -227,6 +227,7 @@
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchDrink">
 					<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/>
+					<requirement name="!HasBuff" buff="buffHelmetPurifierActive"/>
 				</triggered_effect>
 			</effect_group>
 
@@ -516,9 +517,10 @@
 		<item name="foodCanBeefcooked">
 			<property name="Tags" value="food"/>
 			<property name="CustomIcon" value="foodCanBeef"/>
-			<property name="HoldType" value="31"/>
+			<property name="HoldType" value="14"/>
 			<property name="DisplayType" value="foodRaw"/>
-			<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
+			<property name="Meshfile" value="@:Other/Items/Food/cannedFood_BeefPrefab.prefab"/>
+			<property name="TintColor" value="191, 153, 109"/>
 			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="Mmetal"/>
 			<property name="Weight" value="0"/>
@@ -546,6 +548,8 @@
 			<property name="Extends" value="foodCanBeefcooked"/>
 			<property name="SoundPickup" value="canfood_grab"/>
 			<property name="SoundPlace" value="canfood_place"/>
+			<property name="Meshfile" value="@:Other/Items/Food/cannedFood_ChickenPrefab.prefab"/>
+			<property name="TintColor" value="231, 174, 159"/>
 			<effect_group tiered="false" name="Food Tier 0">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7"/>
@@ -558,6 +562,8 @@
 			<property name="Extends" value="foodCanBeefcooked"/>
 			<property name="SoundPickup" value="canfood_grab"/>
 			<property name="SoundPlace" value="canfood_place"/>
+			<property name="Meshfile" value="@:Other/Items/Food/cannedFood_LambPrefab.prefab"/>
+			<property name="TintColor" value="195, 114, 131"/>
 			<effect_group tiered="false" name="Food Tier 0">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7"/>
@@ -570,6 +576,8 @@
 			<property name="Extends" value="foodCanBeefcooked"/>
 			<property name="SoundPickup" value="canfood_grab"/>
 			<property name="SoundPlace" value="canfood_place"/>
+			<property name="Meshfile" value="@:Other/Items/Food/cannedFood_StashChiliPrefab.prefab"/>
+			<property name="TintColor" value="177, 85, 44"/>
 			<effect_group tiered="false" name="Food Tier 0">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7"/>
@@ -582,6 +590,8 @@
 			<property name="Extends" value="foodCanBeefcooked"/>
 			<property name="SoundPickup" value="canfood_grab"/>
 			<property name="SoundPlace" value="canfood_place"/>
+			<property name="Meshfile" value="@:Other/Items/Food/cannedFood_TunaPrefab.prefab"/>
+			<property name="TintColor" value="184, 125, 125"/>
 			<property name="EconomicValue" value="20"/>
 			<effect_group tiered="false" name="Food Tier 0">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="5"/>
@@ -596,6 +606,8 @@
 			<property name="UnlockedBy" value="foodCanShamSchematic"/>
 			<property name="SoundPickup" value="canfood_grab"/>
 			<property name="SoundPlace" value="canfood_place"/>
+			<property name="Meshfile" value="@:Other/Items/Food/cannedFood_TunaPrefab.prefab"/>
+			<property name="TintColor" value="184, 125, 125"/>
 			<effect_group tiered="false" name="Food Tier 0">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7"/>
@@ -608,6 +620,8 @@
 			<property name="Extends" value="foodCanBeefcooked"/>
 			<property name="SoundPickup" value="canfood_grab"/>
 			<property name="SoundPlace" value="canfood_place"/>
+			<property name="Meshfile" value="@:Other/Items/Food/cannedFood_SpaghettiPrefab.prefab"/>
+			<property name="TintColor" value="199, 101, 4"/>
 			<effect_group tiered="false" name="Food Tier 0">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7"/>
@@ -620,6 +634,8 @@
 			<property name="Extends" value="foodCanBeefcooked"/>
 			<property name="SoundPickup" value="canfood_grab"/>
 			<property name="SoundPlace" value="canfood_place"/>
+			<property name="Meshfile" value="@:Other/Items/Food/cannedFood_SalmonPrefab.prefab"/>
+			<property name="TintColor" value="217, 131, 64"/>
 			<effect_group tiered="false" name="Food Tier 0">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7"/>
@@ -633,6 +649,8 @@
 			<property name="DisplayType" value="foodWaterRaw"/>
 			<property name="SoundPickup" value="canfood_grab"/>
 			<property name="SoundPlace" value="canfood_place"/>
+			<property name="Meshfile" value="@:Other/Items/Food/cannedFood_MisoSoupPrefab.prefab"/>
+			<property name="TintColor" value="217, 218, 110"/>
 			<effect_group tiered="false" name="Food Tier 0">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
@@ -647,6 +665,8 @@
 			<property name="EconomicValue" value="20"/>
 			<property name="SoundPickup" value="canfood_grab"/>
 			<property name="SoundPlace" value="canfood_place"/>
+			<property name="Meshfile" value="@:Other/Items/Food/cannedFood_MisoSoupPrefab.prefab"/>
+			<property name="TintColor" value="217, 218, 110"/>
 			<effect_group tiered="false" name="Food Tier 0">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
@@ -660,6 +680,8 @@
 			<property name="Extends" value="foodCanMisocooked"/>
 			<property name="SoundPickup" value="canfood_grab"/>
 			<property name="SoundPlace" value="canfood_place"/>
+			<property name="Meshfile" value="@:Other/Items/Food/cannedFood_PearsPrefab.prefab"/>
+			<property name="TintColor" value="194, 217, 93"/>
 			<effect_group tiered="false" name="Food Tier 0">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
@@ -674,6 +696,8 @@
 			<property name="SoundPickup" value="canfood_grab"/>
 			<property name="SoundPlace" value="canfood_place"/>
 			<property name="EconomicValue" value="40"/>
+			<property name="Meshfile" value="@:Other/Items/Food/cannedFood_NoodleSoupPrefab.prefab"/>
+			<property name="TintColor" value="221, 224, 151"/>
 			<effect_group tiered="false" name="Food Tier 0">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
@@ -688,6 +712,8 @@
 			<property name="SoundPickup" value="canfood_grab"/>
 			<property name="SoundPlace" value="canfood_place"/>
 			<property name="EconomicValue" value="40"/>
+			<property name="Meshfile" value="@:Other/Items/Food/cannedFood_01Prefab.prefab"/>
+			<property name="TintColor" value="191, 153, 109"/>
 			<effect_group tiered="false" name="Food Tier 0">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="5"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="1"/>
@@ -790,6 +816,7 @@
 			<!-- <property name="UnlockedBy" value="craftingMedical"/> -->
 			<property name="DisplayType" value="cureDespair"/>
 			<property name="TintColor" value="221,160,221"/>
+			<property name="DisplayType" value="cureDespair"/>
 			<property name="Group" value="Science,CFChemicals,Medical,TCMedical"/>
 			<property name="SoundPickup" value="grandpas_fergitn_grab"/>
 			<property name="SoundPlace" value="grandpas_fergitn_place"/>
@@ -1579,6 +1606,10 @@
 	<!-- *** uncooked canned food provides food/water only, no health -->
 	<set xpath="//item[starts-with(@name,'foodCan') and not (contains(@name,'cooked'))]/effect_group[@tiered='false']//triggered_effect[@cvar='foodHealthAmount']/@value">0</set>
 	
+	<!-- *** new hold type for honey -->
+	<set xpath="/items/item[@name='foodHoney']/property[@name='HoldType']/@value">31</set>
+	<set xpath="/items/item[@name='foodHoney']/property[@name='Meshfile']/@value">@:Other/Items/Food/parcelGenericPrefab.prefab</set>
+	
 	<!-- *** custom icon for uncooked canned food -->
 	<insertafter xpath="//item[@name='foodCanBeef']//property[1]">
 		<property name="CustomIcon" value="foodCanBeefrusty"/>
@@ -2185,24 +2216,24 @@
 	<!-- wellness negative -->
 	<append xpath="/items/item[@name='foodShamSandwich']">
 		<effect_group tiered="false">
-			<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffWellnessNegative"/>
-			<display_value name="dWellness" value="-5"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffWellnessNegativeOne"/>
+			<display_value name="dWellness" value="-1"/>
 		</effect_group>
 	</append>
 	
 	<append xpath="/items/item[@name='foodRottingFlesh']">
 		<effect_group tiered="false">
-			<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffWellnessNegative"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffWellnessNegativeTwo"/>
 			<display_value name="dWellness" value="-5"/>
 		</effect_group>
 	</append>
 	
 	<append xpath="/items/item[@name='drinkJarRiverWater']">
 		<effect_group tiered="false">
-			<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffWellnessNegative">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffWellnessNegativeOne">
 				<requirement name="!HasBuff" buff="buffHelmetPurifierActive"/>
 			</triggered_effect>
-			<display_value name="dWellness" value="-5"/>
+			<display_value name="dWellness" value="-1"/>
 		</effect_group>
 	</append>
 	
@@ -2224,13 +2255,18 @@
 	
 	<append xpath="/items/item[@name='drinkJarYuccaJuice']/effect_group[@name='Drink Tier 0/1']">
 		<display_value name="dDuration" value="360"/>
-		<display_value name="dHyperthermalResist" value="5"/>
+		<display_value name="dHyperthermalResist" value="10"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffYuccaJuiceDuration" operation="add" value="363"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffYuccaJuiceDuration" operation="set" value="2703">
 			<requirement name="CVarCompare" cvar="$buffYuccaJuiceDuration" operation="GT" value="2703"/></triggered_effect>
 	</append>
 	
 	<set xpath="/items/item[@name='drinkJarYuccaJuice']/property[@name='DisplayType']/@value">waterYuccaJuice</set>
+	
+	<!-- *** increased buff duration for Yucca smoothies -->
+	<set xpath="/items/item[@name='drinkYuccaJuiceSmoothie']/effect_group/triggered_effect[@value='363']/@value">726</set>
+	<set xpath="/items/item[@name='drinkYuccaJuiceSmoothie']/effect_group/triggered_effect[@value='2703']/@value">5406</set>
+	<set xpath="/items/item[@name='drinkYuccaJuiceSmoothie']/effect_group/triggered_effect/requirement[@value='2703']/@value">5406</set>
 	
 	<!-- *** food smell display values -->
 	<append xpath="//item[not (@name='foodRawMeat')]/effect_group[@name='Food Tier 0']">

@@ -36,5 +36,12 @@
 		<crafting_category_list display_type="playerTableSaw">
 			<crafting_category name="Resources" icon="ui_game_symbol_resource" display_name="lblCategoryResources"/>
 		</crafting_category_list>
-	</append>	
+	</append>
+
+	<!-- *** display entry for despair meds -->
+	<append xpath="/ui_display_info/item_display">
+		<item_display_info display_type="cureDespair" display_group="groupConsumables">
+			<display_entry name="dCureDespair" title_key="statCureDespair" display_type="Percent"/>
+		</item_display_info>
+	</append>
 </HellsJanitor>

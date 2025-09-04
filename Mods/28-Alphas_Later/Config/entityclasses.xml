@@ -389,8 +389,9 @@
 		<drop event="Harvest" name="venom" tag="butcherHarvest" count="2"/>
 	</insertafter>
 	
-	<!-- *** new frostclaw -->
-	<!-- <set xpath="/entity_classes/entity_class[contains (@name,'zombieFrostclaw')]/property[@name='Mesh']/@value">#@modfolder:Resources/hjentities.unity3d?ZombieHungry</set> -->
+	<!-- *** new frostclaw & plague splitter -->
+	<!-- <set xpath="/entity_classes/entity_class[contains (@name,'zombieFrostclaw')]/property[@name='Mesh']/@value">#@modfolder:Resources/zombiesNewSpecial.unity3d?zombieFrostclawNew</set> -->
+	<!-- <set xpath="/entity_classes/entity_class[contains (@name,'zombiePlagueSpitter')]/property[@name='Mesh']/@value">#@modfolder:Resources/zombiesNewSpecial.unity3d?zombieGhoul</set> -->
 	
 	<!-- *** plague spitter changes -->
 	<set xpath="/entity_classes/entity_class[@name='zombiePlagueSpitter']/property[@name='AITask']/@value">

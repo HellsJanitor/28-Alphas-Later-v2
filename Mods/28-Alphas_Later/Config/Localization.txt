@@ -61,8 +61,22 @@ perkDeepCutsRank3LongDesc,You're a cut above the rest. Bladed weapons deal 30% m
 perkDeepCutsRank4LongDesc,You're quite lethal with bladed weapons. Bladed weapons deal 40% more damage. Stamina costs are reduced by 25% and 50% for power attacks. Killing blows grant 20 stamina. Find more bladed weapons and parts in loot.
 perkDeepCutsRank5LongDesc,You're a samurai and can make sushi out of your foes. Bladed weapons deal 50% more damage. Killing blows grant 30 stamina. Find more bladed weapons and parts in loot.
 
+perkBetterBarterDesc,"Specialize in convincing area traders to give you a better deal, and to show more of their stock"
+perkBetterBarterName,Better Barter
+perkBetterBarterRank1Desc,Wheeler Dealer
+perkBetterBarterRank1LongDesc,You are good at wheeling and dealing and never pay full price for anything. Get a 5% better deal buying and selling merchandise with traders.\nTraders have more stock.
+perkBetterBarterRank2Desc,Salesman
+perkBetterBarterRank2LongDesc,You must have been a salesman before the apocalypse with the kind of good deals you find. Get a 10% better deal buying and selling with traders.\nTraders have even more stock.
+perkBetterBarterRank3Desc,Sales Manager
+perkBetterBarterRank3LongDesc,You act like a sales manager and have authority to cut the best deals. Get a 15% better deal buying and selling with traders.\nTraders have better stock.
+perkBetterBarterRank4Desc,Wall Street Tycoon
+perkBetterBarterRank4LongDesc,You would do well if the stock market still existed. Get a 20% better deal buying and selling with traders.\nTraders have even better stock.
+perkBetterBarterRank5Desc,Corporate Marketing CEO
+perkBetterBarterRank5LongDesc,You are like a Corporate Manager and buy goods at the lowest prices and sell for a huge profit. Get a 25% better deal buying and selling with traders.\nTraders have the best stock.
+
 buffT0FoodTimeTrackName,"Basic Food/Drink"
-buffT0FoodTimeTrackDesc,"You have consumed some basic food or drink, and your wellness has improved a tiny amount.\n\nYou'll need to wait a while until you can improve your wellness again."
+buffT0FoodTimeTrackDesc,"You have consumed some very basic food or drink, and your wellness has improved a tiny amount.\n\nYou'll need to wait a while until you can improve your wellness again."
+buffT0FoodTimeTrackToolTip,"wellness has improved a tiny amount"
 buffT1FoodTimeTrackName,"Decent Food/Drink"
 buffT1FoodTimeTrackDesc,"You have consumed some basic food or drink, and your wellness has improved a little.\n\nYou'll need to wait a while until you can improve your wellness again."
 buffT1FoodTimeTrackToolTip,"wellness has improved a little"
