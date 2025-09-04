@@ -3,7 +3,7 @@
 
 The idea behind this mod is to slow progression, make traders less powerful, and generally extend the time for a playthrough, while keeping the vanilla look and feel.
 
-31/08/25 - mod version 2.3.0.0, Updated for v2.3 of 7 Days to Die
+### 31/08/25 - mod version 2.3.0.0, Updated for v2.3 of 7 Days to Die (initial release)
 
 > [!NOTE]
 > 04/09/25 mod version 2.3.0.1, changelog:
