@@ -20,7 +20,7 @@ increased duration for Yucca Smoothie buffs (doubled in duration)
 
 changed the screen effect for envenomed debuff
 
-lowered loot probabilites for soldiers to drop weapons
+lowered loot probabilities for soldiers to drop weapons
 
 added antivenom as a rare medical item in loot
 
