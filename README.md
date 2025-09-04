@@ -7,7 +7,6 @@ The idea behind this mod is to slow progression, make traders less powerful, and
 
 > [!NOTE]
 > 04/09/25 mod version 2.3.0.1, changelog:
-
 > Plague Spitters spawn frequency, movement speed, health and ranged attack cooldown all lowered
 > reduced the wellness penalty for sham sandwiches to -1 (was -5)
 > added stats window in the UI for despair meds
