@@ -38,10 +38,16 @@
 		</crafting_category_list>
 	</append>
 
-	<!-- *** display entry for despair meds -->
+	<!-- *** display entry for despair meds and armour mods -->
 	<append xpath="/ui_display_info/item_display">
 		<item_display_info display_type="cureDespair" display_group="groupConsumables">
 			<display_entry name="dCureDespair" title_key="statCureDespair" display_type="Percent"/>
+		</item_display_info>
+		
+		<item_display_info display_type="modTempResist" display_group="modAttire">
+			<display_entry name="HypothermalResist" display_type="Decimal1" title_key="statHypothermalResist" display_leading_plus="true"/>
+			<display_entry name="HyperthermalResist" display_type="Decimal1" title_key="statHyperthermalResist" display_leading_plus="true"/>
+			<display_entry name="ElementalDamageResist" display_type="Decimal1" title_key="statExplosionResistance" display_leading_plus="true" tags="heat,electrical"/>
 		</item_display_info>
 	</append>
 </HellsJanitor>

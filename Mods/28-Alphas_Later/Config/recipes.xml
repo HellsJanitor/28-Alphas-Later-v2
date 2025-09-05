@@ -389,6 +389,21 @@
 			<ingredient name="venom" count="2"/>
 			<ingredient name="drinkJarBoiledWater" count="2"/>
 		</recipe>
+		
+		<recipe name="modArmorCoolingMesh" count="1" craft_area="workbench" tags="learnable,workbenchCrafting">
+			<ingredient name="resourceScrapPolymers" count="10"/>
+			<ingredient name="resourceGlue" count="2"/>
+			<ingredient name="resourceOil" count="2"/>
+			<ingredient name="resourceMechanicalParts" count="2"/>
+			<ingredient name="resourceSewingKit" count="1"/>
+		</recipe>
+		
+		<recipe name="modArmorInsulatedLiner" count="1" craft_area="workbench" tags="learnable,workbenchCrafting">
+			<ingredient name="resourceCloth" count="10"/>
+			<ingredient name="resourceScrapPolymers" count="2"/>
+			<ingredient name="resourceDuctTape" count="2"/>
+			<ingredient name="resourceSewingKit" count="1"/>
+		</recipe>
 	</append>
 	
 	<!-- *** change hobo stew to require cat food -->

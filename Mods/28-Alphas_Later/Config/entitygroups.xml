@@ -51,7 +51,7 @@
 		zombieBowler, .3
 	</set>
 	
-	<set xpath="/entitygroups/entitygroup[@name='ZombiesAll']">
+	<set xpath="/entitygroups/entitygroup[@name='ZombiesNight']">
 		zombieSpider
 		zombieSpiderFeral, .25
 		zombieBoe
@@ -745,10 +745,15 @@
 	
 	<!-- REMOVING CHARGED, INFERNAL, FROSTCLAWS, AND PLAGUE SPITTERS -->
 	<remove xpath="/entitygroups/entitygroup[contains(@name,'Charged')]"/>
-	<csv xpath="/entitygroups/entitygroup/text()[contains(.,'Charged')]" delim="\n" op="remove">*Charged</csv>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(.,'Charged')]" delim="\n" op="remove">*Charged*</csv>
 
 	<remove xpath="/entitygroups/entitygroup[contains(@name,'Infernal')]"/>
-	<csv xpath="/entitygroups/entitygroup/text()[contains(.,'Infernal')]" delim="\n" op="remove">*Infernal</csv>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(.,'Infernal')]" delim="\n" op="remove">*Infernal*</csv>
+	
+	<csv xpath="//entitygroup[contains(@name,'Horde')]/text()" op="remove" delim="\n">*Infernal*</csv>
+    <csv xpath="//entitygroup[contains(@name,'Horde')]/text()" op="remove" delim="\n">*Charged*</csv>
+	<csv xpath="//entitygroup[contains(@name,'Horde')]/text()" op="remove" delim="\n">*Infernal,*</csv>
+    <csv xpath="//entitygroup[contains(@name,'Horde')]/text()" op="remove" delim="\n">*Charged,*</csv>
 
 	<!-- <remove xpath="/entitygroups/entitygroup[contains(@name,'zombieFrostclaw')]"/> -->
 	<!-- <csv xpath="//entitygroup/text()" op="remove" delim="\n">zombieFrostclaw*</csv> -->

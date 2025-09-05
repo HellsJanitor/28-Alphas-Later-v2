@@ -7,7 +7,7 @@
 		<!-- <property name="ambientSkyDesat" value=".7, 0.7"/> -->
 		<!-- <property name="ambientMoon" value=".8, 0.05"/> -->
 		<!-- add, scale -->
-		<!-- <property name="ambientInsideSpeed" value=".3"/> -->
+		<!-- <property name="ambientInsideSpeed" value="0"/> -->
 		<!-- <property name="ambientInsideThreshold" value=".2"/> -->
 		<!-- <property name="ambientInsideEquatorScale" value=".55, 1.5"/> -->
 		<!-- day, night -->
