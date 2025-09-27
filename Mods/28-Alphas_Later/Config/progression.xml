@@ -94,6 +94,14 @@
 	</insertafter>
 	<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingWorkstations']/effect_group/passive_effect[@level='10,100']/@tags">,playerSawmill</append>
 	
+	<set xpath="/progression/crafting_skills/crafting_skill[@name='craftingWorkstations']/display_entry[@icon='cntDewCollector,forge']/@icon">chickenCoop,beehive</set>
+	<set xpath="/progression/crafting_skills/crafting_skill[@name='craftingWorkstations']/display_entry/unlock_entry[@item='cntDewCollector']/@item">chickenCoop,beehive</set>
+	<set xpath="/progression/crafting_skills/crafting_skill[@name='craftingWorkstations']/effect_group/passive_effect[@level='2,100']/@tags">chickenCoop,beehive</set>
+	
+	<!-- *** solar bank unlocks -->
+	<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingElectrician']/display_entry[@icon='batterybank']/unlock_entry/@item">,solarbank</append>
+	<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingElectrician']/effect_group/passive_effect[@level='55,100']/@tags">,solarbank</append>
+	
 	<!-- *** Better Barter & Daring Adventurer removed from skill tree - now a "passive" unlock -->
 	<remove xpath="//perk[@name='perkBetterBarter']"/>
 	<remove xpath="//perk[@name='perkDaringAdventurer']"/>
@@ -130,4 +138,7 @@
 			<!-- Drinking moonshine no longer blurs your vision. Effect is in buffDrunkGrandpasMoonshine. -->
 		</effect_group>
 	</set>
+	
+	<!-- *** lower degradation from sledge saga vol. 2 -->
+	<set xpath="/progression/perks/book[@name='perkSledgeSagaDegradation']/effect_group/passive_effect/@value">-.1</set>
 </HellsJanitor>

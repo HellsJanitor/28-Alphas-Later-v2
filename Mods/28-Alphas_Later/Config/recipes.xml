@@ -193,21 +193,21 @@
 		</recipe>
 		
 		<!-- *** lavender oil -->
-		<recipe name="drugLavenderOil" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkPhysician">
-			<ingredient name="resourceCropLavender" count="8"/>
+		<recipe name="drugLavenderOil" count="1" craft_area="campfire" craft_tool="toolCookingPot" >
+			<ingredient name="resourceCropLavender" count="10"/>
 			<ingredient name="drinkJarBoiledWater" count="1"/>
 			<ingredient name="resourceCloth" count="1"/>
-			<effect_group>
-				<passive_effect name="CraftingIngredientCount" level="1,2,3,4,5" operation="base_add" value="-2,-2,-4,-4,-4" tags="resourceCropLavender"/>
-			</effect_group>
+			<!-- <effect_group> -->
+				<!-- <passive_effect name="CraftingIngredientCount" level="1,2,3,4,5" operation="base_add" value="-2,-2,-4,-4,-4" tags="resourceCropLavender"/> -->
+			<!-- </effect_group> -->
 		</recipe>
 		
 		<!-- *** player-planted lavender crop -->
 		<recipe name="plantedLavender1" count="1" craft_time="1" tags="perkLivingOffTheLandCrafting">
-			<ingredient name="resourceCropLavender" count="4"/>
-			<effect_group>
-				<passive_effect name="CraftingIngredientCount" level="1,2,3" operation="base_add" value="0,-1,-2" tags="resourceCropLavender"/>
-			</effect_group>
+			<ingredient name="resourceCropLavender" count="5"/>
+			<!-- <effect_group> -->
+				<!-- <passive_effect name="CraftingIngredientCount" level="1,2,3" operation="base_add" value="0,-1,-2" tags="resourceCropLavender"/> -->
+			<!-- </effect_group> -->
 		</recipe>
 		
 		<!-- *** wood burning stove -->
@@ -378,6 +378,26 @@
 		<recipe name="foodCanStockcooked" count="1" craft_area="campfire" craft_time="12" tags="perkMasterChef">
 			<ingredient name="foodCanStock" count="1"/>
 		</recipe>
+		
+		<!-- *** Sham Chowder -->
+		<recipe name="foodShamChowder" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,learnable">
+			<ingredient name="foodShamSandwich" count="10"/>
+			<ingredient name="foodCropPotato" count="2"/>
+			<ingredient name="foodCropCorn" count="2"/>
+			<ingredient name="drinkJarBoiledWater" count="1"/>
+		</recipe>
+		
+		<!-- *** solar bank -->
+		<recipe name="solarbank" count="1" craft_area="workbench" tags="perkAdvancedEngineering,learnable">
+			<ingredient name="resourceForgedIron" count="10"/>
+			<ingredient name="resourceMechanicalParts" count="10"/>
+			<ingredient name="resourceElectricParts" count="14"/>
+			<ingredient name="resourceSilverNugget" count="5"/>
+			<ingredient name="resourceGoldNugget" count="5"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".56,.56,.56,.34,.15" tags="resourceForgedIron,resourceMechanicalParts,resourceElectricParts"/>
+			</effect_group>
+		</recipe>
 
 		<!-- *** antivenom -->
 		<recipe name="antivenom" count="1" craft_area="chemistryStation" tags="chemStationCrafting">
@@ -390,6 +410,7 @@
 			<ingredient name="drinkJarBoiledWater" count="2"/>
 		</recipe>
 		
+		<!-- *** Cooling Mesh -->
 		<recipe name="modArmorCoolingMesh" count="1" craft_area="workbench" tags="learnable,workbenchCrafting">
 			<ingredient name="resourceScrapPolymers" count="10"/>
 			<ingredient name="resourceGlue" count="2"/>
@@ -398,13 +419,173 @@
 			<ingredient name="resourceSewingKit" count="1"/>
 		</recipe>
 		
+		<!-- *** Insulated Mesh -->
 		<recipe name="modArmorInsulatedLiner" count="1" craft_area="workbench" tags="learnable,workbenchCrafting">
 			<ingredient name="resourceCloth" count="10"/>
 			<ingredient name="resourceScrapPolymers" count="2"/>
 			<ingredient name="resourceDuctTape" count="2"/>
 			<ingredient name="resourceSewingKit" count="1"/>
 		</recipe>
+		
+		<!-- *** bulk research papers -->
+		<!-- <recipe name="researchPaperBlank100" count="1" craft_time="10" craft_area="workbench" tags="workbenchCrafting"> -->
+			<!-- <ingredient name="researchPaperBlank" count="100"/>			 -->
+		<!-- </recipe> -->
+		
+		<!-- <recipe name="researchPaperBlank500" count="1" craft_time="10" craft_area="workbench" tags="workbenchCrafting"> -->
+			<!-- <ingredient name="researchPaperBlank" count="500"/>			 -->
+		<!-- </recipe> -->
+		
+		<!-- <recipe name="researchPaperBlank1000" count="1" craft_time="10" craft_area="workbench" tags="workbenchCrafting"> -->
+			<!-- <ingredient name="researchPaperBlank" count="1000"/>			 -->
+		<!-- </recipe> -->
+		
+		<!-- <recipe name="researchPaperBlank5000" count="1" craft_time="10" craft_area="workbench" tags="workbenchCrafting"> -->
+			<!-- <ingredient name="researchPaperBlank" count="5000"/>			 -->
+		<!-- </recipe> -->
+		
+		<!-- <recipe name="researchPaperBlank10000" count="1" craft_time="10" craft_area="workbench" tags="workbenchCrafting"> -->
+			<!-- <ingredient name="researchPaperBlank" count="10000"/>			 -->
+		<!-- </recipe>		 -->
+		
+		<!-- <recipe name="researchPaperBlank10000" count="1" craft_time="10" craft_area="workbench" tags="workbenchCrafting"> -->
+			<!-- <ingredient name="researchPaperBlank1000" count="10"/>			 -->
+		<!-- </recipe> -->
+		
+		<!-- <recipe name="researchPaperBlank10000" count="1" craft_time="10" craft_area="workbench" tags="workbenchCrafting"> -->
+			<!-- <ingredient name="researchPaperBlank5000" count="2"/>			 -->
+		<!-- </recipe> -->
+		
+		<!-- <recipe name="researchPaperBlank100000" count="1" craft_time="10" craft_area="workbench" tags="workbenchCrafting"> -->
+			<!-- <ingredient name="researchPaperBlank10000" count="10"/>			 -->
+		<!-- </recipe> -->
+		
+		<!-- *** chicken coop *** -->
+		<recipe name="chickenCoop" count="1" craft_time="120" craft_exp_gain="500" tags="learnable,workbenchCrafting">
+			<ingredient name="resourceWood" count="200"/>
+			<ingredient name="resourceForgedIron" count="10"/>
+			<ingredient name="resourceNail" count="20"/>
+		</recipe>
+		
+		<!-- *** beehive *** -->
+		<recipe name="beehive" count="1" craft_time="120" craft_exp_gain="500" tags="learnable,workbenchCrafting">
+			<ingredient name="resourceWood" count="200"/>
+			<ingredient name="resourceForgedIron" count="10"/>
+			<ingredient name="resourceNail" count="20"/>
+		</recipe>
+		
+		<!-- *** roast chicken -->
+		<recipe name="foodRoastChicken" count="1" craft_time="60" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef">
+			<ingredient name="tameChicken" count="1"/>			
+		</recipe>
+		
+		<!-- *** roast rabbit -->
+		<recipe name="foodRoastedRabbit" count="1" craft_time="60" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef">
+			<ingredient name="tameRabbit" count="1"/>			
+		</recipe>
+		
+		<!-- *** weapon/tool/armour specific repair kits -->
+		<recipe name="PrimitiveRepairKit" count="1">
+			<ingredient name="resourceBranch" count="2"/>
+			<ingredient name="resourceYuccaFibers" count="2"/>
+			<ingredient name="resourceCloth" count="2"/>
+		</recipe>
+		
+		<recipe name="HandgunRepairKit" count="1">
+			<ingredient name="gunHandgunT1PistolParts" count="1"/>
+			<ingredient name="resourceRepairKit" count="1"/>
+		</recipe>
+		
+		<recipe name="ShotgunRepairKit" count="1">
+			<ingredient name="gunShotgunT1DoubleBarrelParts" count="1"/>
+			<ingredient name="resourceRepairKit" count="1"/>
+		</recipe>
+		
+		<recipe name="MachinegunRepairKit" count="1">
+			<ingredient name="gunMGT1AK47Parts" count="1"/>
+			<ingredient name="resourceRepairKit" count="1"/>
+		</recipe>
+		
+		<recipe name="RifleRepairKit" count="1">
+			<ingredient name="gunRifleT1HuntingRifleParts" count="1"/>
+			<ingredient name="resourceRepairKit" count="1"/>
+		</recipe>
+		
+		<recipe name="RobotRepairKit" count="1">
+			<ingredient name="gunBotRoboticsParts" count="1"/>
+			<ingredient name="resourceRepairKit" count="1"/>
+		</recipe>
+		
+		<recipe name="BowRepairKit" count="1">
+			<ingredient name="gunBowT1WoodenBowParts" count="1"/>
+			<ingredient name="resourceRepairKit" count="1"/>
+		</recipe>
+		
+		<recipe name="StunBatonRepairKit" count="1">
+			<ingredient name="meleeWpnBatonT2StunBatonParts" count="1"/>
+			<ingredient name="resourceRepairKit" count="1"/>
+		</recipe>
+		
+		<recipe name="KnucklesRepairKit" count="1">
+			<ingredient name="meleeWpnKnucklesT3SteelKnucklesParts" count="1"/>
+			<ingredient name="resourceRepairKit" count="1"/>
+		</recipe>
+		
+		<recipe name="ClubRepairKit" count="1">
+			<ingredient name="meleeWpnClubT3SteelClubParts" count="1"/>
+			<ingredient name="resourceRepairKit" count="1"/>
+		</recipe>
+		
+		<recipe name="SledgehammerRepairKit" count="1">
+			<ingredient name="meleeWpnSledgeT3SteelSledgehammerParts" count="1"/>
+			<ingredient name="resourceRepairKit" count="1"/>
+		</recipe>
+		
+		<recipe name="MacheteRepairKit" count="1">
+			<ingredient name="meleeWpnBladeT3MacheteParts" count="1"/>
+			<ingredient name="resourceRepairKit" count="1"/>
+		</recipe>
+		
+		<recipe name="SpearRepairKit" count="1">
+			<ingredient name="meleeWpnSpearT3SteelSpearParts" count="1"/>
+			<ingredient name="resourceRepairKit" count="1"/>
+		</recipe>
+		
+		<recipe name="RocketLauncherRepairKit" count="1">
+			<ingredient name="gunExplosivesT3RocketLauncherParts" count="1"/>
+			<ingredient name="resourceRepairKit" count="1"/>
+		</recipe>
+		
+		<recipe name="SteelToolRepairKit" count="1">
+			<ingredient name="meleeToolAllSteelParts" count="1"/>
+			<ingredient name="resourceRepairKit" count="1"/>
+		</recipe>
+		
+		<recipe name="MotorToolRepairKit" count="1">
+			<ingredient name="meleeToolAxeT3ChainsawParts" count="1"/>
+			<ingredient name="resourceRepairKit" count="1"/>
+		</recipe>
+		
+		<recipe name="ArmourRepairKit" count="1">
+			<ingredient name="resourceArmorCraftingKit" count="1"/>
+			<ingredient name="resourceRepairKit" count="1"/>
+		</recipe>
 	</append>
+	
+	<!-- *** repair kits require oil & mech parts -->
+	<set xpath="/recipes/recipe[@name='resourceRepairKit']">
+		<ingredient name="resourceForgedIron" count="1"/>
+		<ingredient name="resourceDuctTape" count="1"/>
+		<ingredient name="resourceMechanicalParts" count="2"/>
+		<ingredient name="resourceOil" count="2"/>
+	</set>
+	
+	<!-- *** remove dew collector -->
+	<remove xpath="/recipes/recipe[@name='cntDewCollector']"/>
+	
+	<!-- *** change paper to require wood scraps -->
+	<set xpath="/recipes/recipe[@name='resourcePaper' and @craft_area='campfire']/ingredient[@name='resourceWood']/@name">resourceWoodScraps</set>
+	<set xpath="/recipes/recipe[@name='resourcePaper' and @craft_area='chemistryStation']/ingredient[@name='resourceWood']/@name">resourceWoodScraps</set>
 	
 	<!-- *** change hobo stew to require cat food -->
 	<set xpath="/recipes/recipe[@name='foodHoboStew']">
@@ -431,6 +612,26 @@
 			</effect_group>
 		</recipe>
 	</insertafter>
+	
+	<!-- *** increase ingredient counts -->
+	<set xpath="/recipes/recipe/ingredient[@name='foodCropCorn' and @count='2']/@count">3</set>
+	<set xpath="/recipes/recipe/ingredient[@name='foodCropPotato' and @count='2']/@count">3</set>
+	<set xpath="/recipes/recipe/ingredient[@name='foodCropMushrooms' and @count='2']/@count">3</set>
+	<set xpath="/recipes/recipe[@name='foodBlueberryPie']/ingredient[@name='foodCropBlueberries']/@count">7</set>
+	
+	<set xpath="/recipes/recipe[@name='foodPumpkinPie']/ingredient[@name='foodCropPumpkin']/@count">4</set>	
+	<append xpath="/recipes/recipe[@name='foodPumpkinPie']">
+		<effect_group>
+			<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-1,-2" tags="foodCropPumpkin"/>
+		</effect_group>
+	</append>
+	
+	<set xpath="/recipes/recipe[@name='foodPumpkinCheesecake']/ingredient[@name='foodCropPumpkin']/@count">4</set>
+	<append xpath="/recipes/recipe[@name='foodPumpkinCheesecake']">
+		<effect_group>
+			<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-1,-2" tags="foodCropPumpkin"/>
+		</effect_group>
+	</append>
 	
 	<!-- *** increase ingredient count for red tea, goldenrod tea, and mineral water -->
 	<set xpath="/recipes/recipe[@name='drinkJarRedTea']/ingredient[@name='resourceCropChrysanthemumPlant']/@count">5</set>

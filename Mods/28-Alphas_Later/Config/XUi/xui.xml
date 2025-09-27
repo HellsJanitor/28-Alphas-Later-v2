@@ -46,6 +46,17 @@
 		<window name="windowOutput" />
 		<window name="windowNonPagingHeader" />
 	</window_group>	
+	
+	<!-- *** chicken coop -->
+	<window_group name="workstation_chickenCoop" controller="XUiC_WorkstationWindowGroup" open_backpack_on_open="true" close_compass_on_open="true" defaultSelected="bp.content">
+		<window name="windowCraftingList"/>
+		<window name="craftingInfoPanel"/>
+		<window name="windowCraftingQueue"/>
+		<!-- <window name="windowToolsChickenCoop" /> -->
+		<window name="windowChickenCoopFuel" />
+		<window name="windowOutput" />
+		<window name="windowNonPagingHeader" />
+	</window_group>
 	</insertafter>
 	
 	<!-- *** stat bar positions -->

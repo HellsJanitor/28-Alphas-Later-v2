@@ -100,7 +100,19 @@
 			<MaxVoices value="3"/>
 			<MaxRepeatRate value="0.01"/>
 		</SoundDataNode>
-	</append>
+		
+		<SoundDataNode name="chicken_coop_complete_item"> <AudioSource name="@:Sounds/Prefabs/AudioSource_UI.prefab"/>
+			<AudioClip ClipName="@:Sounds/Animals/Chicken/chickenpain1.wav"/>
+			<AudioClip ClipName="@:Sounds/Animals/Chicken/chickenpain2.wav"/>
+			<AudioClip ClipName="@:Sounds/Animals/Chicken/chickenpain3.wav"/>
+			<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+		<SoundDataNode name="chicken_coop_cook_click"> <AudioSource name="@:Sounds/Prefabs/AudioSource_UI.prefab"/>
+			<AudioClip ClipName="@:Sounds/Animals/Chicken/chickenpain1.wav"/>
+			<AudioClip ClipName="@:Sounds/Animals/Chicken/chickenpain2.wav"/>
+			<AudioClip ClipName="@:Sounds/Animals/Chicken/chickenpain3.wav"/>
+			<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+		</append>
 	
 	<set xpath="/Sounds/SoundDataNode[@name='suv_horn']/AudioClip[@ClipName='@:Sounds/Vehicles/Suv/truck_horn.wav']/@ClipName">#@modfolder:Resources/4x4horn.unity3d?truckHorn</set>
 	<set xpath="/Sounds/SoundDataNode[@name='quest_master_complete']/AudioClip/@ClipName">none</set>

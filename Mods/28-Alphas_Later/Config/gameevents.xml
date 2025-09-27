@@ -1,5 +1,8 @@
 <configs>
-	<append xpath="//action_sequence[@name='game_first_spawn']">
+	<set xpath="//action_sequence[@name='game_first_spawn']">
+		<property name="allow_user_trigger" value="false"/>
+		<property name="action_type" value="Game"/>
+		
 		<action class="Delay">
 			<property name="time" value="2"/>
 			<property name="phase" value="4"/>
@@ -9,14 +12,32 @@
 			<property name="items_location" value="Toolbelt"/>
 			<property name="items" value="drinkJarPureMineralWater,foodSteakAndPotato,medicalFirstAidBandage,meleeToolFlashlight02,resourceNiCdBattery"/>
 			<property name="item_counts" value="2,2,2,1,1"/>
-			<property name="slot_numbers" value="0,1,2,3,4"/>
+			<property name="slot_numbers" value="1,2,3,4,5"/>
 		</action>
 		
 		<action class="AddQuest">
 			<property name="quest" value="28AlphasLaterQuest"/>
 			<property name="phase" value="3"/>
 		</action>
+	</set>
+	
+	<!-- *** add a chance for a bee from a stump -->
+	<!-- <append xpath="/gameevents/action_sequence[@name='block_tree_stump_bees']/action[@class='AddItems']/property[@name='added_items']/@value">,honeyBee</append> -->
+	<!-- <append xpath="/gameevents/action_sequence[@name='block_tree_stump_bees']/action[@class='AddItems']/property[@name='added_item_counts']/@value">,1</append> -->
+	
+	<append xpath="/gameevents/action_sequence[@name='block_tree_stump_bees']">
+		<action class="AddItems">
+			<property name="added_items" value="honeyBee"/>
+			<property name="added_item_counts" value="1"/>
+			
+			<requirement class="RandomRoll">
+				<property name="min_max" value="0,100"/>
+				<property name="operation" value="LTE"/>
+				<property name="value" value="75"/>
+			</requirement>
+		</action>
 	</append>
+	
 	
 	<append xpath="/gameevents">
 		<!-- *** piano audio -->

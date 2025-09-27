@@ -3,10 +3,63 @@
 
 The idea behind this mod is to slow progression, make traders less powerful, and generally extend the time for a playthrough, while keeping the vanilla look and feel.
 
-### 31/08/25 - mod version 2.3.0.0, Updated for v2.3 of 7 Days to Die (initial release)
+> [!IMPORTANT]
+> 20/09/25 mod version 2.3.1.0 changelog **(NEW SAVE RECOMMENDED)**:
 
-> [!NOTE]
-> 04/09/25 mod version 2.3.0.1, changelog:
+### Crafting research:
+**Magazines have been COMPLETELY removed, and replaced with Research Papers. These papers allow you to unlock crafting items and levels in any order you please, as long as you have enough.**
+**Research papers are mostly found in zombie corpse loot, and everywhere magazines and books would usually be found, plus a few other places too.**
+**You must have research papers in your inventory to unlock crafting skills, and the cost of skills scales as your crafting skill increases.**
+
+Legendary melee weapons added. There's a paintbrush, pitchfork, scythe, and rake. All of these weapons can be found in POI endloot chests, in the **wasteland** ***ONLY***.
+The higher the tier of POI, the more likely you are to find one of these weapons.
+
+Research from zombie corpses has been increased in the **wasteland** biome. Every corpse in the wasteland will have research, and if the zombie would normally have research, that research is doubled in quantity.
+
+Traders are more expensive to buy from and sell to.
+
+Crops take longer to grow.
+
+Food recipes requiring crops now require 50% more crops to make.
+
+Lavender oil is more expensive to craft.
+
+Lavender seeds crop cost now in line with all other crops.
+
+Despair med blocker - there's now a tooltip to warn you if you are treating you despair with your environment, and will prevent you from wasting despair medication.
+
+Chicken coop and tools added.
+
+Beehive and tools added. Bees can be found in treestumps.
+
+Chickens can now be caught by pressing 'E' when close enough. They can be used in a chicken coop for eggs, and/or cooked.
+
+Rabbits can be caught by pressing 'E' when close enough. They can be cooked.
+
+Dew collector removed, and the challenge for placing it replaced with placing a chicken coop.
+
+Workbench combine function reworked. You can now only repair items up to your current crafting skill for that item. Improving items by combining now requires the matching crafting skill level.
+
+Corpse hit points increased.
+
+Solar bank is now craftable.
+
+Sham sandwiches can be used for Sham chowder.
+
+Action Skills have been reworked to account for 100% of your skill, and relevant perks removed. Remaining perks have had their skill point cost revised.
+
+Attribute mods removed, and the cigar reworked for a bartering bonus only.
+
+Dirt bike rear wheel mesh issue fixed.
+
+Wetness now applies regardless of biome progression. If it rains, you get wet.
+
+Frozen zombies are now less blue, and more white.
+
+Localization tweaks and fixes, loot table revisions and other small fixes.
+
+
+### 04/09/25 mod version 2.3.0.1, changelog:
 
 Plague Spitters spawn frequency, movement speed, health and ranged attack cooldown all lowered
 
@@ -39,6 +92,9 @@ changed unlock level for the sawmill so it unlocks with the workbench
 removed wasteland zombies from biome night spawns
 
 changed spawn cooldown between biome spawns for biome spawns during the day
+
+### 31/08/25 - mod version 2.3.0.0, Updated for v2.3 of 7 Days to Die (initial release)
+
 
 
 # FEATURES 

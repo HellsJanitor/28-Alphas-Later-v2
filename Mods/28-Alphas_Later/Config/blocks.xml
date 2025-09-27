@@ -171,8 +171,11 @@
 		<property name="Class" value="BlockHarvestableWithBonuses, 28AL-Harmony"/>
 	</append>
 	
-	<!-- *** Biome Variants -->
+	<!-- *** extend crops growing time -->
+	<set xpath="/blocks/block[@name='cropsGrowingMaster']//property[@name='PlantGrowing.GrowthRate']/@value">126</set>
+	
 	<append xpath="/blocks">
+		<!-- *** Biome Variants -->
 		<block name="plantedAloe3HarvestBiome">
 			<property name="Extends" value="plantedAloe3Harvest"/>
 			<property name="CreativeMode" value="Dev"/>
@@ -330,7 +333,7 @@
 			<!-- <property name="DowngradeBlock" value="plantedLavender1"/> -->
 			<property name="SortOrder1" value="B954"/>
 			<property name="SortOrder2" value="0002"/>
-			<property name="Class" value="CropsGrown"/>
+			<property name="Class" value="BlockHarvestableWithBonuses, 28AL-Harmony"/>
 		</block>
 		
 		<!-- *** barbed wire variant helper -->
@@ -561,7 +564,110 @@
 			<property name="Group" value="Decor/Miscellaneous"/>
 			<property name="FilterTags" value="MC_building,SC_decor"/>
 			<property name="Tags" value="bedroll,playercraftedbed"/>
-		</block>	
+		</block>
+		
+		<!-- *** Chicken Coop -->
+		<block name="chickenCoop">			
+			<property name="Extends" value="cntDewCollector"/>
+			<property name="CustomIcon" value="chickenCoop"/>			
+			<property name="DescriptionKey" value="chickenCoopDesc"/>
+			<property name="Material" value="Mwood_weak"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/ChickenCoop.unity3d?ChickenCoopPrefab.prefab"/>
+			<property name="MultiBlockDim" value="2,2,2"/>
+			<property name="ModelOffset" value="0,0,0"/>
+			<property name="OpenSound" value="door_wood_roughcut_open"/>
+			<property name="CloseSound" value="door_wood_roughcut_close"/>
+			<property name="ConvertSound" value="chickenpain"/>
+			<property name="HeatMapStrength" value="0"/>
+			
+			<property class="RepairItems">
+				<property name="resourceWood" value="15"/>
+			</property>
+			<drop event="Harvest" name="resourceWood" count="10,15" tag="allHarvest,perkJunkMiner"/>
+			<drop event="Harvest" name="resourceForgedIron" count="1,3" tag="allHarvest,perkJunkMiner"/>
+			<drop event="Destroy" name="resourceWoodScraps" count="10,15"/>
+			<property name="DestroyFX" value="blockdestroy_wood,trapWoodDestroy"/>
+			<property name="SoundPickup" value="cratewood_grab"/>
+			<property name="SoundPlace" value="cratewood_place"/>			
+
+			<!-- Production -->
+			<property name="ConvertToItem" value=""/>        <!-- or leave blank; patch handles it -->
+			<property name="MinConvertTime" value="21600"/>         <!-- 21600 = 6h -->
+			<property name="MaxConvertTime" value="43200"/>         <!-- 43200 = 12h -->
+			<property name="ModdedConvertToItem" value="foodEgg"/>
+			<property name="ModdedConvertSpeed" value="2"/>
+			<property name="ModdedConvertCount" value="2"/>
+			<property name="ModTransformNames" value="1,2,3"/>
+			<property name="ModTypes" value="Type,Speed,Count"/>
+
+			<!-- UI (from earlier patches, optional) -->
+			<!-- Look/feel -->
+			<property name="UI_Title" value="Chicken Coop"/>
+			<property name="UI_FillSprite" value="ui_game_symbol_egg"/>
+			<property name="UI_StandardFillColor" value="242,214,119,255"/>
+			<property name="UI_ModdedFillColor"   value="255,247,222,255"/>
+
+			<!-- Mod grid + gating -->
+			<property name="UI_RequiredMods" value="tameChicken,toolHeatLamp,toolNest"/>
+			<property name="UI_RequiredModsOnly" value="true"/>
+			<property name="PR_RequireAny" value="true"/>
+			<property name="PR_RequireAnyOfMods" value="tameChicken"/>	
+
+			<property name="PR_DurabilityMods" value="tameChicken"/>
+			<property name="PR_DurabilityPerCycle" value="1"/>
+		</block>
+		
+		<!-- *** beehive -->
+		<block name="beehive">			
+			<property name="Extends" value="cntDewCollector"/>
+			<property name="CustomIcon" value="Beehive"/>			
+			<property name="DescriptionKey" value="beehiveDesc"/>
+			<property name="Material" value="Mwood_weak"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/furnishings.unity3d?Beehive.prefab"/>
+			<property name="MultiBlockDim" value="2,2,2"/>
+			<property name="ModelOffset" value="0,0,0"/>
+			<property name="OpenSound" value="door_wood_roughcut_open"/>
+			<property name="CloseSound" value="door_wood_roughcut_close"/>
+			<property name="ConvertSound" value="swarmalert"/>
+			<property name="HeatMapStrength" value="0"/>
+			
+			<property class="RepairItems">
+				<property name="resourceWood" value="15"/>
+			</property>
+			<drop event="Harvest" name="resourceWood" count="10,15" tag="allHarvest,perkJunkMiner"/>
+			<drop event="Harvest" name="resourceForgedIron" count="1,3" tag="allHarvest,perkJunkMiner"/>
+			<drop event="Destroy" name="resourceWoodScraps" count="10,15"/>
+			<property name="DestroyFX" value="blockdestroy_wood,trapWoodDestroy"/>
+			<property name="SoundPickup" value="cratewood_grab"/>
+			<property name="SoundPlace" value="cratewood_place"/>			
+
+			<!-- Production -->
+			<property name="ConvertToItem" value=""/>        <!-- or leave blank; patch handles it -->
+			<property name="MinConvertTime" value="21600"/>         <!-- 21600 = 6h -->
+			<property name="MaxConvertTime" value="43200"/>         <!-- 43200 = 12h -->
+			<property name="ModdedConvertToItem" value="foodHoney"/>
+			<property name="ModdedConvertSpeed" value="2"/>
+			<property name="ModdedConvertCount" value="2"/>
+			<property name="ModTransformNames" value="1,2,3"/>
+			<property name="ModTypes" value="Type,Speed,Count"/>
+
+			<!-- Look/feel -->
+			<property name="UI_Title" value="Beehive"/>
+			<property name="UI_FillSprite" value="ui_game_symbol_honey"/>
+			<property name="UI_StandardFillColor" value="235,188,78,255"/>
+			<property name="UI_ModdedFillColor"   value="255,184,28,255"/>
+
+			<!-- Mod grid + gating -->
+			<property name="UI_RequiredMods" value="honeyBee,toolbeeSmoker,toolBeeFrame"/>
+			<property name="UI_RequiredModsOnly" value="true"/>
+			<property name="PR_RequireAny" value="true"/>
+			<property name="PR_RequireAnyOfMods" value="honeyBee"/>	
+
+			<property name="PR_DurabilityMods" value="honeyBee"/>
+			<property name="PR_DurabilityPerCycle" value="1"/>
+		</block>
 	</append>
 	
 	<!-- *** bedroll -->
@@ -942,4 +1048,8 @@
 	<append xpath="//block[starts-with(@name,'flashlight')]">
 		<drop event="Destroy" name="resourceNiCdBattery" count="1" prob=".3" tag="salvageHarvest"/>
 	</append>
+	
+	<!-- *** adjustments for wooden trader walls & gates *** -->
+	<set xpath="/blocks/block[@name='doorWoodLargeGate']/property[@name='MaxDamage']/@value">2000</set>
+	<set xpath="/blocks/block[@name='logWallLeft']/property[@name='Material']/@value">MwoodStrong</set>
 </configs>

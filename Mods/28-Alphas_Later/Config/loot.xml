@@ -1,14 +1,23 @@
 <config>
-	<!-- <set xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate/qualitytemplate[@default_quality='1']/@default_quality">1,99</set> -->
-	<!-- <set xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate/qualitytemplate[@default_quality='2']/@default_quality">100,299</set> -->
-	<!-- <set xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate/qualitytemplate[@default_quality='3']/@default_quality">300,399</set> -->
-	<!-- <set xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate/qualitytemplate[@default_quality='4']/@default_quality">400,499</set> -->
-	<!-- <set xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate/qualitytemplate[@default_quality='6']/@default_quality">600</set> -->
-	<!-- <set xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate/qualitytemplate/loot[@quality='1']/@quality">1,99</set> -->
-	<!-- <set xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate/qualitytemplate/loot[@quality='2']/@quality">100,299</set> -->
-	<!-- <set xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate/qualitytemplate/loot[@quality='3']/@quality">300,399</set> -->
-	<!-- <set xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate/qualitytemplate/loot[@quality='4']/@quality">400,499</set> -->
-	<!-- <set xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate/qualitytemplate/loot[@quality='5']/@quality">500,599</set> -->
+	
+	<insertafter xpath="//lootqualitytemplates/lootqualitytemplate[@name='qualQ1Template']">
+		<!-- *** legendary quality template *** -->
+		<lootqualitytemplate name="qualLegendaryTemplate">
+			<qualitytemplate level="1,999999" default_quality="6">
+				<loot quality="6" prob="1"/>
+			</qualitytemplate>
+		</lootqualitytemplate>
+		
+		<!-- *** basic (hoe) quality template *** -->
+		<lootqualitytemplate name="qualBasicTemplate">
+			<qualitytemplate level="1,999999" default_quality="1">
+				<loot quality="1" prob="1"/>
+			</qualitytemplate>
+		</lootqualitytemplate>
+	</insertafter>
+	
+	<!-- *** adjustments for research paper in loot -->
+	<set xpath="/lootcontainers/lootgroup/item[@group='skillMagazines']/@loot_prob_template">high</set>
 	
 	<!-- *** portable device batteries in loot -->
 	<append xpath="//lootgroup[@name='groupElectricalDevices']">
@@ -16,16 +25,16 @@
 	</append>
 	
 	<append xpath="//lootgroup[@name='groupMoPowerShelves']">
-		<item name="resourceNiCdBattery" count="1,2" loot_prob_template="med"/>
+		<item name="resourceNiCdBattery" count="1,2" loot_prob_template="medLow"/>
 	</append>
 	
 	<append xpath="//lootgroup[contains(@name,'Power01') or (contains(@name,'Power02')) or (contains(@name,'Power03')) or (contains(@name,'Power04'))]">
-		<item name="resourceNiCdBattery" count="1,2" loot_prob_template="med"/>
+		<item name="resourceNiCdBattery" count="1,2" loot_prob_template="low"/>
 	</append>
 	
-	<append xpath="//lootgroup[@name='groupMoPower01']">
-		<item name="resourceNiCdBattery" count="1,2" loot_prob_template="med"/>
-	</append>
+	<!-- <append xpath="//lootgroup[@name='groupMoPower01']"> -->
+		<!-- <item name="resourceNiCdBattery" count="1,2" loot_prob_template="med"/> -->
+	<!-- </append> -->
 	
 	<!-- *** adds cotton seeds to loot -->
 	<append xpath="//lootgroup[@name='seedsNoFlowers']">
@@ -56,6 +65,37 @@
 		<item name="modArmorInsulatedLinerSchematic"/>
 	</append>
 	
+	<!-- *** adds beehive and chicken coop tools -->
+	<insertafter xpath="/lootcontainers/lootgroup[@name='metalpipe']">
+	<lootgroup name="passiveCollectorTools" count="1">
+		<item name="toolHeatLamp" loot_prob_template="ProbT0"/>
+		<item name="toolNest" loot_prob_template="ProbT0"/>
+		<item name="toolbeeSmoker" loot_prob_template="ProbT0"/>
+		<item name="toolBeeFrame" loot_prob_template="ProbT0"/>
+	</lootgroup>
+	</insertafter>
+	
+	<append xpath="/lootcontainers/lootgroup[@name='groupWorkingStiffs01']">
+		<item group="passiveCollectorTools" loot_prob_template="med"/>
+	</append>
+	
+	<append xpath="/lootcontainers/lootgroup[@name='groupJunk03']">
+		<item group="passiveCollectorTools" loot_prob_template="veryLow"/>
+	</append>
+	
+	<!-- *** removes dew collector tools from loot -->
+	<remove xpath="/lootcontainers/lootgroup/item[@name='toolDewGatherer']"/>
+	<remove xpath="/lootcontainers/lootgroup/item[@name='toolDewTarp']"/>
+	<remove xpath="/lootcontainers/lootgroup/item[@name='toolDewFilter']"/>
+	
+	<!-- *** removes attribute mods and cigar from loot -->
+	<remove xpath="/lootcontainers/lootgroup/item[@name='modArmorPerception']"/>
+	<remove xpath="/lootcontainers/lootgroup/item[@name='modArmorStrength']"/>
+	<remove xpath="/lootcontainers/lootgroup/item[@name='modArmorFortitude']"/>
+	<remove xpath="/lootcontainers/lootgroup/item[@name='modArmorAgility']"/>
+	<remove xpath="/lootcontainers/lootgroup/item[@name='modArmorIntellect']"/>
+	<!-- <remove xpath="/lootcontainers/lootgroup/item[@name='modArmorCigar']"/> -->
+	
 	<insertafter xpath="//lootgroup[@name='groupToolsT3']">
 		<!-- *** adds hoe to loot -->
 		<lootgroup name="groupBasic" loot_quality_template="qualBasicTemplate">
@@ -66,6 +106,27 @@
 		<lootgroup name="groupSolarBank" loot_quality_template="qualBaseTemplate">
 			<item name="solarCell"/>
 		</lootgroup>
+		
+		<!-- *** Lootgroups for Legendaries -->
+		<lootgroup name="groupLegendaryMelee" count="1" loot_quality_template="qualLegendaryTemplate">
+			<item name="meleeWpnBladeLegendaryPaintBrush" count="1"/>
+			<item name="meleeWpnLegendaryScythe" count="1"/>
+			<item name="meleeWpnLegendaryPitchfork" count="1"/>
+			<item name="meleeWpnLegendaryGardenRake" count="1"/>
+		</lootgroup>
+	
+		<!-- <lootgroup name="groupLegendaryRanged" count="1" loot_quality_template="qualLegendaryTemplate"> -->
+			<!-- <item name="gunMGT4FNSCAR" count="1"/> -->
+			<!-- <item name="gunHandgunT4MachinePistol" count="1"/> -->
+			<!-- <item name="gunShotgunT4FabarmMartial" count="1"/> -->
+			<!-- <item name="gunHandgunT4MagnumRagingHorn" count="1"/> -->
+			<!-- <item name="gunRifleT4LegendarySniper" count="1"/> -->
+		<!-- </lootgroup> -->
+	
+		<lootgroup name="groupLegendary">
+			<item group="groupLegendaryMelee"/>
+			<!-- <item group="groupLegendaryRanged"/> -->
+		</lootgroup>
 	</insertafter>
 	
 	<append xpath="//lootgroup[@name='groupToolsTiered']">
@@ -74,6 +135,60 @@
 
 	<append xpath="//lootgroup[@name='groupToolsTieredBonus']">
 		<item group="groupBasic" loot_prob_template="ProbT1" force_prob="true"/>
+	</append>
+	
+	<append xpath="//lootgroup[@name='groupHardenedChestT5']">
+		<item group="groupLegendary" count="1" loot_prob_template="ProbT3">
+			<requirement class="Biome" biomes="wasteland"/>
+		</item>
+	</append>
+	
+	<append xpath="//lootgroup[@name='groupInfestedT5']">
+		<item group="groupLegendary" count="1" loot_prob_template="ProbT3"/>
+	</append>
+	
+	<append xpath="//lootgroup[@name='groupHardenedChestT4']">
+		<item group="groupLegendary" count="1" loot_prob_template="med" force_prob="true">
+			<requirement class="Biome" biomes="wasteland"/>
+		</item>
+	</append>
+	
+	<append xpath="//lootgroup[@name='groupInfestedT4']">
+		<item group="groupLegendary" count="1" loot_prob_template="med" force_prob="true"/>
+	</append>
+	
+	<append xpath="//lootgroup[@name='groupReinforcedChestT3']">
+		<item group="groupLegendary" count="1" loot_prob_template="medLow" force_prob="true">
+			<requirement class="Biome" biomes="wasteland"/>
+		</item>
+	</append>
+	
+	<append xpath="//lootgroup[@name='groupInfestedT3']">
+		<item group="groupLegendary" count="1" loot_prob_template="medLow" force_prob="true"/>
+	</append>
+	
+	<append xpath="//lootgroup[@name='groupReinforcedChestT2']">
+		<item group="groupLegendary" count="1" loot_prob_template="low" force_prob="true">
+			<requirement class="Biome" biomes="wasteland"/>
+		</item>
+	</append>
+	
+	<append xpath="//lootgroup[@name='groupInfestedT2']">
+		<item group="groupLegendary" count="1" loot_prob_template="low" force_prob="true"/>
+	</append>
+	
+	<append xpath="//lootgroup[@name='groupReinforcedChestT1']">
+		<item group="groupLegendary" count="1" loot_prob_template="veryLow" force_prob="true">
+			<requirement class="Biome" biomes="wasteland"/>
+		</item>
+	</append>
+	
+	<append xpath="//lootgroup[@name='groupInfestedT1']">
+		<item group="groupLegendary" count="1" loot_prob_template="veryLow" force_prob="true"/>
+	</append>
+	
+	<append xpath="//lootgroup[@name='groupZpackBoss']">
+		<item group="groupLegendary" count="1" loot_prob_template="veryLow" force_prob="true"/>
 	</append>
 	
 	<!-- *** adds ammopress (workbench tool) to loot -->
@@ -255,7 +370,7 @@
 	
 	<!-- TOOLS-->
 	<append xpath="lootcontainers/lootgroup[@name='groupWorkingStiffsCrate']">
-		<item group="ToolsGroup" count="1" loot_prob_template="medLow" force_prob="true"/>
+		<item group="ToolsGroup" count="1" loot_prob_template="low" force_prob="true"/>
 	</append>
 	<append xpath="lootcontainers/lootgroup[@name='groupPassNGas']">
 		<item group="SmallToolsGroup" count="1" loot_prob_template="low" force_prob="true"/>
@@ -268,41 +383,41 @@
 	</append>
 	<!-- WEAPONRY-->
 	<append xpath="lootcontainers/lootgroup[@name='groupShotgunMessiahCrate']">
-		<item group="MeleeGroup" count="1" loot_prob_template="medLow" force_prob="true"/>
-		<item group="CivilianFirearmsGroup" count="1" loot_prob_template="low" force_prob="true"/>
+		<item group="MeleeGroup" count="1" loot_prob_template="low" force_prob="true"/>
+		<item group="CivilianFirearmsGroup" count="1" loot_prob_template="veryLow" force_prob="true"/>
 	</append>
 	<append xpath="lootcontainers/lootgroup[@name='groupSmallWeaponBag']">
-		<item group="MeleeSmallGroup" count="1" loot_prob_template="low" force_prob="true"/>
+		<item group="MeleeSmallGroup" count="1" loot_prob_template="veryLow" force_prob="true"/>
 		<item group="CivilianFirearmsSmallGroup" count="1" loot_prob_template="veryLow" force_prob="true"/>
 	</append>
 	<append xpath="lootcontainers/lootgroup[@name='groupLargeWeaponBag']">
-		<item group="MeleeGroup" count="1" loot_prob_template="medLow" force_prob="true"/>
-		<item group="CivilianFirearmsGroup" count="1" loot_prob_template="low" force_prob="true"/>
+		<item group="MeleeGroup" count="1" loot_prob_template="low" force_prob="true"/>
+		<item group="CivilianFirearmsGroup" count="1" loot_prob_template="veryLow" force_prob="true"/>
 		<item group="FirearmPostApocRareGroup" count="1" loot_prob_template="veryLow" force_prob="true"/>
 	</append>
 	<append xpath="lootcontainers/lootgroup[@name='groupGunSafeSecure']">
-		<item group="CivilianFirearmsGroup" count="1" loot_prob_template="med" force_prob="true"/>
+		<item group="CivilianFirearmsGroup" count="1" loot_prob_template="low" force_prob="true"/>
 		<item group="FirearmPostApocRareGroup" count="1" loot_prob_template="veryLow" force_prob="true"/>
 	</append>
 	<append xpath="lootcontainers/lootgroup[@name='groupArmyTruck']">
-		<item group="FirearmMilitarySmallGroup" count="1" loot_prob_template="medLow" force_prob="true"/>
+		<item group="FirearmMilitarySmallGroup" count="1" loot_prob_template="low" force_prob="true"/>
 	</append>
 	<append xpath="lootcontainers/lootgroup[@name='groupMilitaryFootlocker']">
-		<item group="FirearmMilitarySmallGroup" count="1" loot_prob_template="medLow" force_prob="true"/>
+		<item group="FirearmMilitarySmallGroup" count="1" loot_prob_template="low" force_prob="true"/>
 		<item group="FirearmMilitaryLargeRareGroup" count="1" prob=".05" force_prob="true"/>
 	</append>
 	<append xpath="lootcontainers/lootgroup[@name='groupAmmoRackDisplay']">
-		<item group="CivilianFirearmsSmallGroup" count="1" loot_prob_template="med" force_prob="true"/>
+		<item group="CivilianFirearmsSmallGroup" count="1" loot_prob_template="low" force_prob="true"/>
 	</append>
 	<append xpath="lootcontainers/lootgroup[@name='groupGunRack']">
-		<item group="CivilianFirearmsGroup" count="1" loot_prob_template="high" force_prob="true"/>
+		<item group="CivilianFirearmsGroup" count="1" loot_prob_template="med" force_prob="true"/>
 	</append>
 	<append xpath="lootcontainers/lootgroup[@name='groupPoliceCarBonus']">
-		<item group="FirearmPoliceGroup" count="1" loot_prob_template="med" force_prob="true"/>
+		<item group="FirearmPoliceGroup" count="1" loot_prob_template="medLow" force_prob="true"/>
 		<item group="FirearmMilitaryLargeRareGroup" count="1" prob=".025" force_prob="true"/>
 	</append>
 	<append xpath="lootcontainers/lootgroup[@name='groupSavageCountryCrate']">
-		<item group="SurvivalMeleeGroup" count="1" loot_prob_template="medLow" force_prob="true"/>
+		<item group="SurvivalMeleeGroup" count="1" loot_prob_template="low" force_prob="true"/>
 		<item group="SurvivalRangedGroup" count="1" prob=".20" force_prob="true"/>
 	</append>
 	<append xpath="lootcontainers/lootgroup[@name='groupBackpacks']">
@@ -314,7 +429,7 @@
 		<lootgroup name="groupJunk01zombies" count="1">
 			<item group="groupFoodTrashCommon" loot_prob_template="medLow"/>
 			<item group="groupScrapCommon" loot_prob_template="med"/>
-			<item group="groupCraftingCommon" loot_prob_template="med"/>
+			<item group="groupCraftingCommon" loot_prob_template="low"/>
 		</lootgroup>
 		
 		<lootgroup name="groupJunk02zombies" count="1">
@@ -327,7 +442,6 @@
 		<lootgroup name="groupJunk03zombies" count="1">
 			<item group="booksAllScaled" loot_prob_template="veryLow"/>
 			<item group="skillMagazines" count="1" loot_prob_template="veryLow"/>
-			<!-- <item group="booksRareOnlyScaled" loot_prob_template="veryLow"/> -->
 			<item group="groupValuablesSmall" loot_prob_template="low"/>
 			<item name="resourceLockPick" count="1,2" loot_prob_template="veryLow"/>
 		</lootgroup>
@@ -345,15 +459,44 @@
 			</item>
 		</lootgroup>
 		
+		<lootgroup name="groupLabHazmatLoot01">
+			<item name="resourceWood" count="10,40"/>
+			<item name="resourceGunPowder" count="20,50"/>
+			<item name="resourceCropChrysanthemumPlant" count="5,12"/>
+			<item name="resourceCropCottonPlant" count="5,12"/>
+			<item name="resourceCropGoldenrodPlant" count="5,12"/>
+		</lootgroup>
+
+		<lootgroup name="groupLabHazmatLoot02">
+			<item name="resourceScrapPolymers" count="3,10"/>
+			<item name="drugVitamins" count="1,2"/>
+			<item name="resourceAnimalFat" count="4,10"/>
+			<item name="resourceGlue" count="1,5"/>
+			<item name="resourceOilShale" count="10,30"/>
+			<item name="drugPainkillers" count="1"/>
+			<item name="drugAntibiotics" loot_prob_template="veryLow"/>
+		</lootgroup>
+
+		<lootgroup name="groupLabHazmatLoot03">
+			<item name="toolBeaker" loot_prob_template="veryLow"/>
+			<item name="workstationSkillMagazine" loot_prob_template="high"/>
+		</lootgroup>
+			
+		<lootgroup name="groupLabHazmatLoot" count="all">
+			<item group="groupLabHazmatLoot01" count="1"/>
+			<item group="groupLabHazmatLoot02" loot_prob_template="med" force_prob="true"/>
+			<item group="groupLabHazmatLoot03" loot_prob_template="low" force_prob="true"/>
+			<item name="workstationSkillMagazine" count="1" buffs="buffPerkBookwormSuccess">
+				<requirement class="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$perkBookwormChance"/>
+			</item>
+		</lootgroup>
+		
 		<lootgroup name="groupWeaponsFatCop" count="1">
-			<item group="CivilianFirearmsGroup" loot_prob_template="med" force_prob="true"/>
-			<!-- <item group="groupWeaponsT1_Boomstick" loot_prob_template="low" force_prob="true"/> -->
+			<item group="CivilianFirearmsGroup" loot_prob_template="low" force_prob="true"/>
 		</lootgroup>
 		
 		<lootgroup name="groupToolsUtilityWorker" count="1">
 			<item group="ToolsGroup" loot_prob_template="med" force_prob="true"/>
-			<!-- <item group="groupToolsT1"/> -->
-			<!-- <item group="groupToolsT2" loot_prob_template="medLow" force_prob="true"/> -->
 		</lootgroup>
 		
 		<lootgroup name="groupPartyGirls" count="1">
@@ -364,95 +507,147 @@
 		</lootgroup>
 		
 		<lootgroup name="groupZombieCorpses">
-			<!-- <item name="resourcePaper" count="5,10" loot_prob_template="high"/> -->
-			<!-- <item name="resourceScrapPolymers" count="5,10" loot_prob_template="high"/> -->
-			<!-- <item name="resourceScrapIron" count="5,10" loot_prob_template="medHigh"/> -->
-			<!-- <item name="resourceCloth" count="5,10" loot_prob_template="med"/> -->
 			<item group="groupJunkzombies" loot_prob_template="med"/>
+			<item name="researchPaperBlank" count="8,20"/>			
 		</lootgroup>
 		
 		<lootgroup name="groupZpackRegCorpses" count="all">
 			<item group="groupZombieCorpses" loot_prob_template="high" force_prob="true"/>
-			<item group="groupZpackReg" prob=".03" force_prob="true"/>
+			<item group="groupZpackReg" loot_prob_template="veryLow" force_prob="true" />
+			<item name="researchPaperBlank" count="10,20">
+				<requirement class="Biome" biomes="wasteland"/>
+			</item>
 		</lootgroup>
 	
 		<lootgroup name="groupZpackNurseCorpses" count="all">
 			<item group="survivalMedical" loot_prob_template="high" force_prob="true"/>
-			<item group="groupZpackNurse" prob=".03" force_prob="true"/>
+			<item group="groupZpackNurse" loot_prob_template="veryLow" force_prob="true" />
+			<item name="researchPaperBlank" count="10,20">
+				<requirement class="Biome" biomes="wasteland"/>
+			</item>
 		</lootgroup>
 	
 		<lootgroup name="groupZpackLabCorpses" count="all">
-			<item group="groupChemistryStationLoot" loot_prob_template="high" force_prob="true"/>
-			<item group="groupZpackLab" prob=".03" force_prob="true"/>
+			<item group="groupLabHazmatLoot" loot_prob_template="high" force_prob="true"/>
+			<item group="groupZpackLab" loot_prob_template="veryLow" force_prob="true" />
+			<item name="researchPaperBlank" count="10,20">
+				<requirement class="Biome" biomes="wasteland"/>
+			</item>
 		</lootgroup>
 		
 		<lootgroup name="groupZpackUtilityCorpses" count="all">
 			<item group="groupBuildingCommon" loot_prob_template="high" force_prob="true"/>
 			<item group="groupToolsUtilityWorker" loot_prob_template="low" force_prob="true"/>
-			<item group="groupZpackUtility" prob=".03" force_prob="true"/>
+			<item group="groupZpackUtility" loot_prob_template="veryLow" force_prob="true" />
+			<item name="researchPaperBlank" count="10,20">
+				<requirement class="Biome" biomes="wasteland"/>
+			</item>
 		</lootgroup>
 		
 		<lootgroup name="groupZpackJanitorCorpses" count="all">
 			<item group="groupBuildingCommon" loot_prob_template="high" force_prob="true"/>
 			<item group="groupUtilityItems" loot_prob_template="low" force_prob="true"/>
-			<item group="groupZpackUtility" prob=".03" force_prob="true"/>
+			<item group="groupZpackUtility" loot_prob_template="veryLow" force_prob="true" />
+			<item name="researchPaperBlank" count="10,20">
+				<requirement class="Biome" biomes="wasteland"/>
+			</item>
 		</lootgroup>
 		
 		<lootgroup name="groupZpackSoldierCorpses" count="all">
-			<item group="FirearmPostApocRareGroup" loot_prob_template="medLow" force_prob="true"/>
-			<item group="groupZpackSoldier" prob=".03" force_prob="true"/>
+			<item group="FirearmPostApocRareGroup" loot_prob_template="low" force_prob="true"/>
+			<item group="groupZpackSoldier" loot_prob_template="veryLow" force_prob="true" />
+			<item name="researchPaperBlank" count="10,20">
+				<requirement class="Biome" biomes="wasteland"/>
+			</item>
 		</lootgroup>
 		
 		<lootgroup name="groupZpackThugCorpses" count="all">
 			<item group="metalpipe" loot_prob_template="high" force_prob="true"/>
-			<item group="groupZpackThug" prob=".03" force_prob="true"/>
+			<item group="groupZpackThug" loot_prob_template="veryLow" force_prob="true" />
+			<item name="researchPaperBlank" count="10,20">
+				<requirement class="Biome" biomes="wasteland"/>
+			</item>
 		</lootgroup>
 		
 		<lootgroup name="groupZpackFatCopCorpses" count="all">
-			<item group="CivilianFirearmsGroup" loot_prob_template="med" force_prob="true"/>
-			<item group="groupZpackStrong" prob=".03" force_prob="true"/>
+			<item group="CivilianFirearmsGroup" loot_prob_template="low" force_prob="true"/>
+			<item group="groupZpackStrong" loot_prob_template="veryLow" force_prob="true" />
+			<item name="researchPaperBlank" count="10,20">
+				<requirement class="Biome" biomes="wasteland"/>
+			</item>
 		</lootgroup>
 		
 		<lootgroup name="groupZpackTouristCorpses" count="all">
 			<item group="groupZombieCorpses" loot_prob_template="high" force_prob="true"/>
-			<item group="groupZpackStrong" prob=".03" force_prob="true"/>
+			<item group="groupZpackStrong" loot_prob_template="veryLow" force_prob="true" />
+			<item name="researchPaperBlank" count="10,20">
+				<requirement class="Biome" biomes="wasteland"/>
+			</item>
 		</lootgroup>
 		
 		<lootgroup name="groupZpackHazmatCorpses" count="all">
-			<item group="groupChemistryStationLoot" loot_prob_template="high" force_prob="true"/>
-			<item group="groupZpackLab" prob=".03" force_prob="true"/>
+			<item group="groupLabHazmatLoot" loot_prob_template="high" force_prob="true"/>
+			<item group="groupZpackLab" loot_prob_template="veryLow" force_prob="true" />
+			<item name="researchPaperBlank" count="10,20">
+				<requirement class="Biome" biomes="wasteland"/>
+			</item>
 		</lootgroup>
 		
 		<lootgroup name="groupZpackLumberjackCorpses" count="all">
-			<item group="groupHuntingRanged" loot_prob_template="medLow" force_prob="true"/>
-			<item group="groupZpackStrong" prob=".03" force_prob="true"/>
+			<item group="groupHuntingRanged" loot_prob_template="low" force_prob="true"/>
+			<item group="groupZpackStrong" loot_prob_template="veryLow" force_prob="true" />
+			<item name="researchPaperBlank" count="10,20">
+				<requirement class="Biome" biomes="wasteland"/>
+			</item>
 		</lootgroup>
 		
 		<lootgroup name="groupZpackBikerCorpses" count="all">
 			<item group="groupPassNGas" loot_prob_template="high" force_prob="true"/>
-			<item group="groupZpackStrong" prob=".03" force_prob="true"/>
+			<item group="groupZpackStrong" loot_prob_template="veryLow" force_prob="true" />
+			<item name="researchPaperBlank" count="10,20">
+				<requirement class="Biome" biomes="wasteland"/>
+			</item>
 		</lootgroup>
 		
 		<lootgroup name="groupZpackPartyGirlCorpses" count="all">
-			<item group="groupPurse" loot_prob_template="high" force_prob="true"/>
-			<item group="groupZpackReg" prob=".03" force_prob="true"/>
+			<item group="groupPartyGirls" loot_prob_template="high" force_prob="true"/>
+			<item group="groupZpackReg" loot_prob_template="veryLow" force_prob="true" />
+			<item name="researchPaperBlank" count="10,20">
+				<requirement class="Biome" biomes="wasteland"/>
+			</item>
 		</lootgroup>
 		
 		<lootgroup name="groupZpackBusinessmanCorpses" count="all">
 			<item group="groupValuablesSmall" loot_prob_template="medLow" force_prob="true"/>
-			<item group="groupZpackReg" prob=".03" force_prob="true"/>
+			<item group="groupZpackReg" loot_prob_template="veryLow" force_prob="true" />
+			<item name="researchPaperBlank" count="10,20">
+				<requirement class="Biome" biomes="wasteland"/>
+			</item>
 		</lootgroup>
 		
 		<lootgroup name="groupZpackStrongCorpses" count="all">
 			<item group="groupZombieCorpses" loot_prob_template="high" force_prob="true"/>
-			<item group="groupZpackStrong" prob=".03" force_prob="true"/>
+			<item group="groupZpackStrong" loot_prob_template="veryLow" force_prob="true" />
+			<item name="researchPaperBlank" count="10,20">
+				<requirement class="Biome" biomes="wasteland"/>
+			</item>
 		</lootgroup>
 		
 		<lootgroup name="groupZpackBossCorpses" count="all">
 			<item group="groupZombieCorpses" loot_prob_template="high" force_prob="true"/>
-			<item group="groupZpackBoss" prob=".03" force_prob="true"/>
+			<item group="groupZpackBoss" loot_prob_template="veryLow" force_prob="true" />
+			<item name="researchPaperBlank" count="10,20">
+				<requirement class="Biome" biomes="wasteland"/>
+			</item>
 		</lootgroup>
 	</insertafter>
+	
+	<!-- *** remove all magazines from all loot -->
+	<set xpath="/lootcontainers/lootgroup[@name='skillMagazines']">
+		<item name="researchPaperBlank" count="8,20" loot_stage_count_mod="0.01" loot_prob_template="ProbT2Cap"/>
+	</set>
+	
+	<set xpath="//*/item[contains (@name,'SkillMagazine')]/@name">researchPaperBlank</set>
 	
 	<!-- *** loot from zombie corpses -->
 	<insertafter xpath="/lootcontainers/lootcontainer[@name='zPackReg']">

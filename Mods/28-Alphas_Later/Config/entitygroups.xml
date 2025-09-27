@@ -28,6 +28,13 @@
 	none, 75
 	</set>
 	
+	<!-- *** replace chickens with wild variants -->
+	<set xpath="/entitygroups/entitygroup[@name='WildGameForest']">
+	animalWildRabbit, 5
+	animalWildChicken, 5
+	none, 90
+	</set>
+	
 	<!-- *** remove Lumberjacks from 'ZombiesAll' -->
 	<set xpath="/entitygroups/entitygroup[@name='ZombiesAll']">
 		zombieBoe
