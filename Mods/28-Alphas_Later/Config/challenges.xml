@@ -54,6 +54,10 @@
 	<append xpath="/challenges/challenge[@name='killDemolitions']/objective[@type='Kill']/@entity_names">,zombieMutatedDemolition</append>
 	<append xpath="/challenges/challenge[@name='killRabbits']/objective[@type='Kill']/@entity_names">,animalWildRabbit</append>
 	<append xpath="/challenges/challenge[@name='killChickens']/objective[@type='Kill']/@entity_names">,animalWildChicken</append>
+	<append xpath="/challenges/challenge[@name='burntSurvivalKillZombie']/objective[@type='Kill']/@entity_names">,zombieBurntRotten,zombieBurntWeak</append>
+	<!-- <append xpath="/challenges/challenge[@name='desertSurvivalKillZombie']/objective[@type='Kill']/@entity_names"></append> -->
+	<!-- <append xpath="/challenges/challenge[@name='snowSurvivalKillZombie']/objective[@type='Kill']/@entity_names"></append> -->
+	<!-- <append xpath="/challenges/challenge[@name='wastelandSurvivalKillZombie']/objective[@type='Kill']/@entity_names"></append> -->
 	
 	<set xpath="/challenges/challenge[@name='gathererWood']/objective[@type='Harvest']/@count">200</set>
 	<set xpath="/challenges/challenge[@name='gathererWood']/objective[@type='Harvest']/@item">woodLogPillar100</set>
