@@ -355,7 +355,7 @@
 		<requirement name="!EntityTagCompare" tags="zombie"/>
 	</insertafter>
 	
-	<!-- *** modify bufflegcast and bufflegsplinted to look for lbu progression -->
+	<!-- *** modify buffs for splinted, sprained, broken and cast to look for lbu progression -->
 	<set xpath="/buffs/buff[@name='buffLegSplinted']">
 		<duration value="0"/>
 		<display_value value=".legHurtDurationDisplay"/>
@@ -467,6 +467,177 @@
 		</effect_group>
 	</set>
 	
+	<set xpath="/buffs/buff[@name='buffLegSprained']">
+		<damage_type value="sprain"/>
+		<stack_type value="replace"/>
+		<duration value="0"/>
+		<display_value value=".legHurtDurationDisplay"/>
+		<display_value_format value="time"/>
+
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffBrokenLimbStatus"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffBrokenLimbStatus"/>
+			<!-- Blinks the display -->
+			<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffLegSprained"/>
+			<!-- Setup and start a cool down -->
+			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffLimbSprainedCooldown"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".limbSprainedCooldownCounter" operation="set" value="12"/>
+			<!-- Play sound -->
+			<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="player#painsm"/>
+			<!-- Set counter -->
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$legHurtCounter" operation="set" value="605"/>
+			<!-- Restart counter -->
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$legHurtCounter" operation="set" value="605">
+				<requirement name="CVarCompare" cvar="$legHurtCounter" operation="LT" value="605"/>
+			</triggered_effect>
+			<!-- Reset -->
+			<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$legHurtCounter,.LegHurtHealthBlockage">
+				<requirement name="!HasBuff" buff="buffLegBroken"/>
+				<requirement name="ProgressionLevel" progression_name="lbu_Physician" operation="GTE" value="1"/>
+			</triggered_effect>
+
+			<!-- If not running, decrease counter with natural healing -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$legHurtCounter" operation="subtract" value="@$critHitNaturalHealingRate">
+				<requirement name="!EntityHasMovementTag" tags="running"/>
+				<requirement name="!HasBuff" buff="buffDrugSteroids"/>
+			</triggered_effect>
+			<!-- If not running with steroids active, decrease counter with natural healing -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$legHurtCounter" operation="subtract" value="@$critHitNaturalHealingRate">
+				<requirement name="!EntityHasMovementTag" tags="running"/>
+				<requirement name="HasBuff" buff="buffDrugSteroids"/>
+			</triggered_effect>
+		</effect_group>
+
+		<effect_group name="DisplayDuration">
+			<!-- Handlers for the display -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".legHurtDurationDisplay" operation="set" value="@$legHurtCounter"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".legHurtDurationDisplay" operation="divide" value="@$critHitNaturalHealingRate"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".legHurtDurationDisplay"/>
+		</effect_group>
+
+		<effect_group name="activity makes damaged legs worse">
+			<!-- If not consuming steroids... -->
+			<requirement name="!HasBuff" buff="buffDrugSteroids"/>
+				<!-- Jumping makes it worse -->
+				<triggered_effect trigger="onSelfJump" action="ModifyStats" stat="Health" operation="subtract" value="1"/>
+				<triggered_effect trigger="onSelfJump" action="ModifyCVar" cvar="$legHurtCounter" operation="add" value="20"/>
+				<triggered_effect trigger="onSelfJump" action="AddBuff" buff="buffLegGetsWorse"/>
+				<!-- Falling makes it worse -->
+				<triggered_effect trigger="onSelfFallImpact" action="ModifyCVar" cvar="$legHurtCounter" operation="add" value="20">
+					<requirement name="CVarCompare" cvar="_fallSpeed" operation="GTE" value=".07"/></triggered_effect>
+				<triggered_effect trigger="onSelfFallImpact" action="AddBuff" buff="buffLegGetsWorse">
+					<requirement name="CVarCompare" cvar="_fallSpeed" operation="GTE" value=".07"/></triggered_effect>
+				<!-- If running, make it worse -->
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$legHurtCounter" operation="add" value="2">
+					<requirement name="EntityHasMovementTag" tags="running"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffLegGetsWorse">
+					<requirement name="EntityHasMovementTag" tags="running"/></triggered_effect>
+				<!-- Clamp counter -->
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$legHurtCounter" operation="set" value="605">
+					<requirement name="CVarCompare" cvar="$legHurtCounter" operation="GT" value="605"/>
+				</triggered_effect>
+		</effect_group>
+
+		<effect_group>
+			<!-- If counter LTE 0, reset counter, health blockage, and remove buff -->
+			<requirement name="CVarCompare" cvar="$legHurtCounter" operation="LTE" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveCVar" cvar="$legHurtCounter,.LegHurtHealthBlockage"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffLegSprained"/>
+		</effect_group>
+
+		<effect_group>
+			<!-- Setup the max health blockage based on the remaining counter -->
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".LegHurtHealthBlockage" operation="set" value="@$legHurtCounter"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".LegHurtHealthBlockage" operation="divide" value="40"/> <!-- 15 @ 10m -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".LegHurtHealthBlockage" operation="set" value="@$legHurtCounter"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".LegHurtHealthBlockage" operation="divide" value="40"/> <!-- 15 @ 10m -->
+			<passive_effect name="HealthMaxBlockage" operation="base_add" value="@.LegHurtHealthBlockage"/>
+			<!-- Slow movement and reduce jump strength -->
+			<passive_effect name="Mobility" operation="base_add" value="-.15"/>
+			<passive_effect name="JumpStrength" operation="perc_subtract" value="0.04"/>
+		</effect_group>
+	</set>
+	
+	<set xpath="/buffs/buff[@name='buffLegBroken']">
+		<damage_type value="break"/>
+		<stack_type value="replace"/>
+		<duration value="0"/>
+		<display_value value=".legHurtDurationDisplay"/>
+		<display_value_format value="time"/>
+
+		<effect_group>
+			<!-- Blinks the display -->
+			<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffLegBroken"/>
+			<!-- Handlers for other leg buffs -->
+			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffBrokenLimbStatus"/>
+			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffLegSplinted"/>
+			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffLegCast"/>
+			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffLegSprained"/>
+			<!-- Setup or stack counters -->
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$legHurtCounter" operation="set" value="7208">
+				<requirement name="CVarCompare" cvar="$legHurtCounter" operation="LT" value="7208"/></triggered_effect>
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$legHurtCounter" operation="set" value="7208">
+				<requirement name="CVarCompare" cvar="$legHurtCounter" operation="LT" value="7208"/></triggered_effect>
+			<!-- If not running, decrease counter with natural healing -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$legHurtCounter" operation="subtract" value="@$critHitNaturalHealingRate">
+				<requirement name="!EntityHasMovementTag" tags="running"/></triggered_effect>
+			<!-- Reset -->
+			<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$legHurtCounter,.LegHurtHealthBlockage">
+				<requirement name="HoldingItemHasTags" tags="cast"/>
+				<requirement name="ProgressionLevel" progression_name="lbu_Physician" operation="GTE" value="30"/>
+			</triggered_effect>
+		</effect_group>
+
+		<effect_group name="DisplayDuration">
+			<!-- Handlers for the display -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".legHurtDurationDisplay" operation="set" value="@$legHurtCounter"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".legHurtDurationDisplay" operation="divide" value="@$critHitNaturalHealingRate"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".legHurtDurationDisplay"/>
+		</effect_group>
+
+		<effect_group name="activity makes damaged legs worse">
+			<!-- If not consuming steroids... -->
+			<requirement name="!HasBuff" buff="buffDrugSteroids"/>
+				<!-- Jumping makes it worse -->
+				<triggered_effect trigger="onSelfJump" action="ModifyStats" stat="Health" operation="subtract" value="1"/>
+				<triggered_effect trigger="onSelfJump" action="ModifyCVar" cvar="$legHurtCounter" operation="add" value="20"/>
+				<triggered_effect trigger="onSelfJump" action="AddBuff" buff="buffLegGetsWorse"/>
+				<!-- Falling makes it worse -->
+				<triggered_effect trigger="onSelfFallImpact" action="ModifyCVar" cvar="$legHurtCounter" operation="add" value="20">
+					<requirement name="CVarCompare" cvar="_fallSpeed" operation="GTE" value=".07"/></triggered_effect>
+				<triggered_effect trigger="onSelfFallImpact" action="AddBuff" buff="buffLegGetsWorse">
+					<requirement name="CVarCompare" cvar="_fallSpeed" operation="GTE" value=".07"/></triggered_effect>
+				<!-- If running, make it worse -->
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$legHurtCounter" operation="add" value="2">
+					<requirement name="EntityHasMovementTag" tags="running"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffLegGetsWorse">
+					<requirement name="EntityHasMovementTag" tags="running"/></triggered_effect>
+				<!-- Clamp counter -->
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$legHurtCounter" operation="set" value="7208">
+					<requirement name="CVarCompare" cvar="$legHurtCounter" operation="GT" value="7208"/>
+				</triggered_effect>
+		</effect_group>
+
+		<effect_group>
+			<!-- If counter LTE 0, reset counter, health blockage, and remove buff -->
+			<requirement name="CVarCompare" cvar="$legHurtCounter" operation="LTE" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveCVar" cvar="$legHurtCounter,.LegHurtHealthBlockage"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffLegBroken"/>
+		</effect_group>
+
+		<effect_group>
+			<!-- Setup the max health blockage based on the remaining counter -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".LegHurtHealthBlockage" operation="set" value="@$legHurtCounter"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".LegHurtHealthBlockage" operation="divide" value="240"/> <!-- 30 @ 120m -->
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".LegHurtHealthBlockage" operation="set" value="@$legHurtCounter"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".LegHurtHealthBlockage" operation="divide" value="240"/> <!-- 30 @ 120m -->
+			<passive_effect name="HealthMaxBlockage" operation="base_add" value="@.LegHurtHealthBlockage"/>
+			<!-- Slow movement and reduce jump strength -->
+			<passive_effect name="Mobility" operation="base_add" value="-.5"/>
+			<passive_effect name="JumpStrength" operation="perc_subtract" value="0.12"/>
+		</effect_group>
+	</set>
+	
 	<set xpath="/buffs/buff[@name='buffLegCast']">
 		<duration value="0"/>
 		<display_value value=".legHurtDurationDisplay"/>
@@ -573,6 +744,119 @@
 			<!-- Slow movement and reduce jump strength -->
 			<passive_effect name="Mobility" operation="base_add" value="-.1"/>
 			<passive_effect name="JumpStrength" operation="perc_subtract" value="0.09"/>
+		</effect_group>
+	</set>
+	
+	<set xpath="/buffs/buff[@name='buffArmSplinted']">
+		<duration value="0"/>
+		<display_value value=".armHurtDurationDisplay"/>
+		<display_value_format value="time"/>
+		
+		<!-- Set the base healing rate using the physician progression of the instigator of the heal -->
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$armTreatedCritHealingBase" operation="set" value="1">
+				<requirement name="ProgressionLevel" progression_name="lbu_Physician" operation="LT" value="10" target="instigator"/></triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$armTreatedCritHealingBase" operation="set" value="1.15">
+				<requirement name="ProgressionLevel" progression_name="lbu_Physician" operation="GTE" value="10" target="instigator"/>
+				<requirement name="ProgressionLevel" progression_name="lbu_Physician" operation="LT" value="20" target="instigator"/></triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$armTreatedCritHealingBase" operation="set" value="1.25">
+				<requirement name="ProgressionLevel" progression_name="lbu_Physician" operation="GTE" value="20" target="instigator"/>
+				<requirement name="ProgressionLevel" progression_name="lbu_Physician" operation="LT" value="30" target="instigator"/></triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$armTreatedCritHealingBase" operation="set" value="1.5">
+				<requirement name="ProgressionLevel" progression_name="lbu_Physician" operation="GTE" value="30" target="instigator"/></triggered_effect>
+		</effect_group>
+
+		<!-- Add treatedCritHealingBonuses to armTreatedCritHealing. Then use the greater of armTreatedCritHealing and treatedCritHealing. -->
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$armTreatedCritHealing" operation="set" value="@$armTreatedCritHealingBase"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$armTreatedCritHealing" operation="add" value="@$treatedCritHealingBonuses"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$armTreatedCritHealing" operation="set" value="@$treatedCritHealing">
+				<requirement name="CVarCompare" cvar="$treatedCritHealing" operation="GT" value="@$armTreatedCritHealing"/></triggered_effect>
+		</effect_group>
+
+		<!-- <effect_group> -->
+			<!-- <triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$armTreatedCritHealingBase,$armTreatedCritHealing,.armTotalHealingRate"/> -->
+			<!-- <triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$armHurtCounter,.ArmHurtHealthBlockage"> -->
+				<!-- <requirement name="!HasBuff" buff="buffArmBroken"/> -->
+				<!-- <requirement name="ProgressionLevel" progression_name="lbu_Physician" operation="GTE" value="30" target="instigator"/> -->
+			<!-- </triggered_effect> -->
+		<!-- </effect_group> -->
+
+		<effect_group>
+			<!-- Handlers for other arm buffs -->
+			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffBrokenLimbStatus"/>
+			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffArmBroken"/>
+			<!-- Start natural healing -->
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".armTotalHealingRate" operation="set" value="@$critHitNaturalHealingRate"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".armTotalHealingRate" operation="add" value="2"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".armTotalHealingRate" operation="multiply" value="@$armTreatedCritHealing"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".armTotalHealingRate" operation="divide" value="@$minerHealing">
+				<requirement name="CVarCompare" cvar="$minerCheck" operation="GT" value="0"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".armTotalHealingRate" operation="set" value="@$critHitNaturalHealingRate"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".armTotalHealingRate" operation="add" value="2"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".armTotalHealingRate" operation="multiply" value="@$armTreatedCritHealing"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".armTotalHealingRate" operation="divide" value="@$minerHealing">
+				<requirement name="CVarCompare" cvar="$minerCheck" operation="GT" value="0"/>
+			</triggered_effect>
+			<!-- Reduced counter by rate -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$armHurtCounter" operation="subtract" value="@.armTotalHealingRate"/>
+		</effect_group>
+
+		<effect_group name="DisplayDuration">
+			<!-- Handlers for the display -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".armHurtDurationDisplay" operation="set" value="@$armHurtCounter"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".armHurtDurationDisplay" operation="divide" value="@.armTotalHealingRate"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".armHurtDurationDisplay"/>
+		</effect_group>
+
+		<effect_group name="activity makes damaged arms worse">
+			<!-- If not consuming steroids... -->
+			<requirement name="!HasBuff" buff="buffDrugSteroids"/>
+				<!-- Using ranged makes it worse -->
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$armHurtCounter" operation="add" value="4">
+					<requirement name="HoldingItemHasTags" tags="ranged"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffArmGetsWorse">
+					<requirement name="HoldingItemHasTags" tags="ranged"/></triggered_effect>
+				<!-- Using melee makes it worse -->
+				<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyStats" stat="Health" operation="subtract" value="1">
+					<requirement name="HoldingItemHasTags" tags="melee"/>
+					<requirement name="!HoldingItemHasTags" tags="repairTool,heldTorch"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" cvar="$armHurtCounter" operation="add" value="4">
+					<requirement name="HoldingItemHasTags" tags="melee"/>
+					<requirement name="!HoldingItemHasTags" tags="repairTool,heldTorch"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionEnd" action="AddBuff" buff="buffArmGetsWorse">
+					<requirement name="HoldingItemHasTags" tags="melee"/>
+					<requirement name="!HoldingItemHasTags" tags="repairTool,heldTorch"/></triggered_effect>
+				<!-- Clamp counter -->
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$armHurtCounter" operation="set" value="7208">
+					<requirement name="CVarCompare" cvar="$armHurtCounter" operation="GT" value="7208"/>
+				</triggered_effect>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="CVarCompare" cvar=".armHurtDurationDisplay" operation="LTE" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveCVar" cvar="$armHurtCounter"/>
+		</effect_group>
+
+		<effect_group>
+			<!-- If counter LTE 0, reset counter, health blockage, and remove buff -->
+			<requirement name="CVarCompare" cvar="$armHurtCounter" operation="LTE" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveCVar" cvar="$armHurtCounter,.armTotalHealingRate,.ArmHurtHealthBlockage"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffArmSplinted"/>
+		</effect_group>
+
+		<effect_group>
+			<!-- Setup the max health blockage based on the remaining counter -->
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".ArmHurtHealthBlockage" operation="set" value="@$armHurtCounter"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".ArmHurtHealthBlockage" operation="divide" value="360"/> <!-- 20 @ 120m -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".ArmHurtHealthBlockage" operation="set" value="@$armHurtCounter"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".ArmHurtHealthBlockage" operation="divide" value="360"/> <!-- 20 @ 120m -->
+			<passive_effect name="HealthMaxBlockage" operation="base_add" value="@.ArmHurtHealthBlockage"/>
+			<!-- Reduce weapon actions -->
+			<passive_effect name="WeaponHandling" operation="perc_add" value="-.15" tags="perkGunslinger,perkBoomstick,perkDeadEye,perkMachineGunner,perkBookAutoWeapons,perkTurrets,perkArchery,admin"/>
+			<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="-.2" tags="perkGunslinger,perkBoomstick,perkDeadEye,perkMachineGunner,perkBookAutoWeapons,perkTurrets,perkArchery,admin"/>
+			<passive_effect name="AttacksPerMinute" operation="perc_add" value="-.15" tags="perkMiner69r,perkSalvageOperations,perkElectrocutioner,perkJavelinMaster,perkPummelPete,perkSkullCrusher,perkDeepCuts,perkBrawler,admin"/>
 		</effect_group>
 	</set>
 	
@@ -740,6 +1024,113 @@
 			<passive_effect name="WeaponHandling" operation="perc_add" value="-.25" tags="perkGunslinger,perkBoomstick,perkDeadEye,perkMachineGunner,perkBookAutoWeapons,perkTurrets,perkArchery,admin"/>
 			<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="-.35" tags="perkGunslinger,perkBoomstick,perkDeadEye,perkMachineGunner,perkBookAutoWeapons,perkTurrets,perkArchery,admin"/>
 			<passive_effect name="AttacksPerMinute" operation="perc_add" value="-.25" tags="perkMiner69r,perkSalvageOperations,perkElectrocutioner,perkJavelinMaster,perkPummelPete,perkSkullCrusher,perkDeepCuts,perkBrawler,admin"/>
+		</effect_group>
+	</set>
+	
+	<set xpath="/buffs/buff[@name='buffArmCast']">
+		<duration value="0"/>
+		<display_value value=".armHurtDurationDisplay"/>
+		<display_value_format value="time"/>
+		
+		<!-- Set the base healing rate using the physician progression of the instigator of the heal -->
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$armTreatedCritHealingBase" operation="set" value="1">
+				<requirement name="ProgressionLevel" progression_name="lbu_Physician" operation="LT" value="1" target="instigator"/></triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$armTreatedCritHealingBase" operation="set" value="1.15">
+				<requirement name="ProgressionLevel" progression_name="lbu_Physician" operation="GTE" value="10" target="instigator"/>
+				<requirement name="ProgressionLevel" progression_name="lbu_Physician" operation="LT" value="20" target="instigator"/></triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$armTreatedCritHealingBase" operation="set" value="1.25">
+				<requirement name="ProgressionLevel" progression_name="lbu_Physician" operation="GTE" value="20" target="instigator"/>
+				<requirement name="ProgressionLevel" progression_name="lbu_Physician" operation="LT" value="30" target="instigator"/></triggered_effect>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$armTreatedCritHealingBase" operation="set" value="1.5">
+				<requirement name="ProgressionLevel" progression_name="lbu_Physician" operation="GTE" value="30" target="instigator"/></triggered_effect>
+		</effect_group>
+		
+		<!-- Add treatedCritHealingBonuses to armTreatedCritHealing. Then use the greater of armTreatedCritHealing and treatedCritHealing. -->
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$armTreatedCritHealing" operation="set" value="@$armTreatedCritHealingBase"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$armTreatedCritHealing" operation="add" value="@$treatedCritHealingBonuses"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$armTreatedCritHealing" operation="set" value="@$treatedCritHealing">
+				<requirement name="CVarCompare" cvar="$treatedCritHealing" operation="GT" value="@$armTreatedCritHealing"/></triggered_effect>
+		</effect_group>
+		
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$armTreatedCritHealingBase,$armTreatedCritHealing,$armHurtCounter,.ArmHurtHealthBlockage,.armTotalHealingRate">
+				<requirement name="!HasBuff" buff="buffArmBroken"/></triggered_effect>
+		</effect_group>
+
+		<effect_group>
+			<!-- Remove splinted/broken arms -->
+			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffArmBroken"/>
+			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffArmSplinted"/>
+			<!-- Set counter to natural healing rate, add physician perk, and then add a value -->
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".armTotalHealingRate" operation="set" value="@$critHitNaturalHealingRate"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".armTotalHealingRate" operation="add" value="3.7"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".armTotalHealingRate" operation="multiply" value="@$armTreatedCritHealing"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".armTotalHealingRate" operation="divide" value="@$minerHealing">
+				<requirement name="CVarCompare" cvar="$minerCheck" operation="GT" value="0"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".armTotalHealingRate" operation="set" value="@$critHitNaturalHealingRate"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".armTotalHealingRate" operation="add" value="3.7"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".armTotalHealingRate" operation="multiply" value="@$armTreatedCritHealing"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".armTotalHealingRate" operation="divide" value="@$minerHealing">
+				<requirement name="CVarCompare" cvar="$minerCheck" operation="GT" value="0"/>
+			</triggered_effect>
+			<!-- Reduced counter by rate -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$armHurtCounter" operation="subtract" value="@.armTotalHealingRate"/>
+		</effect_group>
+
+		<effect_group name="DisplayDuration">
+			<!-- Handlers for the display -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".armHurtDurationDisplay" operation="set" value="@$armHurtCounter"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".armHurtDurationDisplay" operation="divide" value="@.armTotalHealingRate"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".armHurtDurationDisplay"/>
+		</effect_group>
+
+		<effect_group name="activity makes damaged arms worse">
+			<requirement name="!HasBuff" buff="buffDrugSteroids"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$armHurtCounter" operation="add" value="4">
+					<requirement name="HoldingItemHasTags" tags="ranged"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffArmGetsWorse">
+					<requirement name="HoldingItemHasTags" tags="ranged"/></triggered_effect>
+
+				<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyStats" stat="Health" operation="subtract" value="1">
+					<requirement name="HoldingItemHasTags" tags="melee"/>
+					<requirement name="!HoldingItemHasTags" tags="repairTool,heldTorch"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" cvar="$armHurtCounter" operation="add" value="4">
+					<requirement name="HoldingItemHasTags" tags="melee"/>
+					<requirement name="!HoldingItemHasTags" tags="repairTool,heldTorch"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionEnd" action="AddBuff" buff="buffArmGetsWorse">
+					<requirement name="HoldingItemHasTags" tags="melee"/>
+					<requirement name="!HoldingItemHasTags" tags="repairTool,heldTorch"/></triggered_effect>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$armHurtCounter" operation="set" value="7208">
+					<requirement name="CVarCompare" cvar="$armHurtCounter" operation="GT" value="7208"/>
+				</triggered_effect>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="CVarCompare" cvar=".armHurtDurationDisplay" operation="LTE" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveCVar" cvar="$armHurtCounter"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="CVarCompare" cvar="$armHurtCounter" operation="LTE" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveCVar" cvar="$armHurtCounter,.armTotalHealingRate,.ArmHurtHealthBlockage"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffArmCast"/>
+		</effect_group>
+
+		<effect_group>
+			<!-- Setup the max health blockage based on the remaining counter -->
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".ArmHurtHealthBlockage" operation="set" value="@$armHurtCounter"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".ArmHurtHealthBlockage" operation="divide" value="480"/> <!-- 15 @ 120m -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".ArmHurtHealthBlockage" operation="set" value="@$armHurtCounter"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".ArmHurtHealthBlockage" operation="divide" value="480"/> <!-- 15 @ 120m -->
+			<passive_effect name="HealthMaxBlockage" operation="base_add" value="@.ArmHurtHealthBlockage"/>
+
+			<passive_effect name="WeaponHandling" operation="perc_add" value="-.15" tags="perkGunslinger,perkBoomstick,perkDeadEye,perkMachineGunner,perkBookAutoWeapons,perkTurrets,perkArchery,admin"/>
+			<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="-.2" tags="perkGunslinger,perkBoomstick,perkDeadEye,perkMachineGunner,perkBookAutoWeapons,perkTurrets,perkArchery,admin"/>
+			<passive_effect name="AttacksPerMinute" operation="perc_add" value="-.15" tags="perkMiner69r,perkSalvageOperations,perkElectrocutioner,perkJavelinMaster,perkPummelPete,perkSkullCrusher,perkDeepCuts,perkBrawler,admin"/>
 		</effect_group>
 	</set>
 	
