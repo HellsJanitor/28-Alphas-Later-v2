@@ -18,6 +18,9 @@
 	<!-- <set xpath="/xui/ruleset/window_group[@name='workstation_campfire']/window[@name='windowFuel']/@name">windowCampfireFuel</set> -->
 	<!-- <set xpath="/xui/ruleset/window_group[@name='workstation_campfire']/window[@name='windowOutput']/@name">windowCampfireOutput</set> -->
 	
+	<!-- *** new forge output -->
+	<set xpath="/xui/ruleset/window_group[@name='workstation_forge']/window[@name='windowOutput']/@name">windowForgeOutput</set>
+	
 	<!-- *** adds tools to workbench -->
 	<insertafter xpath="//window_group[@name='workstation_workbench']//window[@name='windowCraftingQueue']">
 	<window name="windowToolsWorkbench" />

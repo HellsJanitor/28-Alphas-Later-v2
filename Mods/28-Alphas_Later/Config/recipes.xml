@@ -7,9 +7,47 @@
 	<insertafter xpath="/recipes/recipe[@name='resourceBone']">
 		<recipe name="resourceWoodScraps" count="1" tooltip="ttScrapMetalLead" always_unlocked="true" tags="salvageScrap"><wildcard_forge_category/></recipe>
 		<recipe name="resourceBranch" count="1" tooltip="ttScrapMetalLead" always_unlocked="true" tags="salvageScrap"><wildcard_forge_category/></recipe>
-		<!-- <recipe name="resourceScrapBooks" count="1" tooltip="ttScrapMetalLead" always_unlocked="true" tags="salvageScrap"> <wildcard_forge_category /> </recipe> -->
-		<!-- <recipe name="resourceUraniumRaw" count="1" tooltip="ttScrapMetalLead" always_unlocked="true" tags="salvageScrap"> <wildcard_forge_category /> </recipe> -->
+		<recipe name="researchPaperBlank" count="1" tooltip="ttScrapMetalLead" always_unlocked="true" tags="salvageScrap"> <wildcard_forge_category /> </recipe>
+		<recipe name="resourceChromium" count="1" tooltip="ttScrapMetalLead" always_unlocked="true" tags="salvageScrap"> <wildcard_forge_category /> </recipe>
+		<recipe name="resourceCopper" count="1" tooltip="ttScrapMetalLead" always_unlocked="true" tags="salvageScrap"> <wildcard_forge_category /> </recipe>
+		<recipe name="resourceLimestone" count="1" tooltip="ttScrapMetalLead" always_unlocked="true" tags="salvageScrap"> <wildcard_forge_category /> </recipe>
+		<recipe name="resourceZinc" count="1" tooltip="ttScrapMetalLead" always_unlocked="true" tags="salvageScrap"> <wildcard_forge_category /> </recipe>
 	</insertafter>
+	
+	<!-- *** new forge emptying recipes -->
+	<insertafter xpath="/recipes/recipe[@name='resourceScrapLead' and @material_based='true']">
+		<recipe name="resourceLimestone" count="1" material_based="true" craft_area="forge" is_trackable="false" craft_time="1" craft_exp_gain="0" always_unlocked="true" use_ingredient_modifier="false">
+			<ingredient name="unit_limestone" count="5"/>
+		</recipe>
+
+		<recipe name="resourceCopper" count="1" material_based="true" craft_area="forge" is_trackable="false" craft_time="1" craft_exp_gain="0" always_unlocked="true" use_ingredient_modifier="false">
+			<ingredient name="unit_copper" count="1"/>
+		</recipe>
+
+		<recipe name="resourceZinc" count="1" material_based="true" craft_area="forge" is_trackable="false" craft_time="1" craft_exp_gain="0" always_unlocked="true" use_ingredient_modifier="false">
+			<ingredient name="unit_zinc" count="1"/>
+		</recipe>
+
+		<recipe name="resourceChromium" count="1" material_based="true" craft_area="forge" is_trackable="false" craft_time="1" craft_exp_gain="0" always_unlocked="true" use_ingredient_modifier="false">
+			<ingredient name="unit_chromium" count="1"/>
+		</recipe>
+		
+		<recipe name="resourceScrapBrass" count="1" material_based="true" craft_area="forge" is_trackable="false" craft_time="1" craft_exp_gain="0" always_unlocked="true" use_ingredient_modifier="false">
+			<ingredient name="unit_zinc" count="1"/>
+			<ingredient name="unit_copper" count="1"/>
+		</recipe>
+	</insertafter>
+	
+	<!-- *** new ingredients (steel, cement, brass) -->
+	<prepend xpath="/recipes/recipe[@name='resourceForgedSteel']">
+		<ingredient name="unit_chromium" count="20"/>
+	</prepend>
+	<append xpath="/recipes/recipe[@name='resourceForgedSteel']/effect_group/passive_effect/@tags">,unit_chromium</append>
+	
+	<prepend xpath="/recipes/recipe[@name='resourceCement']">
+		<ingredient name="unit_limestone" count="10"/>
+	</prepend>
+	<append xpath="/recipes/recipe[@name='resourceCement']/effect_group/passive_effect/@tags">,unit_limestone</append>	
 	
 	<!-- <set xpath="/recipes/recipe[starts-with (@name,'drinkJar')  -->
 	<!-- or (contains(@name,'Coffee'))  -->
@@ -27,6 +65,7 @@
 	<!-- or (contains(@name,'PlasterCast')) -->
 	<!-- or (contains(@name,'Antibiotics'))]/ingredient[@name='drinkJarBoiledWater']/@name">drinkJarDistilledWater</set> -->
 	
+	<!-- *** Yucca Smoothie needs a jar -->
 	<set xpath="/recipes/recipe[@name='drinkYuccaJuiceSmoothie']">
 		<ingredient name="foodCropYuccaFruit" count="4"/>
 		<ingredient name="foodCropBlueberries" count="4"/>
@@ -38,6 +77,7 @@
 	</set>
 	
 	<append xpath="/recipes">
+		<!-- *** bioled water from snow (+jar) -->
 		<recipe name="drinkJarBoiledWater" count="1" craft_area="campfire" tags="perkMasterChef">
 			<ingredient name="resourceSnowBall" count="20"/>
 			<ingredient name="drinkJarEmpty" count="1"/>
@@ -59,6 +99,23 @@
 		<!-- <ingredient name="resourceMetalPipe" count="4"/> -->
 		<!-- <ingredient name="resourceDuctTape" count="4"/> -->
 		<!-- </recipe> -->
+		
+		<!-- *** bundles for new resources -->
+		<recipe name="resourceChromiumBundle" count="1" craft_time="10" craft_exp_gain="0" tags="learnable,packMuleCrafting">
+			<ingredient name="resourceChromium" count="6000"/>
+		</recipe>
+
+		<recipe name="resourceCopperBundle" count="1" craft_time="10" craft_exp_gain="0" tags="learnable,packMuleCrafting">
+			<ingredient name="resourceCopper" count="6000"/>
+		</recipe>
+		
+		<recipe name="resourceLimestoneBundle" count="1" craft_time="10" craft_exp_gain="0" tags="learnable,packMuleCrafting">
+			<ingredient name="resourceLimestone" count="6000"/>
+		</recipe>
+		
+		<recipe name="resourceZincBundle" count="1" craft_time="10" craft_exp_gain="0" tags="learnable,packMuleCrafting">
+			<ingredient name="resourceZinc" count="6000"/>
+		</recipe>
 		
 		<!-- *** Iron Hoe -->
 		<recipe name="meleeToolFarmT2IronHoe" count="1" craft_area="workbench" craft_tool="meleeToolRepairT1ClawHammer" tags="learnable,perkLivingOffTheLand">

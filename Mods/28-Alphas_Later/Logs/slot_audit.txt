@@ -1,0 +1,48 @@
+== 28AL Slot Audit ==
+Scanned at 2025-09-29 03:01:31
+
+-- Histogram (slot : count) --
+ 0 : 0
+ 1 : 2
+ 2 : 2
+ 3 : 0
+ 4 : 1
+ 5 : 0
+ 6 : 1
+ 7 : 0
+ 8 : 2
+ 9 : 1
+10 : 2
+11 : 1
+12 : 1
+13 : 1
+14 : 1
+15 : 1
+16 : 1
+17 : 0
+18 : 0
+19 : 1
+20 : 0
+21 : 0
+22 : 0
+23 : 0
+
+-- Per Block (name | Texture | slot=Texture%24) --
+terrStone | 1 | 1
+terrainFiller | 403 | 19
+terrBedrock | 1 | 1
+terrDirt | 2 | 2
+terrDestroyedStone | 438 | 6
+terrGravel | 11 | 11
+terrAsphalt | 10 | 10
+terrConcrete | 8 | 8
+terrOreIron | 33 | 9
+terrOreLead | 316 | 4
+terrOreCoal | 34 | 10
+terrOrePotassiumNitrate | 300 | 12
+terrOreOilDeposit | 440 | 8
+terrOreChromium | 13 | 13
+terrOreCopper | 14 | 14
+terrOreLimestone | 15 | 15
+terrOreZinc | 16 | 16
+terrFertilizedFarmland3 | 2 | 2

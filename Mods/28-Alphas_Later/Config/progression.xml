@@ -102,6 +102,9 @@
 	<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingElectrician']/display_entry[@icon='batterybank']/unlock_entry/@item">,solarbank</append>
 	<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingElectrician']/effect_group/passive_effect[@level='55,100']/@tags">,solarbank</append>
 	
+	<!-- *** new resource bundles -->
+	<append xpath="/progression/perks/book[@name='perkArtOfMiningPallets']/effect_group/passive_effect/@tags">,resourceChromiumBundle,resourceCopperBundle,resourceLimestoneBundle,resourceZincBundle</append>
+	
 	<!-- *** Better Barter & Daring Adventurer removed from skill tree - now a "passive" unlock -->
 	<remove xpath="//perk[@name='perkBetterBarter']"/>
 	<remove xpath="//perk[@name='perkDaringAdventurer']"/>
@@ -141,4 +144,7 @@
 	
 	<!-- *** lower degradation from sledge saga vol. 2 -->
 	<set xpath="/progression/perks/book[@name='perkSledgeSagaDegradation']/effect_group/passive_effect/@value">-.1</set>
+	
+	<!-- *** change stupid bucket sound for packmule -->
+	<set xpath="/progression/perks/perk[@name='perkPackMule']/effect_group/triggered_effect[@sound='twitch_bucket_hit']/@sound">metalhitcloth</set>
 </HellsJanitor>

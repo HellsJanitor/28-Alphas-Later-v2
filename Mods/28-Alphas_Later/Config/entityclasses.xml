@@ -418,6 +418,47 @@
 	
 	<set xpath="/entity_classes/entity_class[@name='zombiePlagueSpitterRadiated']/effect_group/passive_effect[@name='HealthMax']/@value">^healthScreamerRadiated</set>
 	
+	<!-- *** remove double damage from businessman and utility worker -->
+	<remove xpath="/entity_classes/entity_class/effect_group[@name='Base Effects']/passive_effect[@name='EntityDamage' and @operation='perc_add' and @value='1']"/>
+	
+	<!-- *** give all rads, charged and infernal 25% damage increase -->
+	<append xpath="/entity_classes/entity_class[contains (@name,'Radiated') and not (contains(@name,'zombieWight'))]/effect_group[@name='Base Effects']">
+		<passive_effect name="EntityDamage" operation="perc_add" value=".25"/>
+	</append>
+	
+	<!-- *** give wights a damage boost -->
+	<append xpath="/entity_classes/entity_class[contains (@name,'zombieWight')]/effect_group[@name='Base Effects']">
+		<passive_effect name="EntityDamage" operation="perc_add" value=".5"/>
+	</append>
+	
+	<!-- give charged and infernal the radiated health pools -->
+	<set xpath="/entity_classes/entity_class/effect_group[@name='Base Effects']/passive_effect[@name='HealthMax' and @value='^healthSlimCharged']/@value">^healthSlimRadiated</set>
+	<set xpath="/entity_classes/entity_class/effect_group[@name='Base Effects']/passive_effect[@name='HealthMax' and @value='^healthSlimInfernal']/@value">^healthSlimRadiated</set>
+	
+	<set xpath="/entity_classes/entity_class/effect_group[@name='Base Effects']/passive_effect[@name='HealthMax' and @value='^healthBusinessManCharged']/@value">^healthBusinessManRadiated</set>
+	<set xpath="/entity_classes/entity_class/effect_group[@name='Base Effects']/passive_effect[@name='HealthMax' and @value='^healthBusinessManInfernal']/@value">^healthBusinessManRadiated</set>
+	
+	<set xpath="/entity_classes/entity_class/effect_group[@name='Base Effects']/passive_effect[@name='HealthMax' and @value='^healthNormalCharged']/@value">^healthNormalRadiated</set>
+	<set xpath="/entity_classes/entity_class/effect_group[@name='Base Effects']/passive_effect[@name='HealthMax' and @value='^healthNormalInfernal']/@value">^healthNormalRadiated</set>
+	
+	<set xpath="/entity_classes/entity_class/effect_group[@name='Base Effects']/passive_effect[@name='HealthMax' and @value='^healthUtilityWorkerCharged']/@value">^healthUtilityWorkerRadiated</set>
+	<set xpath="/entity_classes/entity_class/effect_group[@name='Base Effects']/passive_effect[@name='HealthMax' and @value='^healthUtilityWorkerInfernal']/@value">^healthUtilityWorkerRadiated</set>
+	
+	<set xpath="/entity_classes/entity_class/effect_group[@name='Base Effects']/passive_effect[@name='HealthMax' and @value='^healthSturdyCharged']/@value">^healthSturdyRadiated</set>
+	<set xpath="/entity_classes/entity_class/effect_group[@name='Base Effects']/passive_effect[@name='HealthMax' and @value='^healthSturdyInfernal']/@value">^healthSturdyRadiated</set>
+	
+	<set xpath="/entity_classes/entity_class/effect_group[@name='Base Effects']/passive_effect[@name='HealthMax' and @value='^healthStrongCharged']/@value">^healthStrongRadiated</set>
+	<set xpath="/entity_classes/entity_class/effect_group[@name='Base Effects']/passive_effect[@name='HealthMax' and @value='^healthStrongInfernal']/@value">^healthStrongRadiated</set>
+	
+	<set xpath="/entity_classes/entity_class/effect_group[@name='Base Effects']/passive_effect[@name='HealthMax' and @value='^healthFitCharged']/@value">^healthFitRadiated</set>
+	<set xpath="/entity_classes/entity_class/effect_group[@name='Base Effects']/passive_effect[@name='HealthMax' and @value='^healthFitInfernal']/@value">^healthFitRadiated</set>
+	
+	<set xpath="/entity_classes/entity_class/effect_group[@name='Base Effects']/passive_effect[@name='HealthMax' and @value='^healthWightCharged']/@value">^healthWightRadiated</set>
+	<set xpath="/entity_classes/entity_class/effect_group[@name='Base Effects']/passive_effect[@name='HealthMax' and @value='^healthWightInfernal']/@value">^healthWightRadiated</set>
+	
+	<set xpath="/entity_classes/entity_class/effect_group[@name='Base Effects']/passive_effect[@name='HealthMax' and @value='^healthScreamerCharged']/@value">^healthScreamerRadiated</set>
+	<set xpath="/entity_classes/entity_class/effect_group[@name='Base Effects']/passive_effect[@name='HealthMax' and @value='^healthScreamerInfernal']/@value">^healthScreamerRadiated</set>
+	
 	<!-- *** new zombies -->
 	<append xpath="/entity_classes">
 		<!-- *** horde night bunker buster -->

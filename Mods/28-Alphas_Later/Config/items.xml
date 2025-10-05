@@ -15,7 +15,7 @@
 		<property name="SoundPickup" value="outfit_metal_grab"/>
 		<property name="SoundPlace" value="outfit_metal_place"/>
 		<effect_group name="NerdOutfit">
-			<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
+			<passive_effect name="ModSlots" operation="base_set" value="1,1,2,3,4,5" tier="1,2,3,4,5,6"/>
 			<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
 			<passive_effect name="PhysicalDamageResist" operation="base_add" value="18,21" tier="1,6"/>
 			<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
@@ -488,6 +488,11 @@
 	<!-- *** allowed upgrade items for repair tools *** -->
 	<append xpath="//item/property//property[@name='Allowed_upgrade_items']/@value">,resourceBricks,resourceWoodScraps</append>
 	
+	<!-- *** changed material for scrappable books & schematics -->
+	<set xpath="/items/item[@name='schematicMaster']/property[@name='Material']/@value">MscrapBooks</set>
+	<!-- default weight is 5, books and schema scrap to 3 research. Adjust the property below to suit -->
+	<!-- <set xpath="/items/item[@name='schematicMaster']/property[@name='Weight']/@value">10</set> -->
+	
 	<append xpath="/items">
 		<!-- *** Legendaries -->
 		<!-- *** Red's Paintbrush -->
@@ -598,7 +603,7 @@
 			</effect_group>
 		</item>
 		
-		<!-- *** pitchfork *** -->
+		<!-- *** pitchfork -->
 		<item name="meleeWpnLegendaryPitchfork">
 			<property name="Extends" value="meleeWpnSpearT1IronSpear" param1="TintColor"/>
 			<property name="Tags" value="legendary,melee,grunting,medium,weapon,meleeWeapon,longShaft,attPerception,perkJavelinMaster,perkFlurryOfPerception,canHaveCosmetic,spearSkill"/><!-- ,thrownWeapon -->
@@ -679,7 +684,7 @@
 			</effect_group>
 		</item>
 	
-		<!-- *** garden rake *** -->
+		<!-- *** garden rake -->
 		<item name="meleeWpnLegendaryGardenRake">
 			<property name="Extends" value="meleeToolAxeT1IronFireaxe" param1="TintColor"/>
 			<property name="Tags" value="legendary,axe,melee,grunting,medium,tool,longShaft,attStrength,perkMiner69r,perkMotherLode,canHaveCosmetic,harvestingSkill,corpseRemoval"/>
@@ -741,7 +746,7 @@
 			</effect_group>
 		</item>
 		
-		<!-- *** scythe *** -->
+		<!-- *** scythe -->
 		<item name="meleeWpnLegendaryScythe">
 			<property name="CreativeMode" value="Player"/>
 			<property name="DisplayType" value="meleeKnife"/>
@@ -818,7 +823,7 @@
 				<passive_effect name="ModSlots" operation="base_set" value="3,3,3,4,4,4" tier="1,2,3,4,5,6"/>
 				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
 				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-				<passive_effect name="EntityDamage" operation="base_set" value="30" tags="perkDeepCuts"/> <!-- meleeWpnBladeT3Machete -->
+				<passive_effect name="EntityDamage" operation="base_set" value="33" tags="perkDeepCuts"/> <!-- meleeWpnBladeT3Machete -->
 				<passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkDeepCuts"/> <!-- random EntityDmg -->
 				<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkDeepCuts"/> <!-- tier bonus -->
 				<passive_effect name="BlockDamage" operation="base_set" value="21" tags="perkDeepCuts"/>
@@ -829,7 +834,7 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="metal"/>
 				<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
 				<!--<passive_effect name="BlockDamage" operation="perc_add" value="1.5" tags="blockButcher"/>-->
-				<passive_effect name="DismemberChance" operation="base_add" value="1"/>
+				<passive_effect name="DismemberChance" operation="base_add" value="1.25"/>
 			</effect_group>
 			<effect_group name="Power Attack">
 				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
@@ -849,6 +854,114 @@
 			<effect_group>
 				<requirement name="EntityTagCompare" target="other" tags="radiated,mutated,mutant"/>
 				<passive_effect name="EntityDamage" operation="perc_add" value="1.5"/>
+			</effect_group>
+		</item>
+		
+		<!-- *** Brushknife -->
+		<item name="meleeWpnBladeLegendaryBrushKnife">
+			<property name="Tags" value="machete,melee,grunting,light,longShaft,perkFlurryOfAgility,weapon,meleeWeapon,attAgility,perkDeepCuts,perkTheHuntsman,canHaveCosmetic,bladeSkill,corpseRemoval"/>
+			<property name="CustomIcon" value="meleeWpnBladeLegendaryBrushKnife"/>
+			<property name="DescriptionKey" value="meleeWpnBladeLegendaryBrushKnifeDesc"/>
+			<property name="DisplayType" value="meleeKnife"/>
+			<property name="HoldType" value="36"/>
+			<property name="Meshfile" value="#@modfolder:Resources/LegendaryMelee.unity3d?BrushKnife.prefab"/>
+			<property name="Material" value="Mmetal"/>
+			<!-- <property name="TintColor" value="0,0,0"/> -->
+			<property name="ScrapTimeOverride" value="10.0"/>
+			<property name="RepairTools" value="resourceRepairKit"/>
+			<property name="DegradationBreaksAfter" value="false"/>
+			<property name="EconomicValue" value="500"/>
+			<property name="TraderStageTemplate" value="baseTier1"/><!-- meleeWpnBladeT1HuntingKnife -->
+			<property name="SoundJammed" value="ItemNeedsRepair"/>
+			<property name="SoundDestroy" value="wooddestroy1"/>
+			<property name="UnlockedBy" value="craftingBlades"/><!-- perkDeepCuts,meleeWpnBladeT1HuntingKnifeSchematic, -->
+			<property name="ShowQuality" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Melee Weapons"/>
+			<property name="RepairExpMultiplier" value="5.5"/>
+			<property name="SoundUnholster" value="weapon_unholster"/>
+			<property name="SoundHolster" value="weapon_holster"/>
+			<property name="SoundPickup" value="knife_hunting_grab"/>
+			<property name="SoundPlace" value="knife_hunting_place"/>
+
+			<property class="Action0">
+				<property name="Class" value="DynamicMelee"/>
+				<property name="Damage_type" value="Piercing"/>
+				<property name="Sphere" value=".1"/>
+				<property name="Sound_start" value="knife_metal_swinglight"/>
+				<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
+				<property name="ToolCategory.Butcher" value="0" param1="5"/>
+				<property name="UseGrazingHits" value="false"/>
+				<property name="GrazeStart" value=".25"/>
+				<property name="GrazeEnd" value=".35"/>
+				<property name="SwingDegrees" value="90"/>
+				<property name="SwingAngle" value="90"/>
+				<property class="HitSounds">
+					<property name="Override0" value="organic" param1="metalstaborganic"/>
+				</property>
+				<property class="GrazeSounds">
+					<property name="Override0" value="organic" param1="metalgrazeorganic"/>
+				</property>
+				<property name="HarvestLength" value="1.15"/>
+			</property>
+			<property class="Action1">
+				<property name="Class" value="DynamicMelee"/>
+				<property name="Damage_type" value="Piercing"/>
+				<property name="Sphere" value=".1"/>
+				<property name="Sound_start" value="knife_metal_swingheavy"/>
+				<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
+				<property name="ToolCategory.Butcher" value="0" param1="5"/>
+				<property name="UsePowerAttackAnimation" value="true"/>
+				<property name="UseGrazingHits" value="false"/>
+				<property name="GrazeStart" value=".2"/>
+				<property name="GrazeEnd" value=".3"/>
+				<property name="SwingDegrees" value="80"/>
+				<property name="SwingAngle" value="140"/>
+				<property class="HitSounds">
+					<property name="Override0" value="organic" param1="metalstaborganic"/>
+				</property>
+				<property class="GrazeSounds">
+					<property name="Override0" value="organic" param1="metalgrazeorganic"/>
+				</property>
+				<property name="HarvestLength" value="1.6"/>
+			</property>
+			<effect_group name="meleeWpnBladeT1HuntingKnife">
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="120" tags="perkDeepCuts,perkFlurryOfAgility"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="10.5" tags="primary"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="500,1000" tier="1,6" tags="perkDeepCuts"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkDeepCuts"/>
+				<passive_effect name="MaxRange" operation="base_set" value="2.3" tags="perkDeepCuts"/>
+				<passive_effect name="BlockRange" operation="base_set" value="3.5" tags="perkDeepCuts"/>
+				<passive_effect name="ModSlots" operation="base_set" value="3,3,3,4,4,4" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="27" tags="perkDeepCuts,knife"/><!-- meleeWpnBladeT1HuntingKnife -->
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkDeepCuts"/><!-- random EntityDmg -->
+				<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkDeepCuts"/><!-- tier bonus -->
+				<passive_effect name="BlockDamage" operation="base_set" value="6.5" tags="perkDeepCuts"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.04,.04" tags="perkDeepCuts"/><!-- random BlockDmg -->
+				<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkDeepCuts"/><!-- tier bonus -->
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="stone"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="metal"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value=".6" tags="organic"/>
+				<!-- <passive_effect name="DamageModifier" operation="perc_add" value="0" tags="organic"/> affects organic block harvesting based on block.material.damage_category, not animal corpse harvesting -->
+				<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
+				<!--<passive_effect name="BlockDamage" operation="perc_add" value="6" tags="blockButcher"/>-->
+				<passive_effect name="DismemberChance" operation="base_add" value="1"/>
+			</effect_group>
+			<effect_group name="Power Attack">
+				<passive_effect name="EntityDamage" operation="base_add" value="6" tags="secondary"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="1" tags="secondary"/>
+				<passive_effect name="AttacksPerMinute" operation="base_add" value="-60" tags="secondary"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="13.5" tags="secondary"/>
+			</effect_group>
+			<effect_group name="sneak damage bonus">
+				<requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="1"/>
+				<requirement name="CVarCompare" cvar="_notAlerted" operation="GT" value="0" target="other"/>
+				<passive_effect name="DamageBonus" operation="base_add" value="4"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="4" tags="perkDeepCuts"/>
+				<display_value name="dEntityDamageSneak" value="4"/>
 			</effect_group>
 		</item>
 		
@@ -1989,6 +2102,7 @@
 		<item name="researchPaperBlank">
 			<property name="DescriptionKey" value="researchPaperBlankDesc"/>
 			<property name="Extends" value="resourcePaper"/>
+			<property name="Material" value="MscrapBooks"/>
 			<property name="Tags" value="csm,research"/>
 			<property name="CustomIcon" value="questMaster"/>
 			<property name="Stacknumber" value="10000"/>
@@ -2419,7 +2533,203 @@
 				<display_value name="dWellness" value="-1"/>
 			</effect_group>
 		</item>
+		
+		<!-- *** ore resources -->
+		<item name="resourceChromium">
+			<property name="HoldType" value="45"/>
+			<property name="CustomIcon" value="resourceChromium"/>
+			<property name="DescriptionKey" value="resourceChromiumDesc"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="MresourceChromium"/>
+			<property name="Weight" value="1"/>
+			<property name="Stacknumber" value="6000"/>
+			<property name="EconomicValue" value="10"/>
+			<property name="EconomicBundleSize" value="10"/>
+			<property name="Group" value="Resources"/>
+			<property name="RepairTime" value=".5"/>
+			<property name="RepairAmount" value="20"/>
+			<property name="CraftingIngredientTime" value=".2"/>
+			<property name="SoundPickup" value="scrapiron_grab"/>
+			<property name="SoundPlace" value="scrapiron_place"/>
+		</item>
+		
+		<item name="resourceCopper">
+			<property name="HoldType" value="45"/>
+			<property name="CustomIcon" value="resourceCopper"/>
+			<property name="DescriptionKey" value="resourceCopperDesc"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="MresourceCopper"/>
+			<property name="Weight" value="1"/>
+			<property name="Stacknumber" value="6000"/>
+			<property name="EconomicValue" value="10"/>
+			<property name="EconomicBundleSize" value="10"/>
+			<property name="Group" value="Resources"/>
+			<property name="RepairTime" value=".5"/>
+			<property name="RepairAmount" value="20"/>
+			<property name="CraftingIngredientTime" value=".2"/>
+			<property name="SoundPickup" value="scrapiron_grab"/>
+			<property name="SoundPlace" value="scrapiron_place"/>
+		</item>
+		
+		<item name="resourceLimestone">
+			<property name="HoldType" value="45"/>
+			<property name="CustomIcon" value="resourceLimestone"/>
+			<property name="DescriptionKey" value="resourceLimestoneDesc"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="MresourceLimestone"/>
+			<property name="Weight" value="5"/>
+			<property name="Stacknumber" value="6000"/>
+			<property name="EconomicValue" value="10"/>
+			<property name="EconomicBundleSize" value="10"/>
+			<property name="Group" value="Resources"/>
+			<property name="RepairTime" value=".5"/>
+			<property name="RepairAmount" value="20"/>
+			<property name="CraftingIngredientTime" value=".2"/>
+			<property name="SoundPickup" value="scrapiron_grab"/>
+			<property name="SoundPlace" value="scrapiron_place"/>
+		</item>
+		
+		<item name="resourceZinc">
+			<property name="HoldType" value="45"/>
+			<property name="CustomIcon" value="resourceZinc"/>
+			<property name="DescriptionKey" value="resourceZincDesc"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="MresourceZinc"/>
+			<property name="Weight" value="1"/>
+			<property name="Stacknumber" value="6000"/>
+			<property name="EconomicValue" value="10"/>
+			<property name="EconomicBundleSize" value="10"/>
+			<property name="Group" value="Resources"/>
+			<property name="RepairTime" value=".5"/>
+			<property name="RepairAmount" value="20"/>
+			<property name="CraftingIngredientTime" value=".2"/>
+			<property name="SoundPickup" value="scrapiron_grab"/>
+			<property name="SoundPlace" value="scrapiron_place"/>
+		</item>
+		
+		<!-- *** ore bundles -->
+		<item name="resourceChromiumBundle">
+			<property name="CustomIcon" value="resourceChromium"/><property name="ItemTypeIcon" value="treasure"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="UnlockedBy" value="perkArtOfMiningPallets"/> <!-- BOOK_PERK -->
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="6000"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Group" value="Resources"/>
+			<property name="SoundPickup" value="stone_grab"/>
+			<property name="SoundPlace" value="stone_place"/>
+			<property class="Action0">
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0"/>
+				<property name="Sound_start" value="close_garbage"/>
+				<property name="Create_item" value="resourceChromium"/>
+				<property name="Create_item_count" value="6000"/>
+			</property>
+		</item>
+		
+		<item name="resourceCopperBundle">
+			<property name="CustomIcon" value="resourceCopper"/><property name="ItemTypeIcon" value="treasure"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="UnlockedBy" value="perkArtOfMiningPallets"/> <!-- BOOK_PERK -->
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="6000"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Group" value="Resources"/>
+			<property name="SoundPickup" value="stone_grab"/>
+			<property name="SoundPlace" value="stone_place"/>
+			<property class="Action0">
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0"/>
+				<property name="Sound_start" value="close_garbage"/>
+				<property name="Create_item" value="resourceCopper"/>
+				<property name="Create_item_count" value="6000"/>
+			</property>
+		</item>
+		
+		<item name="resourceLimestoneBundle">
+			<property name="CustomIcon" value="resourceLimestone"/><property name="ItemTypeIcon" value="treasure"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="UnlockedBy" value="perkArtOfMiningPallets"/> <!-- BOOK_PERK -->
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="6000"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Group" value="Resources"/>
+			<property name="SoundPickup" value="stone_grab"/>
+			<property name="SoundPlace" value="stone_place"/>
+			<property class="Action0">
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0"/>
+				<property name="Sound_start" value="close_garbage"/>
+				<property name="Create_item" value="resourceLimestone"/>
+				<property name="Create_item_count" value="6000"/>
+			</property>
+		</item>
+		
+		<item name="resourceZincBundle">
+			<property name="CustomIcon" value="resourceZinc"/><property name="ItemTypeIcon" value="treasure"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="UnlockedBy" value="perkArtOfMiningPallets"/> <!-- BOOK_PERK -->
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="6000"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Group" value="Resources"/>
+			<property name="SoundPickup" value="stone_grab"/>
+			<property name="SoundPlace" value="stone_place"/>
+			<property class="Action0">
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0"/>
+				<property name="Sound_start" value="close_garbage"/>
+				<property name="Create_item" value="resourceZinc"/>
+				<property name="Create_item_count" value="6000"/>
+			</property>
+		</item>
 	</append>
+	
+	<insertAfter xpath="/items/item[@name='unit_clay']">
+		<item name="unit_chromium">
+			<property name="Extends" value="unit_iron"/>
+			<property name="CustomIcon" value="resourceChromium"/>
+			<property name="Material" value="MresourceChromium"/>
+			<property name="CreativeMode" value="None"/>
+		</item>
+		
+		<item name="unit_copper">
+			<property name="Extends" value="unit_iron"/>
+			<property name="CustomIcon" value="resourceCopper"/>
+			<property name="Material" value="MresourceCopper"/>
+			<property name="CreativeMode" value="None"/>
+		</item>
+		
+		<item name="unit_limestone">
+			<property name="Extends" value="unit_iron"/>
+			<property name="CustomIcon" value="resourceLimestone"/>
+			<property name="Material" value="MresourceLimestone"/>
+			<property name="CreativeMode" value="None"/>
+		</item>
+		
+		<item name="unit_zinc">
+			<property name="Extends" value="unit_iron"/>
+			<property name="CustomIcon" value="resourceZinc"/>
+			<property name="Material" value="MresourceZinc"/>
+			<property name="CreativeMode" value="None"/>
+		</item>
+	</insertAfter>
 	
 	<!-- *** correct progression levels for stun baton charges etc -->
 	<set xpath="/items/item[@name='meleeWpnBatonT2StunBaton']">

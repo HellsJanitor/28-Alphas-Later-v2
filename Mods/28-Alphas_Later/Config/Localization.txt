@@ -7,9 +7,9 @@ Key,english
 28AlphasLaterQuest2_title,"Despair (cont.)"
 28AlphasLaterQuest3,"Bears and wolves are back in the forest.\n\nHazmat zombies are now immune to burning.\n\nNew Bunker Buster zombie. Only appears during bloodmoon(s), and can appear from the very first Bloodmoon. You’ll want to take it out quickly … think of it as a light demolition zombie.\n\nDemolition zombies appear at a much earlier gamestage.\n\nFrozen zombie variant. Slightly tougher, slightly slower, slightly more XP, and take slightly more damage than their Normal counterparts. Found in the snow biome.\n\nRotting zombie variant. They have lower HP, lower XP reward, and they take more damage. Found in the forest biome.\n\nCowboy zombie variant. Similar to normal zombies, these enemies are exclusive to the desert biome, identifiable by their cowboy hats.\n\nAll fatties (Big Mama, tourist etc.) explode when their health gets low, and are filled with a substance that’s irresistible to all zombies. If you are within range when they explode, they’ll cover you in this stuff - and attract other zombies. Cop and vulture vomit also has this effect.\n"
 28AlphasLaterQuest3_title,Enemies
-28AlphasLaterQuest4,"All tool and weapon skills are now governed by action skills. 100% of your skills come from the action skill."
+28AlphasLaterQuest4,"All tool and weapon skills are now governed by action skills. 50% of your skills come from the action skill, the other 50% from perk points."
 28AlphasLaterQuest4_title,Progression
-28AlphasLaterQuest5,"Wrench tablesaws for a sawblade - a required component for the sawmill.\n\nThe workbench now has slots for a wrench, hammer, ratchet, impact driver, and nail gun. Some items require these tools to craft, and some have been moved from inventory crafting to workbench crafting.\n\nThe cement mixer now requires gasoline to work.\n\nThe ammo press is required to craft ammunition in a workbench.\n\nThe sawmill. Unlocked at the same level as the workbench, use the sawmill to craft wood logs into wood planks. Wrench a tablesaw for a sawblade, or purchase a sawblade from a trader.\n\nYou can combine duplicate items in the workbench to either repair or upgrade them, depending on their quality and durabilty. Items can only be improved to your current crafting level for that item. Items can never be combined to quality 6."
+28AlphasLaterQuest5,"Wrench tablesaws for a sawblade - a required component for the sawmill.\n\nThe workbench now has slots for a wrench, hammer, ratchet, impact driver, and nail gun. Some items require these tools to craft, and some have been moved from inventory crafting to workbench crafting.\n\nThe cement mixer now requires gasoline to work.\n\nThe ammo press is required to craft ammunition in a workbench.\n\nThe sawmill. Unlocked at the same level as the forge, use this workbench to craft wood logs into wood planks. Wrench a tablesaw for a sawblade, or purchase a sawblade from a trader.\n\nYou can combine duplicate items in the workbench to either repair or upgrade them, depending on their quality and durabilty. Items can never be combined to quality 6."
 28AlphasLaterQuest5_title,Blocks & Workstations
 28AlphasLaterQuest6,"Snakes and Spider zombies will envenom you when they attack. Kill snakes to extract their venom, which can be used to make antivenom. Antivenom crafting can appear in loot and trader stock.\n\nThe Wasteland biome is very, VERY dangerous.\n\nDespair medication (Lavender, St. John’s Wort and Lithium) can be found in medical loot, and in trader stock. Lavender oil can be crafted from lavender flowers and used to treat despair."
 28AlphasLaterQuest6_title,Buffs & Debuffs
@@ -181,32 +181,37 @@ challengePlacePassiveCollectorShort,Place a Chicken Coop to collect eggs.
 challengePlantLavender,Plant Lavender
 challengePlantLavenderDesc,"To make a [DECEA3]lavender seed[-], [DECEA3]Gather[-] some [DECEA3]lavender flowers[-] in the [DECEA3]Forest biome[-], click [DECEA3]Recipes[-], then select [DECEA3]Craft[-].\n\nWhen the seed is crafted, equip it on your [DECEA3]toolbelt[-], and place it in a [DECEA3]Farm Plot[-], or on some [DECEA3]fertilized terrain[-]."
 challengePlantLavenderShort,Plant a Lavender seed.
+challengeReadMagazines,Gather Research Paper
+challengeReadMagazinesDesc,"You can use [DECEA3]Research Papers[-] to increase your [DECEA3]Crafting Skill[-] which in turn increases the [DECEA3]Quality[-] and/or [DECEA3]Technology Tier[-] of the item being crafted. You can track your [DECEA3]Crafting Skill[-] progression in the [DECEA3]Skills Window[-] and selecting the [DECEA3]Hammer[-] icon in the category header.\n\n[DECEA3]Research Papers[-] can be found in various loot containers such as [DECEA3]Mailboxes[-], [DECEA3]Zombie Corpses[-], or [DECEA3]Trash[-].\n[DECEA3]Books[-] and [DECEA3]Schematics[-] can be scrapped for research.\n\nTo use [DECEA3]Research Papers[-], you just need to have them in your inventory. Click on the [DECEA3]Crafting Level[-] icon of the crafting tier you want to progress, and if you have enough [DECEA3]Research Papers[-] in your inventory, your [DECEA3]Crafting Skill[-] will increase."
+challengeReadMagazinesHint1,[00FF00]Gather[-] some [00FF00]Research Papers[-][FFB400].[-]
+challengeReadMagazinesHint1_alt,[00FF00]Gather [-] some [00FF00]Research Papers[-][FFB400].[-]
+challengeReadMagazinesShort,Gather research to increase your crafting skill on [00FF00]ANY[-] topic.
 chickenCoop,Chicken coop
 chickenCoopDesc,Produces eggs. Needs a chicken.\n\nChickens need replacing periodically.\nChickens can be used in other recipes.
 cntMedicineCabinetPlayer,Player Medical Cabinet
-craftingArmorDesc,Increase [DECEA3]Armour Crafting[-] by reading research papers.\nWhen enough research has been read, [DECEA3]purchase[-] your skills.
-craftingBladesDesc,Increase [DECEA3]Blades Crafting[-] by reading research papers.\nWhen enough research has been read, [DECEA3]purchase[-] your skills.
-craftingBowsDesc,Increase [DECEA3]Bows Crafting[-] by reading research papers.\nWhen enough research has been read, [DECEA3]purchase[-] your skills.
-craftingClubsDesc,Increase [DECEA3]Club Crafting[-] by reading research papers.\nWhen enough research has been read, [DECEA3]purchase[-] your skills.
-craftingElectricianDesc,Increase [DECEA3]Electrical Crafting[-] by reading research papers.\nWhen enough research has been read, [DECEA3]purchase[-] your skills.
-craftingExplosivesDesc,Increase [DECEA3]Explosive Crafting[-] by reading research papers.\nWhen enough research has been read, [DECEA3]purchase[-] your skills.
-craftingFoodDesc,Increase [DECEA3]Food Crafting[-] by reading research papers.\nWhen enough research has been read, [DECEA3]purchase[-] your skills.
-craftingHandgunsDesc,Increase [DECEA3]Handgun Crafting[-] by reading research papers.\nWhen enough research has been read, [DECEA3]purchase[-] your skills.
-craftingHarvestingToolsDesc,Increase [DECEA3]Harvesting Tool Crafting[-] by reading research papers.\nWhen enough research has been read, [DECEA3]purchase[-] your skills.
-craftingKnucklesDesc,Increase [DECEA3]Knuckle Crafting[-] by reading research papers.\nWhen enough research has been read, [DECEA3]purchase[-] your skills.
-craftingMachineGunsDesc,Increase [DECEA3]Machine Gun Crafting[-] by reading research papers.\nWhen enough research has been read, [DECEA3]purchase[-] your skills.
-craftingMedicalDesc,Increase [DECEA3]Medical Crafting[-] by reading research papers.\nWhen enough research has been read, [DECEA3]purchase[-] your skills.
-craftingRepairToolsDesc,Increase [DECEA3]Repair Tool Crafting[-] by reading research papers.\nWhen enough research has been read, [DECEA3]purchase[-] your skills.
-craftingRiflesDesc,Increase [DECEA3]Rifle Crafting[-] by reading research papers.\nWhen enough research has been read, [DECEA3]purchase[-] your skills.
-craftingRoboticsDesc,Increase [DECEA3]Robotics Crafting[-] by reading research papers.\nWhen enough research has been read, [DECEA3]purchase[-] your skills.
-craftingSalvageToolsDesc,Increase [DECEA3]Salvage Tool Crafting[-] by reading research papers.\nWhen enough research has been read, [DECEA3]purchase[-] your skills.
-craftingSeedsDesc,Increase [DECEA3]Seed Crafting[-] by reading research papers.\nWhen enough research has been read, [DECEA3]purchase[-] your skills.
-craftingShotgunsDesc,Increase [DECEA3]Shotgun Crafting[-] by reading research papers.\nWhen enough research has been read, [DECEA3]purchase[-] your skills.
-craftingSledgehammersDesc,Increase [DECEA3]Sledgehammer Crafting[-] by reading research papers.\nWhen enough research has been read, [DECEA3]purchase[-] your skills.
-craftingSpearsDesc,Increase [DECEA3]Spear Crafting[-] by reading research papers.\nWhen enough research has been read, [DECEA3]purchase[-] your skills.
-craftingTrapsDesc,Increase [DECEA3]Trap Crafting[-] by reading research papers.\nWhen enough research has been read, [DECEA3]purchase[-] your skills.
-craftingVehiclesDesc,Increase [DECEA3]Vehicle Crafting[-] by reading research papers.\nWhen enough research has been read, [DECEA3]purchase[-] your skills.
-craftingWorkstationsDesc,Increase [DECEA3]Workstation Crafting[-] by reading research papers.\nWhen enough research has been read, [DECEA3]purchase[-] your skills.
+craftingArmorDesc,Increase [DECEA3]Armour Crafting[-] by gathering research papers.\nWhen enough research has been gathered, [DECEA3]purchase[-] your skills.
+craftingBladesDesc,Increase [DECEA3]Blades Crafting[-] by gathering research papers.\nWhen enough research has been gathered, [DECEA3]purchase[-] your skills.
+craftingBowsDesc,Increase [DECEA3]Bows Crafting[-] by gathering research papers.\nWhen enough research has been gathered, [DECEA3]purchase[-] your skills.
+craftingClubsDesc,Increase [DECEA3]Club Crafting[-] by gathering research papers.\nWhen enough research has been gathered, [DECEA3]purchase[-] your skills.
+craftingElectricianDesc,Increase [DECEA3]Electrical Crafting[-] by gathering research papers.\nWhen enough research has been gathered, [DECEA3]purchase[-] your skills.
+craftingExplosivesDesc,Increase [DECEA3]Explosive Crafting[-] by gathering research papers.\nWhen enough research has been gathered, [DECEA3]purchase[-] your skills.
+craftingFoodDesc,Increase [DECEA3]Food Crafting[-] by gathering research papers.\nWhen enough research has been gathered, [DECEA3]purchase[-] your skills.
+craftingHandgunsDesc,Increase [DECEA3]Handgun Crafting[-] by gathering research papers.\nWhen enough research has been gathered, [DECEA3]purchase[-] your skills.
+craftingHarvestingToolsDesc,Increase [DECEA3]Harvesting Tool Crafting[-] by gathering research papers.\nWhen enough research has been gathered, [DECEA3]purchase[-] your skills.
+craftingKnucklesDesc,Increase [DECEA3]Knuckle Crafting[-] by gathering research papers.\nWhen enough research has been gathered, [DECEA3]purchase[-] your skills.
+craftingMachineGunsDesc,Increase [DECEA3]Machine Gun Crafting[-] by gathering research papers.\nWhen enough research has been gathered, [DECEA3]purchase[-] your skills.
+craftingMedicalDesc,Increase [DECEA3]Medical Crafting[-] by gathering research papers.\nWhen enough research has been gathered, [DECEA3]purchase[-] your skills.
+craftingRepairToolsDesc,Increase [DECEA3]Repair Tool Crafting[-] by gathering research papers.\nWhen enough research has been gathered, [DECEA3]purchase[-] your skills.
+craftingRiflesDesc,Increase [DECEA3]Rifle Crafting[-] by gathering research papers.\nWhen enough research has been gathered, [DECEA3]purchase[-] your skills.
+craftingRoboticsDesc,Increase [DECEA3]Robotics Crafting[-] by gathering research papers.\nWhen enough research has been gathered, [DECEA3]purchase[-] your skills.
+craftingSalvageToolsDesc,Increase [DECEA3]Salvage Tool Crafting[-] by gathering research papers.\nWhen enough research has been gathered, [DECEA3]purchase[-] your skills.
+craftingSeedsDesc,Increase [DECEA3]Seed Crafting[-] by gathering research papers.\nWhen enough research has been gathered, [DECEA3]purchase[-] your skills.
+craftingShotgunsDesc,Increase [DECEA3]Shotgun Crafting[-] by gathering research papers.\nWhen enough research has been gathered, [DECEA3]purchase[-] your skills.
+craftingSledgehammersDesc,Increase [DECEA3]Sledgehammer Crafting[-] by gathering research papers.\nWhen enough research has been gathered, [DECEA3]purchase[-] your skills.
+craftingSpearsDesc,Increase [DECEA3]Spear Crafting[-] by gathering research papers.\nWhen enough research has been gathered, [DECEA3]purchase[-] your skills.
+craftingTrapsDesc,Increase [DECEA3]Trap Crafting[-] by gathering research papers.\nWhen enough research has been gathered, [DECEA3]purchase[-] your skills.
+craftingVehiclesDesc,Increase [DECEA3]Vehicle Crafting[-] by gathering research papers.\nWhen enough research has been gathered, [DECEA3]purchase[-] your skills.
+craftingWorkstationsDesc,Increase [DECEA3]Workstation Crafting[-] by gathering research papers.\nWhen enough research has been gathered, [DECEA3]purchase[-] your skills.
 dewCollectorEmpty,{0} Open {1} ([DECEA3]Empty[-])
 dewCollectorHasDirtyWater,{0} Open {1} ([228B22]Collect[-])
 dewCollectorHasWater,{0} Open {1} ([228B22]Collect[-])
@@ -290,11 +295,17 @@ foodVagabondStew,Vagabond Stew
 foodVagabondStewDesc,"No dogs anymore, so someone might as well eat it.\n\nMakes dog food just about edible."
 honeyBee,Bee
 honeyBeeDesc,A wild honey bee. Will produce up to 10 honey when placed in a bee hive.
+lblchromium,Chrome
+lblcopper,Copper
+lbllimestone,Lime
+lblzinc,Zinc
 materialMresourceWoodScraps,Building
 meleeToolFarmT2IronHoe,Garden Hoe
 meleeToolFarmT2IronHoeDesc,"Required for fertilizing terrain, and farmplots found in the world.\n\nNot required for crafted farm plots.\n\nRequires you to have at least 10 fertilizer in your inventory.\nUse your secondary action[FFB400][action:local:Secondary][-] to hoe the ground and use the fertilizer."
 meleeToolFarmT2IronHoeSchematic,Garden Hoe Schematic
 meleeToolTorchDesc,This torch can be used as a portable light source or weapon with a chance to catch enemies on fire.\n\nCan also be used to craft a placeable wall torch. Requires gas to ignite.
+meleeWpnBladeLegendaryBrushKnife,"Subquake's Indignation"
+meleeWpnBladeLegendaryBrushKnifeDesc,"Half paintbrush, half knife—Subquake’s masterpiece of spite. A handle crusted with old pigment, a blade honed on broken palettes; it slashes and smears in the same motion, leaving furious streaks that never quite wash out.\n\nLegendary: for artists who sign their work in blood and don’t wait for the paint to dry."
 meleeWpnLegendaryGardenRake,"Fury's Harvest"
 meleeWpnLegendaryGardenRakeDesc,"Forged in the fires of a long-lost kingdom, this legendary battle rake known as Fury's Harvest is a fearsome weapon that combines beauty and brutality. Its handle, made from the heartwood of an ancient tree, is imbued with the strength of a thousand warriors. The tines, sharp as daggers and are said to have cleaved through armor and stone alike. In the annals of history, it was wielded by a legendary hero during a great war, turning the tide of battle with each swing"
 meleeWpnBladeLegendaryPaintBrush,"Red's Legendary Paintbrush"
@@ -1018,7 +1029,7 @@ perkDemolitionsExpertRank49Desc,Demolitions Expert IX
 perkDemolitionsExpertRank49LongDesc,"Demolitions Expert IX. Explosives deal +49% damage to entities and +49% to blocks, weapon handling +49%, reload +34.3%, and dismember chance +49% with explosives. Perception synergy: headshot damage +98% and dismember chance +44% when using Perception-tagged weapons."
 perkDemolitionsExpertRank50Desc,Demolitions Expert X
 perkDemolitionsExpertRank50LongDesc,"Demolitions Expert X. Explosives deal +50% damage to entities and +50% to blocks, weapon handling +50%, reload +35.0%, and dismember chance +50% with explosives. Perception synergy: headshot damage +100% and dismember chance +45% when using Perception-tagged weapons."
-perkElectrocutionerDesc,Learn how to use batons more effectively. Incapacitate your victims easier and do more damage.
+perkElectrocutionerDesc,You are fascinated with robotics. Learn to use and deploy robotic weapons.
 perkElectrocutionerRank1Desc,Spark I
 perkElectrocutionerRank1LongDesc,"Spark I. Baton & shock weapons: +1% block damage, +1% entity damage. Stamina use: -1.0% (primary), -1% (power). Weapons degrade 1% slower per hit (if Degradation is enabled). Loot: batons & turrets Find chance +2.0%. Books: Tech Junkie Find chance +2.0% until the set is completed (then 0%). On kill: +0.3. Stamina."
 perkElectrocutionerRank2Desc,Spark II
@@ -1624,9 +1635,6 @@ perkMachineGunnerRank49LongDesc,"Machine Gunner IX. LMGs & ARs: block damage +97
 perkMachineGunnerRank50Desc,Machine Gunner X
 perkMachineGunnerRank50LongDesc,"Machine Gunner X. LMGs & ARs: block damage +100%, entity damage +50%. Fire rate +25.0%, reload speed +30.0%. Stamina use: primary -25.0%, secondary -50.0%. Weapons degrade 50% slower per shot (if durability is enabled). Find chance: machine guns +10.0%, 7.62mm ammo +10.0%. Automatic Weapons books +10.0% until complete. Fortitude synergy: headshot +100%, dismember +45%. On hit: regain +6 Stamina (1.0s delay)."
 perkMasterChefDesc,Learn how to become a Master Chef! Decrease cooking time and ingredients needed for your favorite recipes.
-perkMasterChefRank1LongDesc,"Cooking is not your thing, but you know some basics.\nUse 20% less of a recipe's main ingredients.\nCook 40% faster."
-perkMasterChefRank2LongDesc,Don't let good food go to waste!\nAdds a chance to find salvageable food in dumpsters.\nCook 60% faster.
-perkMasterChefRank3LongDesc,Cooking for an Army?\nUse 40% less of a recipe's main ingredients.\nCook 80% faster.
 perkMediumArmorDesc,"Specialize in medium armor to reduce degradation, stamina, and movement penalties."
 perkMiner69rRank1Desc,Rock Hound I
 perkMiner69rRank1LongDesc,"Rock Hound I. Mining tools: block damage +1%, entity damage +1%. Harvest yield +1%. Stamina use: primary -1.0%, secondary -1.0%. Tools degrade 1% slower per hit (if durability is enabled). Flurry of Strength: +5.0% attack speed. Find chance: harvesting tools +2.0%. Art of Mining books +2.0% until complete."
@@ -2130,7 +2138,6 @@ perkSkullCrusherRank50Desc,Skull Crusher X
 perkSkullCrusherRank50LongDesc,"Skull Crusher X. Sledgehammers: block damage +100%, entity damage +50%. Stamina use: primary -25.0%, secondary -50.0%. Weapons degrade 50% slower per hit (if durability is enabled). Flurry of Strength: +25.0% attack speed. Find chance: sledges +10.0%. Sledge Saga books +10.0% until complete. Strength synergy: headshot +100%, dismember +45%. Knockdown: KD II 75% (power) + AOE KD I 50% (1.4m). On kill: regain +45.0 Stamina after 1.0s."
 perkSledgeSagaDegradationDesc,Sledgehammers degrade 10% slower.
 perkSledgeSagaDegradationLongDesc,Maintenance: Maximize every swing to reduce degradation. Sledgehammers degrade 10% slower.
-perkTurretsDesc,You are fascinated with robotics. Learn to use and deploy robotic weapons.
 perkTurretsRank1Desc,Tinkerer I
 perkTurretsRank1LongDesc,"Tinkerer I. 0%, reload +1.0%, magazine +0 (ranged only), entity damage +1.0%, block damage +1.0% (melee only), durability loss -1%. Looting: +2.0% chance to find batons & turrets; Tech Junkie book chance +2.0% until completed. Junk turret active range 10.0; active turrets: 1."
 perkTurretsRank2Desc,Tinkerer II
@@ -2325,6 +2332,22 @@ resourceSawBladeDesc,A crucial compenent for constructing a sawmill.
 resourceWoodDesc,"A piece of wood. Great for building tools and constructing wood frames for building.\n\nPlace logs like a block and chop with an axe, or use a sawmill for a higher yield."
 resourceWoodScraps,Wood scraps
 resourceWoodScrapsDesc,"Small fragments of wood.\n\nCan be used for fuel and basic building blocks, but not much else."
+resourceChromium,Chromium
+resourceChromiumDesc,"A core resource for crafting and forging. Required ingredient for steel."
+resourceCopper,Copper
+resourceCopperDesc,"A core resource for crafting and forging. Required ingredient for brass."
+resourceLimestone,Limestone
+resourceLimestoneDesc,"A core resource for crafting and forging. Required ingredient for concrete."
+resourceZinc,Zinc
+resourceZincDesc,"A core resource for crafting and forging. Required ingredient for brass."
+resourceChromiumBundle,Stack of Chromium (6000)
+resourceChromiumBundleDesc,This is a compact stack of chromium. Use this item to open and unpack it.
+resourceCopperBundle,Stack of Copper (6000)
+resourceCopperBundleDesc,This is a compact stack of copper. Use this item to open and unpack it.
+resourceLimestoneBundle,Stack of Limestone (6000)
+resourceLimestoneBundleDesc,This is a compact stack of limestone. Use this item to open and unpack it.
+resourceZincBundle,Stack of Zinc (6000)
+resourceZincBundleDesc,This is a compact stack of zinc. Use this item to open and unpack it.
 spentWallTorch,Spent Torch
 spentWallTorchDesc,"A spent torch. Can be reused to craft another wall torch"
 statCureDespair,Treat Despair
@@ -2338,6 +2361,22 @@ tameChicken,Chicken
 tameChickenDesc,"A chicken. Will produce up to 20 eggs when place in a chicken coop.\n\nCan also be used in recipes at a campfire or wood burning stove."
 tameRabbit,Rabbit
 tameRabbitDesc,Used in recipes at a campfire or wood burning stove.
+terrOreChromium,Chromium Ore
+terrOreCopper,Copper Ore
+terrOreLimestone,Limestone Ore
+terrOreZinc,Zinc Ore
+oreChromiumBoulder,Chromium Ore Boulder
+oreCopperBoulder,Copper Ore Boulder
+oreLimestoneBoulder,Limestone Ore Boulder
+oreZincBoulder,Zinc Ore Boulder
+terrOreStoneChromiumRandom,= Chromium Vein = Helper
+terrOreStoneChromiumRandomDesc,Chromium / Stone / Sandstone
+terrOreStoneCopperRandom,= Copper Vein = Helper
+terrOreStoneCopperRandomDesc,Copper / Stone / Sandstone
+terrOreStoneLimestoneRandom,= Limestone Vein = Helper
+terrOreStoneLimestoneRandomDesc,Limestone / Stone / Sandstone
+terrOreStoneZincRandom,= Zinc Vein = Helper
+terrOreStoneZincRandomDesc,Zinc / Stone / Sandstone
 toolAmmoPress,Ammunition Press
 toolAmmoPressDesc,This tool is required to assemble and dismantle firearm rounds at a workbench.
 toolBeeFrame,Honeycomb Frame

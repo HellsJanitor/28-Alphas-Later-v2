@@ -4,6 +4,54 @@
 The idea behind this mod is to slow progression, make traders less powerful, and generally extend the time for a playthrough, while keeping the vanilla look and feel.
 
 > [!IMPORTANT]
+> 5/10/25 mod version 2.4.1.0 changelog:
+
+> [!CAUTION]
+> This update *should* be save game safe, but ensure you **back up your save** first!
+
+> [!NOTE]
+> If you are starting a new save, especially a new RWG map, the new ores will appear randomly in biomes.
+> If you are **NOT** starting a new save, you *should* find new ore nodes in areas of the map that you have **not yet discovered**, ie: any are of the map still 'greyed out'
+
+Added 4 custom ore; chromium (wasteland, required for steel), limestone (burnt biome, required for concrete), copper (snow, a component for brass), and zinc (desert, another component for brass). All ores can mined, and smelted in the forge.
+
+Forge now has 3 input slots.
+
+Fixed a bug with challenges for reading magazines; replaced with collecting research paper.
+
+Re-added charged and infernal zombie archetypes, but lowered their base health to be in line with radiated zombies.
+
+Removed the  double damage from rad businessmen and rad utility workers.
+
+Added a 25% damage buff to radiated, infernal and charged zombies.
+
+Added a 50% damage boost to wight zombies.
+
+Fixed bloodmoon entity groups so all zombies appear at the correct gamestage.
+
+Fixed custom biker armour so it has the correct mod slots, in line with all other armour types.
+
+Lowered the count of portable device batteries in Mo Power shelves.
+
+Lowered the amount of all firearm ammo in loot.
+
+Added a new Legendary weapon, 'Subquake's Indignation'.
+
+Adjustments for recipes, including new ore bundles.
+
+Changed the Packmule damage mitigated sound to a more suitable one.
+
+All schematics and books can be scrapped to research paper.
+
+Cleaned up the UI crafting queue for the wood burning stove.
+
+Capped research paper requirements to a maximum of 2k per level.
+
+Fixed the sounds when capturing rabbits.
+
+Various tweaks and localization fixes.
+
+> [!IMPORTANT]
 > 20/09/25 mod version 2.3.1.0 changelog **(NEW SAVE RECOMMENDED)**:
 
 ### Crafting research:
