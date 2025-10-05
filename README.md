@@ -326,7 +326,7 @@ The Ruin Runner is a dirt bike, with similar speed to the motorcycle, but the in
 
 **Hybrid Action skills						- Author: JoeSloMo**
 
-**WMMVideoOptions							- Author: w00kien00kie
+**WMMVideoOptions							- Author: w00kien00kie**
 
 **OcbMicroSplat								- Author: OCB Maurice**
 
