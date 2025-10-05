@@ -49,6 +49,8 @@ Capped research paper requirements to a maximum of 2k per level.
 
 Fixed the sounds when capturing rabbits.
 
+Added WookieNookies video game options mod.
+
 Various tweaks and localization fixes.
 
 > [!IMPORTANT]
@@ -323,6 +325,10 @@ The Ruin Runner is a dirt bike, with similar speed to the motorcycle, but the in
 **Logical Loot (xml code)					- Author: izPreBuilt**
 
 **Hybrid Action skills						- Author: JoeSloMo**
+
+**WMMVideoOptions							- Author: w00kien00kie
+
+**OcbMicroSplat								- Author: OCB Maurice**
 
 						
 Also a huge thank you to Frantic_Dan and redbeardt for the custom HUD base code and main menu localization changes, to Tormented Emu for retexturing of weapons, Frantic_Dan for xml contributions, and to YubiNashi and Frantic_Dan for ideas/balancing and playtesting - and to you, for giving my mod a try :)
