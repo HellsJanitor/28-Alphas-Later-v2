@@ -13,6 +13,9 @@ The idea behind this mod is to slow progression, make traders less powerful, and
 > If you are starting a new save, especially a new RWG map, the new ores will appear randomly in biomes.
 > If you are **NOT** starting a new save, you *should* find new ore nodes in areas of the map that you have **not yet discovered**, ie: any are of the map still 'greyed out'
 
+> [!NOTE]
+> If you are using the mod on a hosted server, you **do not** need to upload the **WMMVidoOptions** folder; it's client-side **only**
+
 Added 4 custom ore; chromium (wasteland, required for steel), limestone (burnt biome, required for concrete), copper (snow, a component for brass), and zinc (desert, another component for brass). All ores can mined, and smelted in the forge.
 
 Forge now has 3 input slots.
