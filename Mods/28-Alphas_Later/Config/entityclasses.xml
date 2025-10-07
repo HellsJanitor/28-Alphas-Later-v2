@@ -431,7 +431,7 @@
 		<passive_effect name="EntityDamage" operation="perc_add" value=".5"/>
 	</append>
 	
-	<!-- give charged and infernal the radiated health pools -->
+	<!-- *** give charged and infernal the radiated health pools -->
 	<set xpath="/entity_classes/entity_class/effect_group[@name='Base Effects']/passive_effect[@name='HealthMax' and @value='^healthSlimCharged']/@value">^healthSlimRadiated</set>
 	<set xpath="/entity_classes/entity_class/effect_group[@name='Base Effects']/passive_effect[@name='HealthMax' and @value='^healthSlimInfernal']/@value">^healthSlimRadiated</set>
 	
@@ -481,7 +481,7 @@
 		<!-- *** rotten -->
 		<entity_class name="zombieArleneRotten" extends="zombieArlene">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker"/>
+			<property name="Tags" value="entity,zombie,walker,allbiome"/>
 			<property name="Mesh" value="@:Entities/Zombies/Arlene/ZArlene.prefab"/>
 			<!-- <property name="MatColor" value="rotten"/> -->
 			<!-- Gameplay zombieRotten -->
@@ -496,7 +496,7 @@
 		
 		<entity_class name="zombieMarleneRotten" extends="zombieMarlene">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker"/>
+			<property name="Tags" value="entity,zombie,walker,allbiome"/>
 			<property name="Mesh" value="@:Entities/Zombies/Marlene/ZMarlene.prefab"/>
 			<!-- <property name="MatColor" value="rotten"/> -->
 			<!-- Gameplay zombieRotten -->
@@ -511,7 +511,7 @@
 		
 		<entity_class name="zombiePartyGirlRotten" extends="zombiePartyGirl">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker"/>
+			<property name="Tags" value="entity,zombie,walker,allbiome"/>
 			<property name="Mesh" value="@:Entities/Zombies/CocktailWaitress/ZCocktailWaitress.prefab"/>
 			<!-- <property name="MatColor" value="rotten"/> -->
 			<!-- Gameplay zombieRotten -->
@@ -526,7 +526,7 @@
 		
 		<entity_class name="zombieNurseRotten" extends="zombieNurse">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker"/>
+			<property name="Tags" value="entity,zombie,walker,allbiome"/>
 			<property name="Mesh" value="@:Entities/Zombies/Nurse/ZNurse.prefab"/>
 			<!-- <property name="MatColor" value="rotten"/> -->
 			<!-- Gameplay zombieRotten -->
@@ -541,7 +541,7 @@
 		
 		<entity_class name="zombieJoeRotten" extends="zombieJoe">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker"/>
+			<property name="Tags" value="entity,zombie,walker,allbiome"/>
 			<property name="Mesh" value="@:Entities/Zombies/Joe/ZJoe.prefab"/>
 			<!-- <property name="MatColor" value="rotten"/> -->
 			<!-- Gameplay zombieRotten -->
@@ -556,7 +556,7 @@
 		
 		<entity_class name="zombieSteveRotten" extends="zombieSteve">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker"/>
+			<property name="Tags" value="entity,zombie,walker,allbiome"/>
 			<property name="Mesh" value="@:Entities/Zombies/Steve/ZSteve.prefab"/>
 			<!-- <property name="MatColor" value="rotten"/> -->
 			<!-- Gameplay zombieRotten -->
@@ -571,7 +571,7 @@
 		
 		<entity_class name="zombieTomClarkRotten" extends="zombieTomClark">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker"/>
+			<property name="Tags" value="entity,zombie,walker,allbiome"/>
 			<property name="Mesh" value="@:Entities/Zombies/TomClark/ZTomClark.prefab"/>
 			<!-- <property name="MatColor" value="rotten"/> -->
 			<!-- Gameplay zombieRotten -->
@@ -586,7 +586,7 @@
 		
 		<entity_class name="zombieBusinessManRotten" extends="zombieBusinessMan">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker"/>
+			<property name="Tags" value="entity,zombie,walker,allbiome"/>
 			<property name="Mesh" value="@:Entities/Zombies/Suit/ZSuit.prefab"/>
 			<!-- <property name="MatColor" value="rotten"/> -->
 			<!-- Gameplay zombieRotten -->
@@ -616,7 +616,7 @@
 		
 		<entity_class name="zombieSpiderRotten" extends="zombieSpider">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker"/>
+			<property name="Tags" value="entity,zombie,walker,allbiome"/>
 			<property name="Mesh" value="@:Entities/Zombies/Spider/ZSpider.prefab"/>
 			<property name="HandItem" value="meleeHandZombieSpider"/>
 			<!-- <property name="MatColor" value="rotten"/> -->
@@ -632,7 +632,7 @@
 		
 		<entity_class name="zombieBoeRotten" extends="zombieBoe">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker"/>
+			<property name="Tags" value="entity,zombie,walker,allbiome"/>
 			<property name="Mesh" value="@:Entities/Zombies/Boe/ZBoe.prefab"/>
 			<!-- <property name="MatColor" value="rotten"/> -->
 			<!-- Gameplay zombieRotten -->
@@ -647,7 +647,7 @@
 		
 		<entity_class name="zombieMaleHazmatRotten" extends="zombieMaleHazmat">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,hazmat"/>
+			<property name="Tags" value="entity,zombie,walker,hazmat,allbiome"/>
 			<property name="Mesh" value="@:Entities/Zombies/Hazmat/ZHazmat.prefab"/>
 			<!-- <property name="MatColor" value="rotten"/> -->
 			<!-- Gameplay zombieRotten -->
@@ -662,7 +662,7 @@
 		
 		<entity_class name="zombieJanitorRotten" extends="zombieJanitor">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker"/>
+			<property name="Tags" value="entity,zombie,walker,allbiome"/>
 			<property name="Mesh" value="@:Entities/Zombies/Mechanic/ZMechanic.prefab"/>
 			<!-- <property name="MatColor" value="rotten"/> -->
 			<!-- Gameplay zombieRotten -->
@@ -677,7 +677,7 @@
 		
 		<entity_class name="zombieInmateRotten" extends="zombieInmate">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker"/>
+			<property name="Tags" value="entity,zombie,walker,allbiome"/>
 			<property name="Mesh" value="@:Entities/Zombies/Mechanic/ZInmate.prefab"/>
 			<!-- <property name="MatColor" value="rotten"/> -->
 			<!-- Gameplay zombieRotten -->
@@ -692,7 +692,7 @@
 		
 		<entity_class name="zombieMoeRotten" extends="zombieMoe">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker"/>
+			<property name="Tags" value="entity,zombie,walker,allbiome"/>
 			<property name="Mesh" value="@:Entities/Zombies/Moe/ZMoe.prefab"/>
 			<!-- <property name="MatColor" value="rotten"/> -->
 			<!-- Gameplay zombieRotten -->
@@ -707,7 +707,7 @@
 		
 		<entity_class name="zombieLabRotten" extends="zombieLab">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker"/>
+			<property name="Tags" value="entity,zombie,walker,allbiome"/>
 			<property name="Mesh" value="@:Entities/Zombies/Lab/ZLab.prefab"/>
 			<!-- <property name="MatColor" value="rotten"/> -->
 			<!-- Gameplay zombieRotten -->
@@ -722,7 +722,7 @@
 		
 		<entity_class name="zombieDarleneRotten" extends="zombieDarlene">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker"/>
+			<property name="Tags" value="entity,zombie,walker,allbiome"/>
 			<property name="Mesh" value="@:Entities/Zombies/Darlene/ZDarlene.prefab"/>
 			<!-- <property name="MatColor" value="rotten"/> -->
 			<!-- Gameplay zombieRotten -->
@@ -737,7 +737,7 @@
 		
 		<entity_class name="zombieYoRotten" extends="zombieYo">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker"/>
+			<property name="Tags" value="entity,zombie,walker,allbiome"/>
 			<property name="Mesh" value="@:Entities/Zombies/Yo/ZYo.prefab"/>
 			<!-- <property name="MatColor" value="rotten"/> -->
 			<!-- Gameplay zombieRotten -->
@@ -752,7 +752,7 @@
 		
 		<entity_class name="zombieUtilityWorkerRotten" extends="zombieUtilityWorker">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker"/>
+			<property name="Tags" value="entity,zombie,walker,allbiome"/>
 			<property name="Mesh" value="@:Entities/Zombies/Worker/ZWorker.prefab"/>
 			<!-- <property name="MatColor" value="rotten"/> -->
 			<!-- Gameplay zombieRotten -->
@@ -767,7 +767,7 @@
 		
 		<entity_class name="zombieBikerRotten" extends="zombieBiker">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker"/>
+			<property name="Tags" value="entity,zombie,walker,allbiome"/>
 			<property name="Mesh" value="@:Entities/Zombies/Biker/ZBiker.prefab"/>
 			<!-- <property name="MatColor" value="rotten"/> -->
 			<!-- Gameplay zombieRotten -->
@@ -782,7 +782,7 @@
 		
 		<entity_class name="zombieLumberjackRotten" extends="zombieLumberjack">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker"/>
+			<property name="Tags" value="entity,zombie,walker,allbiome"/>
 			<property name="Mesh" value="@:Entities/Zombies/Lumberjack/ZLumberjack.prefab"/>
 			<!-- <property name="MatColor" value="rotten"/> -->
 			<!-- Gameplay zombieRotten -->
@@ -798,7 +798,7 @@
 		<entity_class name="zombieFemaleFatRotten" extends="zombieFemaleFat">
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Class" value="EntityZombieCop"/>
-			<property name="Tags" value="entity,zombie,walker"/>
+			<property name="Tags" value="entity,zombie,walker,allbiome"/>
 			<property name="Mesh" value="@:Entities/Zombies/BigMama/ZBigMama.prefab"/>
 			<!-- <property name="MatColor" value="rotten"/> -->
 			<property name="SoundExplodeWarn" value="hulkexplodewarning"/>
@@ -835,7 +835,7 @@
 		<entity_class name="zombieFatHawaiianRotten" extends="zombieFatHawaiian">
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Class" value="EntityZombieCop"/>
-			<property name="Tags" value="entity,zombie,walker"/>
+			<property name="Tags" value="entity,zombie,walker,allbiome"/>
 			<property name="Mesh" value="@:Entities/Zombies/Hawaiian/ZHawaiian.prefab"/>
 			<!-- <property name="MatColor" value="rotten"/> -->
 			<property name="SoundExplodeWarn" value="hulkexplodewarning"/>
@@ -872,7 +872,7 @@
 		<entity_class name="zombieBowlerRotten" extends="zombieBowler">
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Class" value="EntityZombieCop"/>
-			<property name="Tags" value="entity,zombie,walker"/>
+			<property name="Tags" value="entity,zombie,walker,allbiome"/>
 			<property name="Mesh" value="@:Entities/Zombies/Hawaiian/ZBowler.prefab"/>
 			<!-- <property name="MatColor" value="rotten"/> -->
 			<property name="SoundExplodeWarn" value="hulkexplodewarning"/>
@@ -909,7 +909,7 @@
 		<entity_class name="zombieFatCopRotten" extends="zombieFatCop">
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Class" value="EntityZombieCop"/>
-			<property name="Tags" value="entity,zombie,walker"/>
+			<property name="Tags" value="entity,zombie,walker,allbiome"/>
 			<property name="Mesh" value="@:Entities/Zombies/Cop/ZCop.prefab"/>
 			<!-- <property name="MatColor" value="rotten"/> -->
 			<property name="SoundExplodeWarn" value="hulkexplodewarning"/>
@@ -934,7 +934,7 @@
 		
 		<entity_class name="zombieSkateboarderRotten" extends="zombieSkateboarder">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker"/>
+			<property name="Tags" value="entity,zombie,walker,allbiome"/>
 			<property name="Mesh" value="@:Entities/Zombies/Thug/ZThug.prefab"/>
 			<!-- <property name="MatColor" value="rotten"/> -->
 			<!-- Gameplay zombieRotten -->
@@ -949,7 +949,7 @@
 		
 		<entity_class name="zombieSoldierRotten" extends="zombieSoldier">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker"/>
+			<property name="Tags" value="entity,zombie,walker,allbiome"/>
 			<property name="Mesh" value="@:Entities/Zombies/Soldier/ZSoldier.prefab"/>
 			<!-- <property name="MatColor" value="rotten"/> -->
 			<!-- Gameplay zombieRotten -->
@@ -964,7 +964,7 @@
 		
 		<entity_class name="zombieSteveCrawlerRotten" extends="zombieSteveCrawler">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,crawler"/>
+			<property name="Tags" value="entity,zombie,crawler,allbiome"/>
 			<property name="Mesh" value="@:Entities/Zombies/Crawler/ZCrawler.prefab"/>
 			<!-- <property name="MatColor" value="rotten"/> -->
 			<!-- Gameplay zombieRotten -->
@@ -980,7 +980,7 @@
 		<!-- *** weak (in between rotten and normal) -->
 		<entity_class name="zombieArleneWeak" extends="zombieArlene">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,weak"/>
+			<property name="Tags" value="entity,zombie,walker,weak,allbiome"/>
 			<!-- <property name="MatColor" value="weak"/> -->
 			
 			<effect_group name="Base Effects">
@@ -992,7 +992,7 @@
 		
 		<entity_class name="zombieMarleneWeak" extends="zombieMarlene">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,weak"/>
+			<property name="Tags" value="entity,zombie,walker,weak,allbiome"/>
 			<!-- <property name="MatColor" value="weak"/> -->
 			
 			<effect_group name="Base Effects">
@@ -1003,7 +1003,7 @@
 		
 		<entity_class name="zombiePartyGirlWeak" extends="zombiePartyGirl">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,weak"/>
+			<property name="Tags" value="entity,zombie,walker,weak,allbiome"/>
 			<!-- <property name="MatColor" value="weak"/> -->
 			
 			<effect_group name="Base Effects">
@@ -1014,7 +1014,7 @@
 		
 		<entity_class name="zombieNurseWeak" extends="zombieNurse">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,weak"/>
+			<property name="Tags" value="entity,zombie,walker,weak,allbiome"/>
 			<!-- <property name="MatColor" value="weak"/> -->
 			
 			<effect_group name="Base Effects">
@@ -1025,7 +1025,7 @@
 		
 		<entity_class name="zombieJoeWeak" extends="zombieJoe">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,weak"/>
+			<property name="Tags" value="entity,zombie,walker,weak,allbiome"/>
 			<!-- <property name="MatColor" value="weak"/> -->
 			
 			<effect_group name="Base Effects">
@@ -1036,7 +1036,7 @@
 		
 		<entity_class name="zombieSteveWeak" extends="zombieSteve">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,weak"/>
+			<property name="Tags" value="entity,zombie,walker,weak,allbiome"/>
 			<!-- <property name="MatColor" value="weak"/> -->
 			
 			<effect_group name="Base Effects">
@@ -1047,7 +1047,7 @@
 		
 		<entity_class name="zombieTomClarkWeak" extends="zombieTomClark">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,weak"/>
+			<property name="Tags" value="entity,zombie,walker,weak,allbiome"/>
 			<!-- <property name="MatColor" value="weak"/> -->
 			
 			<effect_group name="Base Effects">
@@ -1058,7 +1058,7 @@
 		
 		<entity_class name="zombieBusinessManWeak" extends="zombieBusinessMan">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,weak"/>
+			<property name="Tags" value="entity,zombie,walker,weak,allbiome"/>
 			<!-- <property name="MatColor" value="weak"/> -->
 			
 			<effect_group name="Base Effects">
@@ -1080,7 +1080,7 @@
 		
 		<entity_class name="zombieSpiderWeak" extends="zombieSpider">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,weak"/>
+			<property name="Tags" value="entity,zombie,walker,weak,allbiome"/>
 			<!-- <property name="MatColor" value="weak"/> -->
 			
 			<effect_group name="Base Effects">
@@ -1091,7 +1091,7 @@
 		
 		<entity_class name="zombieBoeWeak" extends="zombieBoe">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,weak"/>
+			<property name="Tags" value="entity,zombie,walker,weak,allbiome"/>
 			<!-- <property name="MatColor" value="weak"/> -->
 			
 			<effect_group name="Base Effects">
@@ -1102,7 +1102,7 @@
 		
 		<entity_class name="zombieMaleHazmatWeak" extends="zombieMaleHazmat">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,weak"/>
+			<property name="Tags" value="entity,zombie,walker,weak,allbiome"/>
 			<!-- <property name="MatColor" value="weak"/> -->
 			
 			<effect_group name="Base Effects">
@@ -1113,7 +1113,7 @@
 		
 		<entity_class name="zombieJanitorWeak" extends="zombieJanitor">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,weak"/>
+			<property name="Tags" value="entity,zombie,walker,weak,allbiome"/>
 			<!-- <property name="MatColor" value="weak"/> -->
 			
 			<effect_group name="Base Effects">
@@ -1124,7 +1124,7 @@
 		
 		<entity_class name="zombieInmateWeak" extends="zombieInmate">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,weak"/>
+			<property name="Tags" value="entity,zombie,walker,weak,allbiome"/>
 			<!-- <property name="MatColor" value="weak"/> -->
 			
 			<effect_group name="Base Effects">
@@ -1135,7 +1135,7 @@
 		
 		<entity_class name="zombieMoeWeak" extends="zombieMoe">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,weak"/>
+			<property name="Tags" value="entity,zombie,walker,weak,allbiome"/>
 			<!-- <property name="MatColor" value="weak"/> -->
 			
 			<effect_group name="Base Effects">
@@ -1146,7 +1146,7 @@
 		
 		<entity_class name="zombieLabWeak" extends="zombieLab">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,weak"/>
+			<property name="Tags" value="entity,zombie,walker,weak,allbiome"/>
 			<!-- <property name="MatColor" value="weak"/> -->
 			
 			<effect_group name="Base Effects">
@@ -1157,7 +1157,7 @@
 		
 		<entity_class name="zombieDarleneWeak" extends="zombieDarlene">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,weak"/>
+			<property name="Tags" value="entity,zombie,walker,weak,allbiome"/>
 			<!-- <property name="MatColor" value="weak"/> -->
 			
 			<effect_group name="Base Effects">
@@ -1168,7 +1168,7 @@
 		
 		<entity_class name="zombieYoWeak" extends="zombieYo">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,weak"/>
+			<property name="Tags" value="entity,zombie,walker,weak,allbiome"/>
 			<!-- <property name="MatColor" value="weak"/> -->
 			
 			<effect_group name="Base Effects">
@@ -1179,7 +1179,7 @@
 		
 		<entity_class name="zombieUtilityWorkerWeak" extends="zombieUtilityWorker">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,weak"/>
+			<property name="Tags" value="entity,zombie,walker,weak,allbiome"/>
 			<!-- <property name="MatColor" value="weak"/> -->
 			
 			<effect_group name="Base Effects">
@@ -1190,7 +1190,7 @@
 		
 		<entity_class name="zombieBikerWeak" extends="zombieBiker">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,weak"/>
+			<property name="Tags" value="entity,zombie,walker,weak,allbiome"/>
 			<!-- <property name="MatColor" value="weak"/> -->
 			
 			<effect_group name="Base Effects">
@@ -1201,7 +1201,7 @@
 		
 		<entity_class name="zombieLumberjackWeak" extends="zombieLumberjack">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,weak"/>
+			<property name="Tags" value="entity,zombie,walker,weak,allbiome"/>
 			<!-- <property name="MatColor" value="weak"/> -->
 			
 			<effect_group name="Base Effects">
@@ -1212,7 +1212,7 @@
 		
 		<entity_class name="zombieFemaleFatWeak" extends="zombieFemaleFat">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,weak"/>
+			<property name="Tags" value="entity,zombie,walker,weak,allbiome"/>
 			<!-- <property name="MatColor" value="weak"/> -->
 			<property name="Class" value="EntityZombieCop"/>
 			
@@ -1235,7 +1235,7 @@
 		
 		<entity_class name="zombieFatHawaiianWeak" extends="zombieFatHawaiian">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,weak"/>
+			<property name="Tags" value="entity,zombie,walker,weak,allbiome"/>
 			<!-- <property name="MatColor" value="weak"/> -->
 			<property name="Class" value="EntityZombieCop"/>
 			
@@ -1258,7 +1258,7 @@
 		
 		<entity_class name="zombieBowlerWeak" extends="zombieBowler">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,weak"/>
+			<property name="Tags" value="entity,zombie,walker,weak,allbiome"/>
 			<!-- <property name="MatColor" value="weak"/> -->
 			<property name="Class" value="EntityZombieCop"/>
 			
@@ -1281,7 +1281,7 @@
 		
 		<entity_class name="zombieFatCopWeak" extends="zombieFatCop">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,weak"/>
+			<property name="Tags" value="entity,zombie,walker,weak,allbiome"/>
 			<!-- <property name="MatColor" value="weak"/> -->
 			
 			<effect_group name="Base Effects">
@@ -1295,7 +1295,7 @@
 		
 		<entity_class name="zombieSkateboarderWeak" extends="zombieSkateboarder">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,weak"/>
+			<property name="Tags" value="entity,zombie,walker,weak,allbiome"/>
 			<!-- <property name="MatColor" value="weak"/> -->
 			
 			<effect_group name="Base Effects">
@@ -1306,7 +1306,7 @@
 		
 		<entity_class name="zombieSoldierWeak" extends="zombieSoldier">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,weak"/>
+			<property name="Tags" value="entity,zombie,walker,weak,allbiome"/>
 			<!-- <property name="MatColor" value="weak"/> -->
 			
 			<effect_group name="Base Effects">
@@ -1317,7 +1317,7 @@
 		
 		<entity_class name="zombieScreamerWeak" extends="zombieScreamer">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,weak"/>
+			<property name="Tags" value="entity,zombie,walker,weak,allbiome"/>
 			<!-- <property name="MatColor" value="weak"/> -->
 			
 			<effect_group name="Base Effects">
@@ -1328,7 +1328,7 @@
 		
 		<entity_class name="zombieSteveCrawlerWeak" extends="zombieSteveCrawler">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,weak"/>
+			<property name="Tags" value="entity,zombie,walker,weak,allbiome"/>
 			<!-- <property name="MatColor" value="weak"/> -->
 			
 			<effect_group name="Base Effects">
@@ -1341,7 +1341,7 @@
 		<!-- slightly tougher, slightly slower, slightly more XP, and take more damage than their "standard" versions -->
 		<entity_class name="zombieArleneFrozen" extends="zombieArlene">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,frozen"/>
+			<property name="Tags" value="entity,zombie,walker,frozen,allbiome"/>
 			<!-- <property name="Mesh" value="@:Entities/Zombies/Prefabs/ZArlene.prefab"/> -->
 			<property name="MatColor" value="frozen"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1359,7 +1359,7 @@
 		
 		<entity_class name="zombieMarleneFrozen" extends="zombieMarlene">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,frozen"/>
+			<property name="Tags" value="entity,zombie,walker,frozen,allbiome"/>
 			<!-- <property name="Mesh" value="@:Entities/Zombies/Prefabs/ZMarlene.prefab"/> -->
 			<property name="MatColor" value="frozen"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1376,7 +1376,7 @@
 		
 		<entity_class name="zombiePartyGirlFrozen" extends="zombiePartyGirl">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,frozen"/>
+			<property name="Tags" value="entity,zombie,walker,frozen,allbiome"/>
 			<!-- <property name="Mesh" value="@:Entities/Zombies/Prefabs/ZCocktailWaitress.prefab"/> -->
 			<property name="MatColor" value="frozen"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1393,7 +1393,7 @@
 		
 		<entity_class name="zombieNurseFrozen" extends="zombieNurse">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,frozen"/>
+			<property name="Tags" value="entity,zombie,walker,frozen,allbiome"/>
 			<!-- <property name="Mesh" value="@:Entities/Zombies/Prefabs/ZNurse.prefab"/> -->
 			<property name="MatColor" value="frozen"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1410,7 +1410,7 @@
 		
 		<entity_class name="zombieJoeFrozen" extends="zombieJoe">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,frozen"/>
+			<property name="Tags" value="entity,zombie,walker,frozen,allbiome"/>
 			<!-- <property name="Mesh" value="@:Entities/Zombies/Prefabs/ZJoe.prefab"/> -->
 			<property name="MatColor" value="frozen"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1427,7 +1427,7 @@
 		
 		<entity_class name="zombieSteveFrozen" extends="zombieSteve">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,frozen"/>
+			<property name="Tags" value="entity,zombie,walker,frozen,allbiome"/>
 			<!-- <property name="Mesh" value="@:Entities/Zombies/Prefabs/ZSteve.prefab"/> -->
 			<property name="MatColor" value="frozen"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1444,7 +1444,7 @@
 		
 		<entity_class name="zombieTomClarkFrozen" extends="zombieTomClark">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,frozen"/>
+			<property name="Tags" value="entity,zombie,walker,frozen,allbiome"/>
 			<!-- <property name="Mesh" value="@:Entities/Zombies/Prefabs/ZTomClark.prefab"/> -->
 			<property name="MatColor" value="frozen"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1461,7 +1461,7 @@
 		
 		<entity_class name="zombieBusinessManFrozen" extends="zombieBusinessMan">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,frozen"/>
+			<property name="Tags" value="entity,zombie,walker,frozen,allbiome"/>
 			<!-- <property name="Mesh" value="@:Entities/Zombies/Prefabs/ZSuit.prefab"/> -->
 			<property name="MatColor" value="frozen"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1478,7 +1478,7 @@
 		
 		<entity_class name="zombieSpiderFrozen" extends="zombieSpider">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,frozen"/>
+			<property name="Tags" value="entity,zombie,walker,frozen,allbiome"/>
 			<!-- <property name="Mesh" value="@:Entities/Zombies/Prefabs/ZSpider.prefab"/> -->
 			<property name="HandItem" value="meleeHandZombieSpider"/>
 			<property name="MatColor" value="frozen"/>
@@ -1496,7 +1496,7 @@
 		
 		<entity_class name="zombieBoeFrozen" extends="zombieBoe">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,frozen"/>
+			<property name="Tags" value="entity,zombie,walker,frozen,allbiome"/>
 			<!-- <property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBoe.prefab"/> -->
 			<property name="MatColor" value="frozen"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1513,7 +1513,7 @@
 		
 		<entity_class name="zombieMaleHazmatFrozen" extends="zombieMaleHazmat">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,hazmat"/>
+			<property name="Tags" value="entity,zombie,walker,hazmat,allbiome"/>
 			<!-- <property name="Mesh" value="@:Entities/Zombies/Prefabs/ZHazmat.prefab"/> -->
 			<property name="MatColor" value="frozen"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1530,7 +1530,7 @@
 		
 		<entity_class name="zombieJanitorFrozen" extends="zombieJanitor">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,frozen"/>
+			<property name="Tags" value="entity,zombie,walker,frozen,allbiome"/>
 			<!-- <property name="Mesh" value="@:Entities/Zombies/Prefabs/ZMechanic.prefab"/> -->
 			<property name="MatColor" value="frozen"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1547,7 +1547,7 @@
 		
 		<entity_class name="zombieMoeFrozen" extends="zombieMoe">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,frozen"/>
+			<property name="Tags" value="entity,zombie,walker,frozen,allbiome"/>
 			<!-- <property name="Mesh" value="@:Entities/Zombies/Prefabs/ZMoe.prefab"/> -->
 			<property name="MatColor" value="frozen"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1564,7 +1564,7 @@
 		
 		<entity_class name="zombieLabFrozen" extends="zombieLab">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,frozen"/>
+			<property name="Tags" value="entity,zombie,walker,frozen,allbiome"/>
 			<!-- <property name="Mesh" value="@:Entities/Zombies/Prefabs/ZLab.prefab"/> -->
 			<property name="MatColor" value="frozen"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1581,7 +1581,7 @@
 		
 		<entity_class name="zombieDarleneFrozen" extends="zombieDarlene">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,frozen"/>
+			<property name="Tags" value="entity,zombie,walker,frozen,allbiome"/>
 			<!-- <property name="Mesh" value="@:Entities/Zombies/Prefabs/ZDarlene.prefab"/> -->
 			<property name="MatColor" value="frozen"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1598,7 +1598,7 @@
 		
 		<entity_class name="zombieYoFrozen" extends="zombieYo">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,frozen"/>
+			<property name="Tags" value="entity,zombie,walker,frozen,allbiome"/>
 			<!-- <property name="Mesh" value="@:Entities/Zombies/Prefabs/ZYo.prefab"/> -->
 			<property name="MatColor" value="frozen"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1615,7 +1615,7 @@
 		
 		<entity_class name="zombieUtilityWorkerFrozen" extends="zombieUtilityWorker">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,frozen"/>
+			<property name="Tags" value="entity,zombie,walker,frozen,allbiome"/>
 			<!-- <property name="Mesh" value="@:Entities/Zombies/Prefabs/ZWorker.prefab"/> -->
 			<property name="MatColor" value="frozen"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1632,7 +1632,7 @@
 		
 		<entity_class name="zombieBikerFrozen" extends="zombieBiker">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,frozen"/>
+			<property name="Tags" value="entity,zombie,walker,frozen,allbiome"/>
 			<!-- <property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBiker.prefab"/> -->
 			<property name="MatColor" value="frozen"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1650,7 +1650,7 @@
 		<entity_class name="zombieFemaleFatFrozen" extends="zombieFemaleFat">
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Class" value="EntityZombieCop"/>
-			<property name="Tags" value="entity,zombie,walker,frozen"/>
+			<property name="Tags" value="entity,zombie,walker,frozen,allbiome"/>
 			<!-- <property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBigMama.prefab"/> -->
 			<property name="MatColor" value="frozen"/>
 			<property name="SoundExplodeWarn" value="hulkexplodewarning"/>
@@ -1676,7 +1676,7 @@
 		<entity_class name="zombieFatHawaiianFrozen" extends="zombieFatHawaiian">
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Class" value="EntityZombieCop"/>
-			<property name="Tags" value="entity,zombie,walker,frozen"/>
+			<property name="Tags" value="entity,zombie,walker,frozen,allbiome"/>
 			<!-- <property name="Mesh" value="@:Entities/Zombies/Prefabs/ZHawaiian.prefab"/> -->
 			<property name="MatColor" value="frozen"/>
 			<property name="SoundExplodeWarn" value="hulkexplodewarning"/>
@@ -1700,7 +1700,7 @@
 		
 		<entity_class name="zombieSkateboarderFrozen" extends="zombieSkateboarder">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,frozen"/>
+			<property name="Tags" value="entity,zombie,walker,frozen,allbiome"/>
 			<!-- <property name="Mesh" value="@:Entities/Zombies/Prefabs/ZThug.prefab"/> -->
 			<property name="MatColor" value="frozen"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1717,7 +1717,7 @@
 		
 		<entity_class name="zombieSoldierFrozen" extends="zombieSoldier">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,frozen"/>
+			<property name="Tags" value="entity,zombie,walker,frozen,allbiome"/>
 			<!-- <property name="Mesh" value="@:Entities/Zombies/Prefabs/ZSoldier.prefab"/> -->
 			<property name="MatColor" value="frozen"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1734,7 +1734,7 @@
 		
 		<entity_class name="zombieSteveCrawlerFrozen" extends="zombieSteveCrawler">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,crawler,frozen"/>
+			<property name="Tags" value="entity,zombie,crawler,frozen,allbiome"/>
 			<!-- <property name="Mesh" value="@:Entities/Zombies/Prefabs/ZCrawler.prefab"/> -->
 			<property name="MatColor" value="frozen"/>
 			<!-- Gameplay zombieFrozen -->
@@ -2108,7 +2108,7 @@
 			<property name="PhysicsBody" value="mixamoConvertedStandardZombie"/>
 			<property name="LookAtAngle" value="0"/>
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,feral,mutant"/>
+			<property name="Tags" value="entity,zombie,walker,feral,mutant,allbiome"/>
 			<property name="SoundRandom" value="Enemies/Feral_Zombie/zombieferalroam"/>
 			<property name="SoundAlert" value="Enemies/Feral_Zombie/zombieferalalert"/>
 			<property name="SoundAttack" value="Enemies/Feral_Zombie/zombieferalattack"/>
@@ -2147,7 +2147,7 @@
 		<entity_class name="zombieHellsParasite" extends="zombieTemplateMale">
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="SizeScale" value=".85"/>
-			<property name="Tags" value="entity,zombie,walker,feral,mutant"/>
+			<property name="Tags" value="entity,zombie,walker,feral,mutant,allbiome"/>
 			<property name="Mesh" value="#@modfolder:Resources/parasite.unity3d?ZombieParasite"/>
 			<property name="PhysicsBody" value="mixamoConvertedStandardZombie"/>
 			<property name="LookAtAngle" value="0"/>
@@ -2183,7 +2183,7 @@
 			<property name="PhysicsBody" value="mixamoConvertedStandardZombie"/>
 			<property name="LookAtAngle" value="0"/>
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,feral,mutant"/>
+			<property name="Tags" value="entity,zombie,walker,feral,mutant,allbiome"/>
 			<property name="SoundRandom" value="Enemies/Feral_Zombie/zombieferalroam"/>
 			<property name="SoundAlert" value="Enemies/Feral_Zombie/zombieferalalert"/>
 			<property name="SoundAttack" value="Enemies/Feral_Zombie/zombieferalattack"/>
@@ -2224,7 +2224,7 @@
 			<property name="PhysicsBody" value="mixamoConvertedStandardZombie"/>
 			<property name="LookAtAngle" value="0"/>
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,feral,mutant"/>
+			<property name="Tags" value="entity,zombie,walker,feral,mutant,allbiome"/>
 			<property name="SoundRandom" value="Enemies/Feral_Zombie/zombieferalroam"/>
 			<property name="SoundAlert" value="Enemies/Feral_Zombie/zombieferalalert"/>
 			<property name="SoundAttack" value="Enemies/Feral_Zombie/zombieferalattack"/>
@@ -2265,7 +2265,7 @@
 			<property name="PhysicsBody" value="mixamoConvertedStandardZombie"/>
 			<property name="LookAtAngle" value="0"/>
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,feral,mutant"/>
+			<property name="Tags" value="entity,zombie,walker,feral,mutant,allbiome"/>
 			<property name="SoundRandom" value="Enemies/Feral_Zombie/zombieferalroam"/>
 			<property name="SoundAlert" value="Enemies/Feral_Zombie/zombieferalalert"/>
 			<property name="SoundAttack" value="Enemies/Feral_Zombie/zombieferalattack"/>
@@ -2304,7 +2304,7 @@
 		<entity_class name="zombieHellsMutantBoomer" extends="zombieTemplateMale">
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Class" value="EntityZombieCop"/>
-			<property name="Tags" value="entity,zombie,walker,zombieCop,feral,mutant"/>
+			<property name="Tags" value="entity,zombie,walker,zombieCop,feral,mutant,allbiome"/>
 			<property name="Mesh" value="#@modfolder:Resources/mutantboomer.unity3d?MutantBoomer"/>
 			<property name="LookAtAngle" value="0"/>
 			<property name="RightHandJointName" value="Jaw"/>
@@ -2388,7 +2388,7 @@
 			<property name="PhysicsBody" value="mixamoConvertedStandardZombie"/>
 			<property name="LookAtAngle" value="0"/>
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,feral,mutant"/>
+			<property name="Tags" value="entity,zombie,walker,feral,mutant,allbiome"/>
 			<property name="SoundRandom" value="Enemies/Feral_Zombie/zombieferalroam"/>
 			<property name="SoundAlert" value="Enemies/Feral_Zombie/zombieferalalert"/>
 			<property name="SoundAttack" value="Enemies/Feral_Zombie/zombieferalattack"/>
@@ -2430,7 +2430,7 @@
 			<property name="PhysicsBody" value="mixamoConvertedStandardZombie"/>
 			<property name="LookAtAngle" value="0"/>
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,feral,mutant"/>
+			<property name="Tags" value="entity,zombie,walker,feral,mutant,allbiome"/>
 			<property name="SoundRandom" value="Enemies/Feral_Zombie/zombieferalroam"/>
 			<property name="SoundAlert" value="Enemies/Feral_Zombie/zombieferalalert"/>
 			<property name="SoundAttack" value="Enemies/Feral_Zombie/zombieferalattack"/>
@@ -2465,69 +2465,82 @@
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffDespairAOEMutatedTrigger"/>
 			</effect_group>
 		</entity_class>
+		
+		<!-- <entity_class name="animalMutantBug" extends="animalBear"> -->
+			<!-- <property name="SizeScale" value=".8"/> -->
+			<!-- <property name="Prefab" value="#@modfolder:Resources/mutantbug.unity3d?InsectMonsterSM.prefab"/> -->
+		<!-- </entity_class> -->
 			
-		<entity_class name="animalMutantBug" extends="animalTemplateHostile">
-			<property name="SizeScale" value=".8"/>
-			<property name="Mesh" value="#@modfolder:Resources/mutantbug.unity3d?InsectMonsterSM"/>
-			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,animal,hostile,mutant"/>
-			<property name="AvatarController" value="AvatarAnimalController"/>
-			<property name="LookAtAngle" value="0"/>
-			<property name="IsAnimalEntity" value="true"/>
-			<property name="IsEnemyEntity" value="true"/>
-			<property name="Faction" value="animals"/>
-			<property name="AltMats" value="#@modfolder:Resources/mutantbug.unity3d?InsectMonsterBlack.mat,#@modfolder:Resources/mutantbug.unity3d?InsectMonsterBlue.mat,#@modfolder:Resources/mutantbug.unity3d?InsectMonsterBrown.mat"/>
+		<!-- <entity_class name="animalMutantBug" extends="animalTemplateHostile">			 -->
+			<!-- <property name="SizeScale" value=".8"/> -->
+			<!-- <property name="UserSpawnType" value="Menu"/> -->
+			<!-- <property name="Tags" value="entity,animal,hostile,mutant"/> -->
+			<!-- <property name="Prefab" value="#@modfolder:Resources/mutantbug.unity3d?InsectMonsterSM.prefab"/> -->
+			<!-- <property name="PrefabCombined" value="true"/> -->
+			<!-- <property name="MapIcon" value="ui_game_symbol_tracking_bear"/> -->
+			<!-- <property name="TrackerIcon" value="ui_game_symbol_tracking_bear"/> -->
+			<!-- <property name="AvatarController" value="AvatarAnimalController"/> -->
+			<!-- <property name="ModelType" value="Standard"/> -->
+			<!-- <property name="HasRagdoll" value="true"/> -->
+			<!-- <property name="HasDeathAnim" value="true"/> -->
+			<!-- <property name="RootMotion" value="true"/> -->
+			<!-- <property name="RagdollOnDeathChance" value=".5"/> -->
+			<!-- <property name="PhysicsBody" value="mutantBugCustom"/> -->
+			<!-- <property name="Mass" value="180"/> -->
 			
-			<property name="ModelType" value="Standard"/>
-			<property name="HasRagdoll" value="true"/>
-			<property name="Mass" value="180"/>
-			<property name="HasDeathAnim" value="true"/>
-			<property name="RootMotion" value="false"/>
-			<property name="RagdollOnDeathChance" value=".5"/>
+			<!-- <property name="LookAtAngle" value="0"/> -->
+			<!-- <property name="AltMats" value="#@modfolder:Resources/mutantbug.unity3d?InsectMonsterBlack.mat,#@modfolder:Resources/mutantbug.unity3d?InsectMonsterBlue.mat,#@modfolder:Resources/mutantbug.unity3d?InsectMonsterBrown.mat"/> -->
 
-			<property name="SoundRandomTime" value="20"/>
-			<property name="SoundAlertTime" value="10"/>
-			<property name="SoundHurt" value="Animals/Snake/snakepain"/>
-			<property name="SoundDeath" value="Animals/Snake/snakedeath"/>
-			<property name="SoundRandom" value="Animals/Snake/snakeroam"/>
-			<property name="SoundSense" value="Animals/Snake/snakesense"/>
-			<property name="SoundAlert" value="Animals/Snake/snakealert"/>
-			<property name="SoundAttack" value="Animals/Snake/snakeattack"/>
+			<!-- <property name="IsAnimalEntity" value="true"/> -->
+			<!-- <property name="IsEnemyEntity" value="true"/> -->
+			<!-- <property name="Faction" value="animals"/> -->
+			
+			
+			<!-- <property name="ModelType" value="Standard"/> -->
 
-			<property name="AIFeralSense" value="1.6"/>
-			<property name="AITask-1" value="BreakBlock"/>
-			<property name="AITask-2" value="Territorial"/>
-			<property name="AITask-3" value="ApproachAndAttackTarget" data="class=EntityPlayer,20,EntityBandit,20"/>
-			<property name="AITask-4" value="ApproachSpot"/>
-			<property name="AITask-5" value="Look"/>
-			<property name="AITask-6" value="Wander"/>
-			<property name="AITask-7" value=""/>
-			<property name="AITarget-1" value="SetAsTargetIfHurt" data="class=EntityPlayer,EntityBandit"/>
-			<property name="AITarget-2" value="BlockingTargetTask"/>
-			<property name="AITarget-3" value="SetNearestCorpseAsTarget" data="flags=edible"/>
-			<property name="AITarget-4" value="SetNearestEntityAsTarget" data="class=EntityPlayer,22,20,EntityBandit,0,-8"/>
-			<property name="AITarget-5" value=""/>
+			<!-- <property name="SoundRandomTime" value="20"/> -->
+			<!-- <property name="SoundAlertTime" value="10"/> -->
+			<!-- <property name="SoundHurt" value="Animals/Snake/snakepain"/> -->
+			<!-- <property name="SoundDeath" value="Animals/Snake/snakedeath"/> -->
+			<!-- <property name="SoundRandom" value="Animals/Snake/snakeroam"/> -->
+			<!-- <property name="SoundSense" value="Animals/Snake/snakesense"/> -->
+			<!-- <property name="SoundAlert" value="Animals/Snake/snakealert"/> -->
+			<!-- <property name="SoundAttack" value="Animals/Snake/snakeattack"/> -->
+
+			<!-- <property name="AIFeralSense" value="1.6"/> -->
+			<!-- <property name="AITask-1" value="BreakBlock"/> -->
+			<!-- <property name="AITask-2" value="Territorial"/> -->
+			<!-- <property name="AITask-3" value="ApproachAndAttackTarget" data="class=EntityPlayer,20,EntityBandit,20"/> -->
+			<!-- <property name="AITask-4" value="ApproachSpot"/> -->
+			<!-- <property name="AITask-5" value="Look"/> -->
+			<!-- <property name="AITask-6" value="Wander"/> -->
+			<!-- <property name="AITask-7" value=""/> -->
+			<!-- <property name="AITarget-1" value="SetAsTargetIfHurt" data="class=EntityPlayer,EntityBandit"/> -->
+			<!-- <property name="AITarget-2" value="BlockingTargetTask"/> -->
+			<!-- <property name="AITarget-3" value="SetNearestCorpseAsTarget" data="flags=edible"/> -->
+			<!-- <property name="AITarget-4" value="SetNearestEntityAsTarget" data="class=EntityPlayer,22,20,EntityBandit,0,-8"/> -->
+			<!-- <property name="AITarget-5" value=""/> -->
 
 			<!-- Gameplay  -->
-			<property name="MoveSpeed" value=".2"/>
-			<property name="MoveSpeedNight" value=".25"/>
-			<property name="MoveSpeedAggro" value="1, 1.1"/>
-			<property name="MoveSpeedPanic" value="1.5"/>
+			<!-- <property name="MoveSpeed" value=".2"/> -->
+			<!-- <property name="MoveSpeedNight" value=".25"/> -->
+			<!-- <property name="MoveSpeedAggro" value="1, 1.1"/> -->
+			<!-- <property name="MoveSpeedPanic" value="1.5"/> -->
 
-			<property name="HandItem" value="meleeHandAnimalMutantBug"/>
+			<!-- <property name="HandItem" value="meleeHandAnimalMutantBug"/> -->
 
-			<property name="Immunity" value="sickness;disease;wellness"/>
-			<property name="PainResistPerHit" value=".9"/>
+			<!-- <property name="Immunity" value="sickness;disease;wellness"/> -->
+			<!-- <property name="PainResistPerHit" value=".9"/> -->
 
-			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
-			<drop event="Harvest" name="venom" count="0" tool_category="Butcher"/>
-			<drop event="Harvest" name="venom" tag="butcherHarvest" count="2"/>
-			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="10"/>
-			<drop event="Harvest" name="foodRottingFlesh" count="1" tag="WasteTreasuresCompleteHarvest"/>
-			<effect_group name="Base Effects">
-				<passive_effect name="HealthMax" operation="base_set" value="250"/>
-			</effect_group>
-		</entity_class>
+			<!-- <drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/> -->
+			<!-- <drop event="Harvest" name="venom" count="0" tool_category="Butcher"/> -->
+			<!-- <drop event="Harvest" name="venom" tag="butcherHarvest" count="2"/> -->
+			<!-- <drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="10"/> -->
+			<!-- <drop event="Harvest" name="foodRottingFlesh" count="1" tag="WasteTreasuresCompleteHarvest"/> -->
+			<!-- <effect_group name="Base Effects"> -->
+				<!-- <passive_effect name="HealthMax" operation="base_set" value="250"/> -->
+			<!-- </effect_group> -->
+		<!-- </entity_class> -->
 		
 		<!-- *** The Hornet -->
 		<entity_class name="vehicleDuneBuggy">
