@@ -621,12 +621,117 @@
 		<recipe name="MotorToolRepairKit" count="1">
 			<ingredient name="meleeToolAxeT3ChainsawParts" count="1"/>
 			<ingredient name="resourceRepairKit" count="1"/>
-		</recipe>
+		</recipe>		
 		
 		<recipe name="ArmourRepairKit" count="1">
 			<ingredient name="resourceArmorCraftingKit" count="1"/>
 			<ingredient name="resourceRepairKit" count="1"/>
 		</recipe>
+		
+		<!-- *** arrows/bolts dismantle to component parts -->
+		<!-- arrows -->
+		<recipe name="ammoDismantleArrowStone" count="1">
+			<ingredient name="ammoArrowStone" count="1"/>
+		</recipe>
+	
+		<recipe name="ammoDismantleArrowIron" count="1">
+			<ingredient name="ammoArrowIron" count="1"/>
+		</recipe>
+	
+		<recipe name="ammoDismantleArrowSteelAP" count="1" craft_area="workbench" tags="workbenchCrafting">
+			<ingredient name="ammoArrowSteelAP" count="1"/>
+		</recipe>
+	
+		<recipe name="ammoDismantleArrowFlaming" count="1" craft_area="workbench" tags="workbenchCrafting">
+			<ingredient name="ammoArrowFlaming" count="1"/>
+		</recipe>
+	
+		<recipe name="ammoDismantleArrowExploding" count="1" craft_area="workbench" tags="workbenchCrafting">
+			<ingredient name="ammoArrowExploding" count="1"/>
+		</recipe>
+	
+		<!-- crossbow bolts -->
+		<recipe name="ammoDismantleCrossbowBoltStone" count="1">
+			<ingredient name="ammoCrossbowBoltStone" count="1"/>
+		</recipe>
+	
+		<recipe name="ammoDismantleCrossbowBoltIron" count="1">
+			<ingredient name="ammoCrossbowBoltIron" count="1"/>
+		</recipe>
+	
+		<recipe name="ammoDismantleCrossbowBoltSteelAP" count="1" craft_area="workbench" tags="workbenchCrafting">
+			<ingredient name="ammoCrossbowBoltSteelAP" count="1"/>
+		</recipe>
+	
+		<recipe name="ammoDismantleCrossbowBoltFlaming" count="1" craft_area="workbench" tags="workbenchCrafting">
+			<ingredient name="ammoCrossbowBoltFlaming" count="1"/>
+		</recipe>
+	
+		<recipe name="ammoDismantleCrossbowBoltExploding" count="1" craft_area="workbench" tags="workbenchCrafting">
+			<ingredient name="ammoCrossbowBoltExploding" count="1"/>
+		</recipe>
+	
+	<!-- *** bullets/shells dismantle to component parts (70% return) *** -->
+		<!-- 9mm -->
+		<recipe name="ammoDismantle9mmBulletBall" count="1" craft_area="workbench" tags="workbenchCrafting" craft_tool="toolAmmoPress">
+			<ingredient name="ammo9mmBulletBall" count="10"/>
+		</recipe>
+	
+		<recipe name="ammoDismantle9mmBulletHP" count="1" craft_area="workbench" tags="workbenchCrafting" craft_tool="toolAmmoPress">
+			<ingredient name="ammo9mmBulletHP" count="10"/>
+		</recipe>
+	
+		<recipe name="ammoDismantle9mmBulletAP" count="1" craft_area="workbench" tags="workbenchCrafting" craft_tool="toolAmmoPress">
+			<ingredient name="ammo9mmBulletAP" count="10"/>
+		</recipe>
+	
+		<!-- .44 -->
+		<recipe name="ammoDismantle44MagnumBulletBall" count="1" craft_area="workbench" tags="workbenchCrafting" craft_tool="toolAmmoPress">
+			<ingredient name="ammo44MagnumBulletBall" count="10"/>
+		</recipe>
+	
+		<recipe name="ammoDismantle44MagnumBulletHP" count="1" craft_area="workbench" tags="workbenchCrafting" craft_tool="toolAmmoPress">
+			<ingredient name="ammo44MagnumBulletHP" count="10"/>
+		</recipe>
+	
+		<recipe name="ammoDismantle44MagnumBulletAP" count="1" craft_area="workbench" tags="workbenchCrafting" craft_tool="toolAmmoPress">
+			<ingredient name="ammo44MagnumBulletAP" count="10"/>
+		</recipe>
+	
+		<!-- 7.62mm -->
+		<recipe name="ammoDismantle762mmBulletBall" count="1" craft_area="workbench" tags="workbenchCrafting" craft_tool="toolAmmoPress">
+			<ingredient name="ammo762mmBulletBall" count="10"/>
+		</recipe>
+	
+		<recipe name="ammoDismantle762mmBulletHP" count="1" craft_area="workbench" tags="workbenchCrafting" craft_tool="toolAmmoPress">
+			<ingredient name="ammo762mmBulletHP" count="10"/>
+		</recipe>
+	
+		<recipe name="ammoDismantle762mmBulletAP" count="1" craft_area="workbench" tags="workbenchCrafting" craft_tool="toolAmmoPress">
+			<ingredient name="ammo762mmBulletAP" count="10"/>
+		</recipe>
+	
+		<!-- shotgun shells -->
+		<recipe name="ammoDismantleShotgunShell" count="1" craft_area="workbench" tags="workbenchCrafting" craft_tool="toolAmmoPress">
+			<ingredient name="ammoShotgunShell" count="10"/>
+		</recipe>
+	
+		<recipe name="ammoDismantleShotgunSlug" count="1" craft_area="workbench" tags="workbenchCrafting" craft_tool="toolAmmoPress">
+			<ingredient name="ammoShotgunSlug" count="10"/>
+		</recipe>
+	
+		<recipe name="ammoDismantleShotgunBreachingSlug" count="1" craft_area="workbench" tags="workbenchCrafting" craft_tool="toolAmmoPress">
+			<ingredient name="ammoShotgunBreachingSlug" count="10"/>
+		</recipe>
+
+	<!-- *** rockets can be dismantled into component parts (50% gasoline return) *** -->
+		<recipe name="ammoDismantleRocketFrag" count="1" craft_area="workbench" tags="workbenchCrafting" craft_tool="toolAmmoPress">
+			<ingredient name="ammoRocketFrag" count="1"/>
+		</recipe>
+	
+		<recipe name="ammoDismantleRocketHE" count="1" craft_area="workbench" tags="workbenchCrafting" craft_tool="toolAmmoPress">
+			<ingredient name="ammoRocketHE" count="1"/>
+		</recipe>	
 	</append>
 	
 	<!-- *** repair kits require oil & mech parts -->

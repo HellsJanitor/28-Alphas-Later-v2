@@ -1,7 +1,7 @@
 <HellsJanitor>
 	<!-- *** drastically lowers the number of "special biome" zombies -->
 	<set xpath="//entitygroup[@name='ZombiesDesert']">
-	zombiePlagueSpitter, .2
+	zombiePlagueSpitter
 	zombieMoe, .25
 	zombieFatHawaiian, .2
 	zombieSteveCrawler, .05
@@ -15,7 +15,7 @@
 	</set>
 	
 	<set xpath="//entitygroup[@name='ZombiesSnow']">
-	zombieFrostclaw, .2
+	zombieFrostclaw
 	zombieMoe, .25
 	zombieLumberjack, .25
 	</set>

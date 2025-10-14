@@ -1,6 +1,6 @@
 <HellsJanitor>
-	<set xpath="//biome[@name='pine_forest']//spawn[@time='Day'][@notags='commercial,industrial,downtown']/@entitygroup">ZombiesRottenNoTough</set>
-	<set xpath="//biome[@name='pine_forest']//spawn[@time='Day'][@notags='downtown']/@entitygroup">ZombiesRottenAll</set>
+	<!-- <set xpath="//biome[@name='pine_forest']//spawn[@time='Day'][@notags='commercial,industrial,downtown']/@entitygroup">ZombiesRottenNoTough</set> -->
+	<!-- <set xpath="//biome[@name='pine_forest']//spawn[@time='Day'][@notags='downtown']/@entitygroup">ZombiesRottenAll</set> -->
 	
 	<append xpath="/spawning">
 		<biome name="pine_forest_GS1">

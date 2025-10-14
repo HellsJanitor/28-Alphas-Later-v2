@@ -361,6 +361,7 @@
 			<property name="Model" value="#@modfolder:Resources/OreBoulders.unity3d?RockChromiumPrefab"/>
 			<property name="Map.Color" value="0,0,255"/>
 			<property name="Material" value="MresourceChromium"/>
+			<property name="MaxDamage" value="950"/>
 			<drop event="Harvest" name="resourceChromium" count="105" tag="oreWoodHarvest"/>
 			<property name="SortOrder2" value="0101"/>
 		</block>
@@ -370,6 +371,7 @@
 			<property name="Model" value="#@modfolder:Resources/OreBoulders.unity3d?RockCopperPrefab"/>
 			<property name="Map.Color" value="255,0,0"/>
 			<property name="Material" value="MresourceCopper"/>
+			<property name="MaxDamage" value="600"/>
 			<drop event="Harvest" name="resourceCopper" count="105" tag="oreWoodHarvest"/>
 			<property name="SortOrder2" value="0101"/>
 		</block>
@@ -379,6 +381,7 @@
 			<property name="Model" value="#@modfolder:Resources/OreBoulders.unity3d?RockLimestonePrefab"/>
 			<property name="Map.Color" value="255,255,0"/>
 			<property name="Material" value="MresourceLimestone"/>
+			<property name="MaxDamage" value="600"/>
 			<drop event="Harvest" name="resourceLimestone" count="105" tag="oreWoodHarvest"/>
 			<property name="SortOrder2" value="0101"/>
 		</block>
@@ -388,6 +391,7 @@
 			<property name="Model" value="#@modfolder:Resources/OreBoulders.unity3d?RockZincPrefab"/>
 			<property name="Map.Color" value="128,0,128"/>
 			<property name="Material" value="MresourceZinc"/>
+			<property name="MaxDamage" value="600"/>
 			<drop event="Harvest" name="resourceZinc" count="105" tag="oreWoodHarvest"/>
 			<property name="SortOrder2" value="0101"/>
 		</block>

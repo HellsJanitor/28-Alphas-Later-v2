@@ -572,7 +572,7 @@
 				<passive_effect name="ModSlots" operation="base_set" value="3,3,3,4,4,4" tier="1,2,3,4,5,6"/>
 				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
 				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-				<passive_effect name="EntityDamage" operation="base_set" value="27" tags="perkDeepCuts,knife"/><!-- meleeWpnBladeT1HuntingKnife -->
+				<passive_effect name="EntityDamage" operation="base_set" value="30" tags="perkDeepCuts,knife"/><!-- meleeWpnBladeT1HuntingKnife -->
 				<passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkDeepCuts"/><!-- random EntityDmg -->
 				<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkDeepCuts"/><!-- tier bonus -->
 				<passive_effect name="BlockDamage" operation="base_set" value="6.5" tags="perkDeepCuts"/>
@@ -600,6 +600,13 @@
 				<passive_effect name="DamageBonus" operation="base_add" value="4"/>
 				<passive_effect name="EntityDamage" operation="perc_add" value="4" tags="perkDeepCuts"/>
 				<display_value name="dEntityDamageSneak" value="4"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffRadiatedRegenBlock"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="other" tags="radiated,charged,infernal,mutated,mutant"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
 			</effect_group>
 		</item>
 		
@@ -679,8 +686,8 @@
 				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffRadiatedRegenBlock"/>
 			</effect_group>
 			<effect_group>
-				<requirement name="EntityTagCompare" target="other" tags="radiated,mutated,mutant"/>
-				<passive_effect name="EntityDamage" operation="perc_add" value="1.5"/>
+				<requirement name="EntityTagCompare" target="other" tags="radiated,charged,infernal,mutated,mutant"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
 			</effect_group>
 		</item>
 	
@@ -719,7 +726,7 @@
 				<passive_effect name="ModSlots" operation="base_set" value="3,3,3,4,4,4" tier="1,2,3,4,5,6"/>
 				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
 				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-				<passive_effect name="EntityDamage" operation="base_set" value="33" tags="perkMiner69r"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="40" tags="perkMiner69r"/>
 				<passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkMiner69r"/><!-- random EntityDmg -->
 				<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkMiner69r"/><!-- tier bonus -->
 				<passive_effect name="BlockDamage" operation="base_set" value="15" tags="perkMiner69r"/>
@@ -741,8 +748,8 @@
 				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffRadiatedRegenBlock"/>
 			</effect_group>
 			<effect_group>
-				<requirement name="EntityTagCompare" target="other" tags="radiated,mutated,mutant"/>
-				<passive_effect name="EntityDamage" operation="perc_add" value="1.5"/>
+				<requirement name="EntityTagCompare" target="other" tags="radiated,charged,infernal,mutated,mutant"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
 			</effect_group>
 		</item>
 		
@@ -823,7 +830,7 @@
 				<passive_effect name="ModSlots" operation="base_set" value="3,3,3,4,4,4" tier="1,2,3,4,5,6"/>
 				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
 				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-				<passive_effect name="EntityDamage" operation="base_set" value="33" tags="perkDeepCuts"/> <!-- meleeWpnBladeT3Machete -->
+				<passive_effect name="EntityDamage" operation="base_set" value="40" tags="perkDeepCuts"/> <!-- meleeWpnBladeT3Machete -->
 				<passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkDeepCuts"/> <!-- random EntityDmg -->
 				<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkDeepCuts"/> <!-- tier bonus -->
 				<passive_effect name="BlockDamage" operation="base_set" value="21" tags="perkDeepCuts"/>
@@ -852,8 +859,113 @@
 				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffRadiatedRegenBlock"/>
 			</effect_group>
 			<effect_group>
-				<requirement name="EntityTagCompare" target="other" tags="radiated,mutated,mutant"/>
-				<passive_effect name="EntityDamage" operation="perc_add" value="1.5"/>
+				<requirement name="EntityTagCompare" target="other" tags="radiated,charged,infernal,mutated,mutant"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
+			</effect_group>
+		</item>
+		
+		<!-- *** piston hammer -->
+		<item name="meleeWpnLegendarySledgehammer">
+			<property name="CreativeMode" value="Player"/>
+			<property name="DisplayType" value="meleeKnife"/>
+			<property name="CrosshairUpAfterShot" value="false"/>
+			<property name="DescriptionKey" value="meleeWpnLegendarySledgehammerDesc"/>
+			<property name="CustomIcon" value="meleeWpnLegendarySledgehammer"/>
+			<property name="DegradationBreaksAfter" value="false"/>
+			<property name="EconomicValue" value="1500"/>
+			<property name="Group" value="Tools/Traps"/>
+			<property name="HoldType" value="33"/>
+			<property name="Material" value="Mwood"/>
+			<property name="Meshfile" value="#@modfolder:Resources/LegendaryMelee.unity3d?PistonHammer.prefab"/>
+			<property name="PositionOffset" value="0,0,-.01"/>
+			<property name="RepairExpMultiplier" value="5.5"/>
+			<property name="RepairTools" value="resourceRepairKit"/>
+			<property name="ShowQuality" value="true"/>
+			<property name="SoundDestroy" value="wooddestroy1"/>
+			<property name="SoundHolster" value="weapon_holster"/>
+			<property name="SoundJammed" value="ItemNeedsRepair"/>
+			<property name="SoundUnholster" value="weapon_unholster"/>
+			<property name="SoundPickup" value="machete_grab"/>
+			<property name="SoundPlace" value="machete_place"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Tags" value="legendary,blunt,melee,grunting,heavy,sledge,weapon,meleeWeapon,longShaft,attStrength,perkSkullCrusher,perkFlurryOfStrength,canHaveCosmetic,sledgeSkill"/>
+			<!-- <property name="TintColor" value="255,0,0"/> -->
+			<property name="TraderStageTemplate" value="baseTier0"/>
+
+			<property class="Action0">
+				<property name="Class" value="DynamicMelee"/>
+				<property name="Sphere" value=".15"/> <!-- limit to 0.15, else the sphere cast can overlap the target already -->
+				<property name="Sound_start" value="sledge_swinglight"/>
+				<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
+				<property name="UseGrazingHits" value="true"/>
+				<property name="GrazeStart" value=".515"/>
+				<property name="GrazeEnd" value=".52"/>
+				<property name="SwingDegrees" value="65"/>
+				<property name="SwingAngle" value="160"/>
+				<property class="HitSounds">
+					<property name="Override0" value="organic" param1="metalsolidhitorganic"/>
+				</property>
+				<property class="GrazeSounds">
+					<property name="Override0" value="organic" param1="metalgrazeorganic"/>
+				</property>
+			</property>
+			<property class="Action1">
+				<property name="Class" value="DynamicMelee"/>
+				<property name="Sphere" value=".15"/> <!-- limit to 0.15, else the sphere cast can overlap the target already -->
+				<property name="Sound_start" value="sledge_swingheavy"/>
+				<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
+				<property name="UsePowerAttackAnimation" value="true"/>
+				<property name="UseGrazingHits" value="true"/>
+				<property name="GrazeStart" value=".515"/>
+				<property name="GrazeEnd" value=".52"/>
+				<property name="SwingDegrees" value="110"/>
+				<property name="SwingAngle" value="90"/>
+				<property class="HitSounds">
+					<property name="Override0" value="organic" param1="metalsolidhitorganic"/>
+				</property>
+				<property class="GrazeSounds">
+					<property name="Override0" value="organic" param1="metalgrazeorganic"/>
+				</property>
+			</property>
+			<effect_group name="meleeWpnSledgeT3SteelSledgehammer">
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="34" tags="perkSkullCrusher,perkFlurryOfStrength"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="40.5" tags="primary"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="400,800" tier="1,6" tags="perkSkullCrusher"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkSkullCrusher"/>
+				<passive_effect name="MaxRange" operation="base_set" value="2.6" tags="perkSkullCrusher"/>
+				<passive_effect name="BlockRange" operation="base_set" value="3.5" tags="perkSkullCrusher"/>
+				<passive_effect name="DismemberChance" operation="base_add" value=".1" tags="perkSkullCrusher,primary"/>
+				<passive_effect name="ModSlots" operation="base_set" value="3,3,3,4,4,4" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="65" tags="perkSkullCrusher"/> <!-- meleeWpnSledgeT3SteelSledgehammer -->
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkSkullCrusher"/> <!-- random EntityDmg -->
+				<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkSkullCrusher"/> <!-- tier bonus -->
+				<passive_effect name="BlockDamage" operation="base_set" value="85" tags="perkSkullCrusher"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.04,.04" tags="perkSkullCrusher"/> <!-- random BlockDmg -->
+				<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkSkullCrusher"/> <!-- tier bonus -->
+				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+			</effect_group>
+			<effect_group name="Power Attack">
+				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="1" tags="secondary"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="32.7" tags="secondary"/>
+			</effect_group>
+			<effect_group name="sneak damage bonus">
+				<requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="1"/>
+				<requirement name="CVarCompare" cvar="_notAlerted" operation="GT" value="0" target="other"/>
+					<passive_effect name="DamageBonus" operation="base_add" value="4"/>
+					<passive_effect name="EntityDamage" operation="perc_add" value="4" tags="perkDeepCuts"/>
+					<display_value name="dEntityDamageSneak" value="4"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffRadiatedRegenBlock"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="other" tags="radiated,charged,infernal,mutated,mutant"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
 			</effect_group>
 		</item>
 		
@@ -934,7 +1046,7 @@
 				<passive_effect name="ModSlots" operation="base_set" value="3,3,3,4,4,4" tier="1,2,3,4,5,6"/>
 				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
 				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-				<passive_effect name="EntityDamage" operation="base_set" value="27" tags="perkDeepCuts,knife"/><!-- meleeWpnBladeT1HuntingKnife -->
+				<passive_effect name="EntityDamage" operation="base_set" value="30" tags="perkDeepCuts,knife"/><!-- meleeWpnBladeT1HuntingKnife -->
 				<passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkDeepCuts"/><!-- random EntityDmg -->
 				<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkDeepCuts"/><!-- tier bonus -->
 				<passive_effect name="BlockDamage" operation="base_set" value="6.5" tags="perkDeepCuts"/>
@@ -962,6 +1074,190 @@
 				<passive_effect name="DamageBonus" operation="base_add" value="4"/>
 				<passive_effect name="EntityDamage" operation="perc_add" value="4" tags="perkDeepCuts"/>
 				<display_value name="dEntityDamageSneak" value="4"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffRadiatedRegenBlock"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="other" tags="radiated,charged,infernal,mutated,mutant"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
+			</effect_group>
+		</item>
+		
+		<!-- *** Hydraulic Hammer -->
+		<item name="meleeWpnClubHydraulicHammer">
+			<property name="Tags" value="blunt,club,melee,grunting,light,longShaft,perkFlurryOfStrength,weapon,meleeWeapon,attStrength,perkPummelPete,canHaveCosmetic,clubSkill"/>
+			<property name="DisplayType" value="melee"/>
+			<property name="CustomIcon" value="meleeWpnClubHydraulicHammer"/>
+			<property name="DescriptionKey" value="meleeWpnClubHydraulicHammerDesc"/>
+			<property name="Group" value="Ammo/Weapons,Melee Weapons"/>
+			<property name="Meshfile" value="#@modfolder:Resources/LegendaryMelee.unity3d?HydraulicHammer.prefab"/>
+			<property name="HoldType" value="2"/>
+			<property name="Material" value="MmeleeWpnClubParts"/>
+			<property name="TintColor" value="166, 166, 166"/>
+			<property name="Weight" value="1"/>
+			<property name="ScrapTimeOverride" value="10.0"/>
+			<property name="RepairTools" value="resourceRepairKit"/>
+			<property name="SoundDestroy" value="wooddestroy1"/>
+			<property name="RepairExpMultiplier" value="5.5"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="EconomicValue" value="1100"/>
+			<property name="TraderStageTemplate" value="baseTier2"/><!-- meleeWpnClubT3SteelClub -->
+			<property name="UnlockedBy" value="craftingClubs"/><!-- perkBatterUpBaseballBats, -->
+			<property name="ShowQuality" value="true"/>
+			<property name="SoundUnholster" value="weapon_unholster"/>
+			<property name="SoundHolster" value="weapon_holster"/>
+			<property name="SoundPickup" value="club_metal_grab"/>
+			<property name="SoundPlace" value="club_metal_place"/>
+
+			<property class="Action0">
+				<property name="Class" value="DynamicMelee"/>
+				<property name="Sound_start" value="batwood_swinglight"/>
+				<property name="Sphere" value=".1"/>
+				<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
+				<property name="UseGrazingHits" value="true"/>
+				<property name="GrazeStart" value=".25"/>
+				<property name="GrazeEnd" value=".32"/>
+				<property name="SwingDegrees" value="65"/>
+				<property name="SwingAngle" value="120"/>
+			<property class="HitSounds">
+				<property name="Override0" value="organic" param1="metalhitorganic"/>
+			</property>
+			<property class="GrazeSounds">
+				<property name="Override0" value="organic" param1="metalgrazeorganic"/>
+			</property>
+			</property>
+			<property class="Action1">
+				<property name="Class" value="DynamicMelee"/>
+				<property name="Sound_start" value="batwood_swingheavy"/>
+				<property name="Sphere" value=".15"/>
+				<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
+				<property name="UsePowerAttackAnimation" value="true"/>
+				<property name="UseGrazingHits" value="true"/>
+				<property name="IsHorizontalSwing" value="true"/>
+				<property name="GrazeStart" value=".25"/>
+				<property name="GrazeEnd" value=".32"/>
+				<property name="SwingDegrees" value="120"/>
+				<property name="SwingAngle" value="90"/>
+			<property class="HitSounds">
+				<property name="Override0" value="organic" param1="woodhitorganic"/>
+			</property>
+			<property class="GrazeSounds">
+				<property name="Override0" value="organic" param1="woodgrazeorganic"/>
+			</property>
+			</property>
+			<effect_group name="meleeWpnClubT3SteelClub">
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="52" tags="perkPummelPete,perkFlurryOfStrength"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="23.7" tags="primary"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="500,1000" tier="1,6" tags="perkPummelPete"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkPummelPete"/>
+				<passive_effect name="MaxRange" operation="base_set" value="2.4" tags="perkPummelPete"/>
+				<passive_effect name="BlockRange" operation="base_set" value="3" tags="perkPummelPete"/>
+				<passive_effect name="ModSlots" operation="base_set" value="3,3,3,4,4,4" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="35" tags="perkPummelPete"/> <!-- meleeWpnClubT3SteelClub -->
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkPummelPete"/> <!-- random EntityDmg -->
+				<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkPummelPete"/> <!-- tier bonus -->
+				<passive_effect name="BlockDamage" operation="base_set" value="30" tags="perkPummelPete"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.04,.04" tags="perkPummelPete"/> <!-- random BlockDmg -->
+				<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkPummelPete"/> <!-- tier bonus -->
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="metal"/>
+				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+			</effect_group>
+			<effect_group name="Power Attack">
+				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="1" tags="secondary"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="40.3" tags="secondary"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffRadiatedRegenBlock"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="other" tags="radiated,charged,infernal,mutated,mutant"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
+			</effect_group>
+		</item>
+		
+		<!-- *** Knuckles -->
+		<item name="meleeWpnKnucklesLegendaryKnuckles">
+			<property name="Extends" value="meleeWpnKnucklesT1IronKnuckles"/>
+			<property name="Tags" value="blunt,melee,grunting,light,perkFlurryOfFortitude,weapon,attFortitude,perkBrawler,canHaveCosmetic,knuckleSkill,corpseRemoval"/>
+			<property name="CustomIcon" value="meleeWpnKnucklesLegendaryKnuckles"/>
+			<property name="DescriptionKey" value="meleeWpnKnucklesLegendaryKnucklesDesc"/>
+			<property name="Material" value="MmeleeWpnKnucklesParts"/>
+			<property name="TintColor" value="191, 172, 95"/>
+			<property name="Meshfile" value="#@modfolder:Resources/LegendaryMeleeKnuckles.unity3d?KnuckleBloodyRight.prefab"/>
+			<property name="HoldType" value="79"/>
+			<property name="ScrapTimeOverride" value="10.0"/>
+			<property name="TraderStageTemplate" value="baseTier2"/><!-- meleeWpnKnucklesT3SteelKnuckles -->
+			<property name="EconomicValue" value="1100"/>
+			<property name="UnlockedBy" value="craftingKnuckles"/><!-- meleeWpnKnucklesT3SteelKnucklesSchematic, -->
+			<property name="SoundUnholster" value="weapon_unholster"/>
+			<property name="SoundHolster" value="weapon_holster"/>
+			<property name="SoundPickup" value="machete_grab"/>
+			<property name="SoundPlace" value="machete_place"/>
+
+			<property class="Action0">
+				<property name="ToolCategory.Butcher" value="5" param1="1.5"/>
+				<property name="Sound_start" value="knuckles_steel_swinglight"/>
+				<property class="HitSounds">
+				<property name="Override0" value="organic" param1="metalstaborganic"/></property>
+				<property class="GrazeSounds">
+				<property name="Override0" value="organic" param1="metalgrazeorganic"/></property>
+			</property>
+
+			<property class="Action1">
+				<property name="ToolCategory.Butcher" value="0" param1="1.5"/>
+				<property name="Sound_start" value="knuckles_steel_swingheavy"/>
+				<property class="HitSounds">
+				<property name="Override0" value="organic" param1="metalstaborganic"/></property>
+				<property class="GrazeSounds">
+				<property name="Override0" value="organic" param1="metalgrazeorganic"/></property>
+			</property>
+
+			<effect_group name="meleeWpnKnucklesT3SteelKnuckles">
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="100" tags="perkBrawler,perkFlurryOfFortitude"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="10.2" tags="primary"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="700,1400" tier="1,6" tags="perkBrawler"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkBrawler"/>
+				<passive_effect name="MaxRange" operation="base_set" value="2.0" tags="perkBrawler"/>
+				<passive_effect name="BlockRange" operation="base_set" value="3" tags="perkBrawler"/>
+				<passive_effect name="ModSlots" operation="base_set" value="3,3,3,4,4,4" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="24" tags="perkBrawler"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkBrawler"/> <!-- random EntityDmg -->
+				<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkBrawler"/> <!-- tier bonus -->
+				<passive_effect name="BlockDamage" operation="base_set" value="6" tags="perkBrawler"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.04,.04" tags="perkBrawler"/> <!-- random BlockDmg -->
+				<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkBrawler"/> <!-- tier bonus -->
+
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="metal"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="1.7" tags="organic"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
+
+				<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="LeftKnuckles" prefab="#@modfolder:Resources/LegendaryMeleeKnuckles.unity3d?KnuckleBloodyLeft.prefab" parentTransform="LeftWeapon" localPos="0,0,0" localRot="0,0,0" colorTint="true"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="LeftKnuckles"/>
+			</effect_group>
+			<effect_group name="Power Attack">
+				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="1" tags="secondary"/>
+				<!-- <passive_effect name="AttacksPerMinute" operation="perc_add" value="-.3" tags="secondary"/> -->
+				<passive_effect name="StaminaLoss" operation="base_set" value="17.3" tags="secondary"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffRadiatedRegenBlock"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="other" tags="radiated,charged,infernal,mutated,mutant"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
 			</effect_group>
 		</item>
 		
@@ -2697,6 +2993,350 @@
 				<property name="Sound_start" value="close_garbage"/>
 				<property name="Create_item" value="resourceZinc"/>
 				<property name="Create_item_count" value="6000"/>
+			</property>
+		</item>
+		
+		<!-- *** ammo dismantling bundles -->
+		<!-- arrows -->
+		<item name="ammoDismantleArrowStone">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleAmmo"/>
+			<property name="CustomIconTint" value="195905"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="Stacknumber" value="150"/>
+			<property name="DescriptionKey" value="ammoDismantleArrowStoneDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceRockSmall,resourceBranch,resourceFeather"/>
+				<property name="Create_item_count" value="1,1,1"/>
+			</property>
+		</item>
+		
+		<item name="ammoDismantleArrowIron">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleAmmo"/>
+			<property name="CustomIconTint" value="195905"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="Stacknumber" value="150"/>
+			<property name="DescriptionKey" value="ammoDismantleArrowIronDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceArrowHeadIron,resourceBranch,resourceFeather"/>
+				<property name="Create_item_count" value="1,1,1"/>
+			</property>
+		</item>
+		
+		<item name="ammoDismantleArrowSteelAP">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleAmmo"/>
+			<property name="CustomIconTint" value="195905"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="Stacknumber" value="150"/>
+			<property name="DescriptionKey" value="ammoDismantleArrowSteelAPDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceArrowHeadSteelAP,resourceScrapPolymers"/>
+				<property name="Create_item_count" value="1,2"/>
+			</property>
+		</item>
+		
+		<item name="ammoDismantleArrowFlaming">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleAmmo"/>
+			<property name="CustomIconTint" value="195905"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="Stacknumber" value="150"/>
+			<property name="DescriptionKey" value="ammoDismantleArrowFlamingDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceArrowHeadSteelAP,resourceScrapPolymers,resourceGunPowder,resourceCloth"/>
+				<property name="Create_item_count" value="1,2,1,3"/>
+			</property>
+		</item>
+		
+		<item name="ammoDismantleArrowExploding">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleAmmo"/>
+			<property name="CustomIconTint" value="195905"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="Stacknumber" value="150"/>
+			<property name="DescriptionKey" value="ammoDismantleArrowExplodingDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceArrowHeadSteelAP,resourceScrapPolymers,resourceGunPowder"/>
+				<property name="Create_item_count" value="1,2,4"/>
+			</property>
+		</item>
+		
+		<!-- crossbow bolts -->
+		<item name="ammoDismantleCrossbowBoltStone">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleAmmo"/>
+			<property name="CustomIconTint" value="195905"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="Stacknumber" value="150"/>
+			<property name="DescriptionKey" value="ammoDismantleCrossbowBoltStoneDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceRockSmall,resourceBranch,resourceFeather"/>
+				<property name="Create_item_count" value="1,1,1"/>
+			</property>
+		</item>
+		
+		<item name="ammoDismantleCrossbowBoltIron">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleAmmo"/>
+			<property name="CustomIconTint" value="195905"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="Stacknumber" value="150"/>
+			<property name="DescriptionKey" value="ammoDismantleCrossbowBoltIronDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceArrowHeadIron,resourceBranch,resourceFeather"/>
+				<property name="Create_item_count" value="1,1,1"/>
+			</property>
+		</item>
+		
+		<item name="ammoDismantleCrossbowBoltSteelAP">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleAmmo"/>
+			<property name="CustomIconTint" value="195905"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="Stacknumber" value="150"/>
+			<property name="DescriptionKey" value="ammoDismantleCrossbowBoltSteelAPDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceArrowHeadSteelAP,resourceScrapPolymers"/>
+				<property name="Create_item_count" value="1,2"/>
+			</property>
+		</item>
+		
+		<item name="ammoDismantleCrossbowBoltFlaming">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleAmmo"/>
+			<property name="CustomIconTint" value="195905"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="Stacknumber" value="150"/>
+			<property name="DescriptionKey" value="ammoDismantleCrossbowBoltFlamingDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceArrowHeadSteelAP,resourceScrapPolymers,resourceGunPowder,resourceCloth"/>
+				<property name="Create_item_count" value="1,2,1,3"/>
+			</property>
+		</item>
+		
+		<item name="ammoDismantleCrossbowBoltExploding">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleAmmo"/>
+			<property name="CustomIconTint" value="195905"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="Stacknumber" value="150"/>
+			<property name="DescriptionKey" value="ammoDismantleCrossbowBoltExplodingDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceArrowHeadSteelAP,resourceScrapPolymers,resourceGunPowder"/>
+				<property name="Create_item_count" value="1,2,5"/>
+			</property>
+		</item>
+		
+		<!-- 9mm -->
+		<item name="ammoDismantle9mmBulletBall">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleAmmo"/>
+			<property name="CustomIconTint" value="195905"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="Stacknumber" value="150"/>
+			<property name="DescriptionKey" value="ammoDismantle9mmBulletBallDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceGunPowder,resourceBulletTip,resourceBulletCasing"/>
+				<property name="Create_item_count" value="7,7,7"/>
+			</property>
+		</item>
+		
+		<item name="ammoDismantle9mmBulletHP">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleAmmo"/>
+			<property name="CustomIconTint" value="195905"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="Stacknumber" value="150"/>
+			<property name="DescriptionKey" value="ammoDismantle9mmBulletHPDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceGunPowder,resourceBulletTip,resourceBulletCasing"/>
+				<property name="Create_item_count" value="7,14,7"/>
+			</property>
+		</item>
+		
+		<item name="ammoDismantle9mmBulletAP">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleAmmo"/>
+			<property name="CustomIconTint" value="195905"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="Stacknumber" value="150"/>
+			<property name="DescriptionKey" value="ammoDismantle9mmBulletAPDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceGunPowder,resourceBulletTip,resourceBulletCasing"/>
+				<property name="Create_item_count" value="14,14,7"/>
+			</property>
+		</item>
+		
+		<!-- .44 -->
+		<item name="ammoDismantle44MagnumBulletBall">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleAmmo"/>
+			<property name="CustomIconTint" value="195905"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="Stacknumber" value="150"/>
+			<property name="DescriptionKey" value="ammoDismantle44MagnumBulletBallDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceGunPowder,resourceBulletTip,resourceBulletCasing"/>
+				<property name="Create_item_count" value="14,7,7"/>
+			</property>
+		</item>
+		
+		<item name="ammoDismantle44MagnumBulletHP">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleAmmo"/>
+			<property name="CustomIconTint" value="195905"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="Stacknumber" value="150"/>
+			<property name="DescriptionKey" value="ammoDismantle44MagnumBulletHPDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceGunPowder,resourceBulletTip,resourceBulletCasing"/>
+				<property name="Create_item_count" value="14,14,7"/>
+			</property>
+		</item>
+		
+		<item name="ammoDismantle44MagnumBulletAP">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleAmmo"/>
+			<property name="CustomIconTint" value="195905"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="Stacknumber" value="150"/>
+			<property name="DescriptionKey" value="ammoDismantle44MagnumBulletAPDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceGunPowder,resourceBulletTip,resourceBulletCasing"/>
+				<property name="Create_item_count" value="21,14,7"/>
+			</property>
+		</item>
+		
+		<!-- 7.62mm -->
+		<item name="ammoDismantle762mmBulletBall">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleAmmo"/>
+			<property name="CustomIconTint" value="195905"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="Stacknumber" value="150"/>
+			<property name="DescriptionKey" value="ammoDismantle762mmBulletBallDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceGunPowder,resourceBulletTip,resourceBulletCasing"/>
+				<property name="Create_item_count" value="21,7,7"/>
+			</property>
+		</item>
+		
+		<item name="ammoDismantle762mmBulletHP">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleAmmo"/>
+			<property name="CustomIconTint" value="195905"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="Stacknumber" value="150"/>
+			<property name="DescriptionKey" value="ammoDismantle762mmBulletHPDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceGunPowder,resourceBulletTip,resourceBulletCasing"/>
+				<property name="Create_item_count" value="21,14,7"/>
+			</property>
+		</item>
+		
+		<item name="ammoDismantle762mmBulletAP">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleAmmo"/>
+			<property name="CustomIconTint" value="195905"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="Stacknumber" value="150"/>
+			<property name="DescriptionKey" value="ammoDismantle762mmBulletAPDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceGunPowder,resourceBulletTip,resourceBulletCasing"/>
+				<property name="Create_item_count" value="35,14,7"/>
+			</property>
+		</item>
+		
+		<!-- shotgun shells -->
+		<item name="ammoDismantleShotgunShell">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleAmmo"/>
+			<property name="CustomIconTint" value="195905"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="Stacknumber" value="150"/>
+			<property name="DescriptionKey" value="ammoDismantleShotgunShellDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceGunPowder,resourceBuckshot,resourcePaper"/>
+				<property name="Create_item_count" value="28,7,7"/>
+			</property>
+		</item>
+		
+		<item name="ammoDismantleShotgunSlug">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleAmmo"/>
+			<property name="CustomIconTint" value="195905"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="Stacknumber" value="150"/>
+			<property name="DescriptionKey" value="ammoDismantleShotgunSlugDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceGunPowder,resourceBulletTip,resourceScrapPolymers"/>
+				<property name="Create_item_count" value="35,14,7"/>
+			</property>
+		</item>
+		
+		<item name="ammoDismantleShotgunBreachingSlug">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleAmmo"/>
+			<property name="CustomIconTint" value="195905"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="Stacknumber" value="150"/>
+			<property name="DescriptionKey" value="ammoDismantleShotgunBreachingSlugDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceGunPowder,resourceScrapPolymers,resourceForgedSteel,resourceClayLump"/>
+				<property name="Create_item_count" value="35,14,7,14"/>
+			</property>
+		</item>
+		
+		<!-- rockets (50% gas return) -->		
+		<item name="ammoDismantleRocketFrag">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleAmmo"/>
+			<property name="CustomIconTint" value="195905"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="Stacknumber" value="150"/>
+			<property name="DescriptionKey" value="ammoDismantleRocketFragDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceGunPowder,resourceRocketCasing,ammoGasCan,resourceBuckshot"/>
+				<property name="Create_item_count" value="11,1,250,18"/>
+			</property>
+		</item>
+		
+		<item name="ammoDismantleRocketHE">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleAmmo"/>
+			<property name="CustomIconTint" value="195905"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="Stacknumber" value="150"/>
+			<property name="DescriptionKey" value="ammoDismantleRocketHEDesc"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceGunPowder,resourceRocketCasing,ammoGasCan,resourceRocketTip"/>
+				<property name="Create_item_count" value="11,1,250,1"/>
 			</property>
 		</item>
 	</append>

@@ -22,6 +22,54 @@ Key,english
 DespairTip,"You are overwhelmed by how hopeless the situation appears. You can combat this by staying in a well-lit area, staying warm, and staying dry.\n\nProlonged periods of being wet, in darkness, or cold temperatures will increase the rate at which your despair grows. Injuries sustained, along with hunger and thirst also have an adverse effect, as does being in close proximity to zombies.\n\nThere is medication available to reduce your symptoms, and consuming certain food or drink may help too.\n\nTreatment from consumables:\n\nCooked Canned Food: [FFC800]0.1%[-]\nBoiled egg & Charred meat: [FFC800]0.20%[-]\nTier 1 food: [FFC800]0.25%[-]\nGoldenrod & Red tea: [FFC800]0.5%[-]\nBacon & Eggs and Coffee: [FFC800]1%[-]\nTier 2 food, Blackstrap coffee,smoothies, mineral water & beer: [FFC800]2%[-]\nTier 3 food: [FFC800]3%[-]\nTier 4 food: [FFC800]5%[-]"
 DespairTip_title,Despair
 FertilizerDesc,"Fertilizer is made in a Chemistry Station or Cement Mixer. Use a hoe to fertilize the land.\n\nYou must have at least 10 fertilizer in your inventory to fertilize terrain with a hoe."
+ammoDismantleArrowStone,Stone Arrow Parts
+ammoDismantleArrowStoneDesc,Component parts from dismantling stone arrows.
+ammoDismantleArrowIron,Iron Arrow Parts
+ammoDismantleArrowIronDesc,Component parts from dismantling iron arrows.
+ammoDismantleArrowSteelAP,Steel Arrow Parts
+ammoDismantleArrowSteelAPDesc,Component parts from dismantling steel arrows.
+ammoDismantleArrowFlaming,Flaming Arrow Parts
+ammoDismantleArrowFlamingDesc,Component parts from dismantling flaming arrows.
+ammoDismantleArrowExploding,Exloding Arrow Parts
+ammoDismantleArrowExplodingDesc,Component parts from dismantling exploding arrows.
+ammoDismantleCrossbowBoltStone,Stone Crossbow Bolt Parts
+ammoDismantleCrossbowBoltStoneDesc,Component parts from dismantling stone crossbow bolts.
+ammoDismantleCrossbowBoltIron,Iron Crossbow Bolt Parts
+ammoDismantleCrossbowBoltIronDesc,Component parts from dismantling iron crossbow bolts.
+ammoDismantleCrossbowBoltSteelAP,Steel Crossbow Bolt Parts
+ammoDismantleCrossbowBoltSteelAPDesc,Component parts from dismantling steel crossbow bolts.
+ammoDismantleCrossbowBoltFlaming,Flaming Crossbow Bolt Parts
+ammoDismantleCrossbowBoltFlamingDesc,Component parts from dismantling flaming crossbow bolts.
+ammoDismantleCrossbowBoltExploding,Exploding Crossbow Bolt Parts
+ammoDismantleCrossbowBoltExplodingDesc,Component parts from dismantling exploding crossbow bolts.
+ammoDismantle9mmBulletBall,9mm Bullet Parts
+ammoDismantle9mmBulletBallDesc,Component parts from dismantling 9mm rounds.
+ammoDismantle9mmBulletHP,9mm HP Bullet Parts
+ammoDismantle9mmBulletHPDesc,Component parts from dismantling high-power 9mm rounds.
+ammoDismantle9mmBulletAP,9mm AP Bullet Parts
+ammoDismantle9mmBulletAPDesc,Component parts from dismantling armour piercing 9mm rounds.
+ammoDismantle44MagnumBulletBall,.44 Bullet Parts
+ammoDismantle44MagnumBulletBallDesc,Component parts from dismantling .44 Magnum rounds.
+ammoDismantle44MagnumBulletHP,.44 HP Bullet Parts
+ammoDismantle44MagnumBulletHPDesc,Component parts from dismantling high-power .44 Magnum rounds.
+ammoDismantle44MagnumBulletAP,.44 AP Bullet Parts
+ammoDismantle44MagnumBulletAPDesc,Component parts from dismantling armour piercing .44 Magnum rounds.
+ammoDismantle762mmBulletBall,7.62mm Bullet Parts
+ammoDismantle762mmBulletBallDesc,Component parts from dismantling 7.62mm rounds.
+ammoDismantle762mmBulletHP,7.62mm HP Bullet Parts
+ammoDismantle762mmBulletHPDesc,Component parts from dismantling high-power 7.62mm rounds.
+ammoDismantle762mmBulletAP,7.62mm AP Bullet Parts
+ammoDismantle762mmBulletAPDesc,Component parts from dismantling armour piercing 7.62mm rounds.
+ammoDismantleShotgunShell,Shotgun Shell Parts
+ammoDismantleShotgunShellDesc,Component parts from dismantling shotgun shells.
+ammoDismantleShotgunSlug,Shotgun Slug Parts
+ammoDismantleShotgunSlugDesc,Component parts from dismantling shotgun slugs.
+ammoDismantleShotgunBreachingSlug,Shotgun Breaching Slug Parts
+ammoDismantleShotgunBreachingSlugDesc,Component parts from dismantling shotgun breaching slugs.
+ammoDismantleRocketFrag,Frag Rocket Parts
+ammoDismantleRocketFragDesc,Component parts from dismantling frag rockets.
+ammoDismantleRocketHE,High Explosive Rocket Parts
+ammoDismantleRocketHEDesc,Component parts from dismantling high explosive rockets.
 animalCockroach,Mutated Cockroach
 animalMutantBug,Mutant Bug
 animalWildChicken,Chicken
@@ -305,15 +353,21 @@ meleeToolFarmT2IronHoeDesc,"Required for fertilizing terrain, and farmplots foun
 meleeToolFarmT2IronHoeSchematic,Garden Hoe Schematic
 meleeToolTorchDesc,This torch can be used as a portable light source or weapon with a chance to catch enemies on fire.\n\nCan also be used to craft a placeable wall torch. Requires gas to ignite.
 meleeWpnBladeLegendaryBrushKnife,"Subquake's Indignation"
-meleeWpnBladeLegendaryBrushKnifeDesc,"Half paintbrush, half knife—Subquake’s masterpiece of spite. A handle crusted with old pigment, a blade honed on broken palettes; it slashes and smears in the same motion, leaving furious streaks that never quite wash out.\n\nLegendary: for artists who sign their work in blood and don’t wait for the paint to dry."
+meleeWpnBladeLegendaryBrushKnifeDesc,"Half paintbrush, half knife—Subquake’s masterpiece of spite. A handle crusted with old pigment, a blade honed on broken palettes; it slashes and smears in the same motion, leaving furious streaks that never quite wash out. For artists who sign their work in blood and don’t wait for the paint to dry.\n\nStops all radiated regen. 30% damage bonus to elite zombies."
 meleeWpnLegendaryGardenRake,"Fury's Harvest"
-meleeWpnLegendaryGardenRakeDesc,"Forged in the fires of a long-lost kingdom, this legendary battle rake known as Fury's Harvest is a fearsome weapon that combines beauty and brutality. Its handle, made from the heartwood of an ancient tree, is imbued with the strength of a thousand warriors. The tines, sharp as daggers and are said to have cleaved through armor and stone alike. In the annals of history, it was wielded by a legendary hero during a great war, turning the tide of battle with each swing"
+meleeWpnLegendaryGardenRakeDesc,"Forged in the fires of a long-lost kingdom, this legendary battle rake known as Fury's Harvest is a fearsome weapon that combines beauty and brutality. Its handle, made from the heartwood of an ancient tree, is imbued with the strength of a thousand warriors. The tines, sharp as daggers and are said to have cleaved through armor and stone alike.\n\nStops all radiated regen. 30% damage bonus to elite zombies."
 meleeWpnBladeLegendaryPaintBrush,"Red's Legendary Paintbrush"
-meleeWpnBladeLegendaryPaintBrushDesc,"This ancient & mysterious brush has built up thousands of layers of paint & varnish, which have hardened to be more durable than steel. In RambunctiousRed's hands, it has been honed into a deadly weapon.\n\nGo out, and paint the apocalypse red!!\n\nStops all radiated regen. 30% damage bonus to radiated zombies."
+meleeWpnBladeLegendaryPaintBrushDesc,"This ancient & mysterious brush has built up thousands of layers of paint & varnish, which have hardened to be more durable than steel. In RambunctiousRed's hands, it has been honed into a deadly weapon.\n\nGo out, and paint the apocalypse red!!\n\nStops all radiated regen. 30% damage bonus to elite zombies."
 meleeWpnLegendaryPitchfork,"Hells' Wrath"
-meleeWpnLegendaryPitchforkDesc,"Legends tell of its origin: crafted by a vengeful farmer who sought to protect his land from marauding invaders. With every thrust and sweep, Hells' Wrath channels the fury of the earth itself, stunning foes in it's tracks. This pitchfork is not merely a tool; it embodies the relentless spirit of those who defend their home, turning the very essence of agriculture into a weapon of epic proportions."
+meleeWpnLegendaryPitchforkDesc,"Legends tell of its origin: crafted by a vengeful farmer who sought to protect his land from marauding invaders. This pitchfork is not merely a tool; it embodies the relentless spirit of those who defend their home, turning the very essence of agriculture into a weapon of epic proportions.\n\nStops all radiated regen. 30% damage bonus to elite zombies."
 meleeWpnLegendaryScythe,"Death's Whisper"
-meleeWpnLegendaryScytheDesc,"A devastating slashing weapon, and when swung, Death's Whisper emits a haunting hum, resonating with the whispers of lost souls. Legends say it can slice through the fabric of reality itself, allowing its wielder to reap not just lives, but destinies. It is not merely a weapon; it is a harbinger of change, a symbol of inevitability. In the hands of a true master, it can unleash the fury of a tempest, or restore balance to a world in chaos."
+meleeWpnLegendaryScytheDesc,"A devastating slashing weapon, and when swung, Death's Whisper emits a haunting hum, resonating with the whispers of lost souls. Legends say it can slice through the fabric of reality itself, allowing its wielder to reap not just lives, but destinies. It is not merely a weapon; it is a harbinger of change, a symbol of inevitability. In the hands of a true master, it can unleash the fury of a tempest, or restore balance to a world in chaos.\n\nStops all radiated regen. 30% damage bonus to elite zombies."
+meleeWpnLegendarySledgehammer,"Piston-Head Sledge"
+meleeWpnLegendarySledgehammerDesc,"A salvaged engine piston welded to a length of rebar, heavy, balanced, and mean. Each swing compresses more than air — it dents skulls and stalls hearts. Tuned for knockdowns and broken bones.\n\nStops all radiated regen. 30% damage bonus to elite zombies."
+meleeWpnClubHydraulicHammer,"Purgatory's Rebuke"
+meleeWpnClubHydraulicHammerDesc,"An oversized spanner with its jaw locked tight, the handle wrapped in oilcloth for grip. Hook, pry, and crack in one motion—lefty-loosey for them, righty-tighty for you.\n\nStops all radiated regen. 30% damage bonus to elite zombies."
+meleeWpnKnucklesLegendaryKnuckles,Geargrinders
+meleeWpnKnucklesLegendaryKnucklesDesc,"Twin rings forged from heavy machine cogs, teeth filed to a cruel bite. Every punch chews through armor and grinds morale to filings. Fast, brutal, unapologetically loud.\n\nStops all radiated regen. 30% damage bonus to elite zombies."
 modArmorCigarDesc,Look intimidating and get a better deal from traders.
 modArmorWaterPurifier,Water Filtration Unit
 modArmorWaterPurifierDesc,Requires a limited-use filter to allow safe consumption of standing and murky water.

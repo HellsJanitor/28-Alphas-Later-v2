@@ -244,6 +244,7 @@
 		<color name="rotten" value="0.169, 0.145, 0.102, 0"/>
 		<color name="weak" value="0.102, 0.067, 0.063, .01"/>
 		<color name="frozen" value="0.941, 0.973, 1, 0"/>
+		<color name="buster" value="0.502, 0, 0.502, 0"/>
 	</insertafter>
 	
 	<!-- *** AOE Despair -->
@@ -468,7 +469,7 @@
 			<property name="Tags" value="entity,zombie,walker,buster"/>
 			<property name="Mesh" value="@:Entities/Zombies/Burnt/ZBurnt.prefab"/>
 			<property name="WalkType" value="7"/>
-			<property name="MatColor" value="infernal"/>
+			<property name="MatColor" value="buster"/>
 			<!-- Gameplay -->
 			<property name="MoveSpeedAggro" value="0.2, 1.2"/>
 			<property name="JumpMaxDistance" value=".8, 1.1"/>
@@ -2310,7 +2311,7 @@
 			<property name="RightHandJointName" value="Jaw"/>
 			<property name="ModelType" value="Standard"/>
 			<property name="WalkType" value="2"/>
-			<property name="Mass" value="210"/>
+			<property name="Mass" value="320"/>
 			<property name="Weight" value="70"/>
 			<property name="PhysicsBody" value="zombieFat"/>
 			<property name="RootMotion" value="true"/>

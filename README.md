@@ -4,6 +4,29 @@
 The idea behind this mod is to slow progression, make traders less powerful, and generally extend the time for a playthrough, while keeping the vanilla look and feel.
 
 > [!IMPORTANT]
+>14/10/25 mod version 2.4.1.2 changelog:
+
+> [!CAUTION]
+> This update *should* be save game safe, but ensure you **back up your save** first!
+
+Fixed hard-coded 'E' to pick-up chickens and rabbits - now works with re-mapped keys and controller inputs.
+
+Lowered lootstage modifiers and bonuses for burnt forest, desert and snow biomes.
+
+Changed bunker buster colour to purple.
+
+Reverted frostclaw and plague spitter spawn weights to vanilla values.
+
+Added ammo dismantling bundles.
+
+Added legendary weapons for missing classes.
+
+Tweaked pine forest commercial, industrial and downtown spawns.
+
+Various localization fixes and small tweaks.
+
+
+> [!IMPORTANT]
 > 5/10/25 mod version 2.4.1.0 changelog:
 
 > [!CAUTION]

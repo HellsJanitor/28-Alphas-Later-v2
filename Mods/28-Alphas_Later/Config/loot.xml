@@ -115,6 +115,9 @@
 			<item name="meleeWpnLegendaryPitchfork" count="1"/>
 			<item name="meleeWpnLegendaryGardenRake" count="1"/>
 			<item name="meleeWpnBladeLegendaryBrushKnife" count="1"/>
+			<item name="meleeWpnLegendarySledgehammer" count="1"/>
+			<item name="meleeWpnClubHydraulicHammer" count="1"/>
+			<item name="meleeWpnKnucklesLegendaryKnuckles" count="1"/>
 		</lootgroup>
 	
 		<!-- <lootgroup name="groupLegendaryRanged" count="1" loot_quality_template="qualLegendaryTemplate"> -->
