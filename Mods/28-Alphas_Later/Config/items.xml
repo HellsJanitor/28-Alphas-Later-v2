@@ -865,33 +865,30 @@
 		</item>
 		
 		<!-- *** piston hammer -->
-		<item name="meleeWpnLegendarySledgehammer">
-			<property name="CreativeMode" value="Player"/>
-			<property name="DisplayType" value="meleeKnife"/>
-			<property name="CrosshairUpAfterShot" value="false"/>
-			<property name="DescriptionKey" value="meleeWpnLegendarySledgehammerDesc"/>
-			<property name="CustomIcon" value="meleeWpnLegendarySledgehammer"/>
-			<property name="DegradationBreaksAfter" value="false"/>
-			<property name="EconomicValue" value="1500"/>
-			<property name="Group" value="Tools/Traps"/>
+		<item name="meleeWpnLegendarySledgehammer">			
+			<property name="Tags" value="blunt,melee,grunting,heavy,sledge,weapon,meleeWeapon,longShaft,attStrength,perkSkullCrusher,perkFlurryOfStrength,canHaveCosmetic,sledgeSkill"/>
+			<property name="DisplayType" value="meleeHeavy"/>
 			<property name="HoldType" value="33"/>
-			<property name="Material" value="Mwood"/>
 			<property name="Meshfile" value="#@modfolder:Resources/LegendaryMelee.unity3d?PistonHammer.prefab"/>
 			<property name="PositionOffset" value="0,0,-.01"/>
-			<property name="RepairExpMultiplier" value="5.5"/>
+			<property name="Material" value="MmeleeWpnSledgeParts"/>
+			<property name="TintColor" value="60, 0, 0"/>
+			<property name="Weight" value="1"/>
+			<property name="ScrapTimeOverride" value="10.0"/>
 			<property name="RepairTools" value="resourceRepairKit"/>
-			<property name="ShowQuality" value="true"/>
-			<property name="SoundDestroy" value="wooddestroy1"/>
-			<property name="SoundHolster" value="weapon_holster"/>
+			<property name="DegradationBreaksAfter" value="false"/>
 			<property name="SoundJammed" value="ItemNeedsRepair"/>
+			<property name="SoundDestroy" value="metaldestroy1"/>
+			<property name="EconomicValue" value="1100"/>
+			<property name="TraderStageTemplate" value="baseTier2"/><!-- meleeWpnSledgeT3SteelSledgehammer -->
+			<property name="Group" value="Ammo/Weapons,Melee Weapons"/>
+			<property name="UnlockedBy" value="craftingSledgehammers"/><!-- meleeWpnSledgeT3SteelSledgehammerSchematic, -->
+			<property name="ShowQuality" value="true"/>
 			<property name="SoundUnholster" value="weapon_unholster"/>
-			<property name="SoundPickup" value="machete_grab"/>
-			<property name="SoundPlace" value="machete_place"/>
-			<property name="Stacknumber" value="1"/>
-			<property name="Tags" value="legendary,blunt,melee,grunting,heavy,sledge,weapon,meleeWeapon,longShaft,attStrength,perkSkullCrusher,perkFlurryOfStrength,canHaveCosmetic,sledgeSkill"/>
-			<!-- <property name="TintColor" value="255,0,0"/> -->
-			<property name="TraderStageTemplate" value="baseTier0"/>
-
+			<property name="SoundHolster" value="weapon_holster"/>
+			<property name="SoundPickup" value="sledgehammer_steel_grab"/>
+			<property name="SoundPlace" value="sledgehammer_steel_place"/>
+			
 			<property class="Action0">
 				<property name="Class" value="DynamicMelee"/>
 				<property name="Sphere" value=".15"/> <!-- limit to 0.15, else the sphere cast can overlap the target already -->
