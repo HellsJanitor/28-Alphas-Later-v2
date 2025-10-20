@@ -542,6 +542,7 @@
 				<passive_effect name="BlockDamage" operation="perc_add" value=".01,1" level="1,50" tags="perkSalvageOperations"/>
 				<passive_effect name="EntityDamage" operation="perc_add" value=".01,0.5" level="1,50" tags="perkSalvageOperations"/>
 				<passive_effect name="HarvestCount" operation="perc_add" value=".01,1" level="1,50" tags="salvageHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".01,1" level="1,50" tags="PercMasterySteelHarvest"/>
 				<passive_effect name="StaminaLoss" operation="perc_add" value="-.01,-.25" level="1,50" tags="primary"/>
 				<passive_effect name="StaminaLoss" operation="perc_add" value="-.01,-.50" level="1,50" tags="secondary"/>
 				<passive_effect name="DegradationPerUse" operation="perc_add" value="-0.01,-.5" level="1,50" tags="perkSalvageOperations">

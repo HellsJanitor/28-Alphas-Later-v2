@@ -866,7 +866,7 @@
 		
 		<!-- *** piston hammer -->
 		<item name="meleeWpnLegendarySledgehammer">			
-			<property name="Tags" value="blunt,melee,grunting,heavy,sledge,weapon,meleeWeapon,longShaft,attStrength,perkSkullCrusher,perkFlurryOfStrength,canHaveCosmetic,sledgeSkill"/>
+			<property name="Tags" value="blunt,melee,grunting,heavy,sledge,weapon,meleeWeapon,longShaft,attStrength,perkSkullCrusher,perkFlurryOfStrength,canHaveCosmetic,sledgeSkill,legendary"/>
 			<property name="DisplayType" value="meleeHeavy"/>
 			<property name="HoldType" value="33"/>
 			<property name="Meshfile" value="#@modfolder:Resources/LegendaryMelee.unity3d?PistonHammer.prefab"/>
@@ -1535,7 +1535,7 @@
 			<property name="Stacknumber" value="1"/>
 			<property name="Group" value="Tools/Traps"/>
 			<property name="EconomicValue" value="500"/>
-			<property name="SellableToTrader" value="false"/>
+			<!-- <property name="SellableToTrader" value="false"/> -->
 			<property name="ItemTypeIcon" value="workbench"/>
 			<property name="SoundPickup" value="crucible_grab"/>
 			<property name="SoundPlace" value="crucible_place"/>
@@ -2349,7 +2349,7 @@
 			<property name="Weight" value="5"/>
 			<property name="EconomicValue" value="1"/>
 			<property name="Group" value="Resources,Chemicals"/>
-			<property name="DegradationBreaksAfter" value="false"/>
+			<property name="DegradationBreaksAfter" value="true"/>
 			<property name="ShowQuality" value="true"/>
 			<property name="SoundPickup" value="swarmdeath"/>
 			<property name="SoundPlace" value="swarmdeath"/>
@@ -2504,8 +2504,8 @@
 			<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
 
 			<effect_group tiered="false" name="Food Tier 1">
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="20"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="10"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="5">
 					<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="10"/>
@@ -2546,8 +2546,8 @@
 			<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
 
 			<effect_group tiered="false" name="Food Tier 1">
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="20"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="10"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="5">
 					<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="10"/>
@@ -2874,6 +2874,7 @@
 			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MresourceLimestone"/>
 			<property name="Weight" value="5"/>
+			<property name="MeltTimePerUnit" value=".5"/>
 			<property name="Stacknumber" value="6000"/>
 			<property name="EconomicValue" value="10"/>
 			<property name="EconomicBundleSize" value="10"/>
@@ -3356,8 +3357,9 @@
 		<item name="unit_limestone">
 			<property name="Extends" value="unit_iron"/>
 			<property name="CustomIcon" value="resourceLimestone"/>
-			<property name="Material" value="MresourceLimestone"/>
+			<property name="Material" value="Mlimestone"/>
 			<property name="CreativeMode" value="None"/>
+			<property name="CraftingIngredientTime" value=".25"/>
 		</item>
 		
 		<item name="unit_zinc">

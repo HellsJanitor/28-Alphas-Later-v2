@@ -81,15 +81,20 @@
 		<!-- damage modifier for missed headshots -->
 		<effect_group>
 			<requirement name="HitLocation" body_parts="Torso,LeftUpperArm,RightUpperArm,LeftLowerArm,RightLowerArm,LeftUpperLeg,RightUpperLeg,LeftLowerLeg,RightLowerLeg"/>
-			<requirement name="EntityTagCompare" target="other" tags="walker,feral,radiated,hazmat,mutated,mutant"/>
-			<requirement name="IsAlive" target="other" tags="walker,feral,radiated,hazmat,mutated,mutant"/>
+			<requirement name="EntityTagCompare" target="other" tags="walker,feral,radiated,charged,infernal,hazmat,mutated,mutant"/>
+			<requirement name="IsAlive" target="other" tags="walker,feral,radiated,charged,infernal,hazmat,mutated,mutant"/>
 			<passive_effect name="DamageModifier" operation="perc_add" value="-.90"/>
 		</effect_group>
 		<effect_group>
 			<requirement name="HitLocation" body_parts="Head"/>
-			<requirement name="EntityTagCompare" target="other" tags="walker,feral,radiated,hazmat,mutated,mutant"/>
-			<requirement name="IsAlive" target="other" tags="walker,feral,radiated,hazmat,mutated,mutant"/>
+			<requirement name="EntityTagCompare" target="other" tags="walker,feral,radiated,charged,infernal,hazmat,mutated,mutant"/>
+			<requirement name="IsAlive" target="other" tags="walker,feral,radiated,charged,infernal,hazmat,mutated,mutant"/>
 			<passive_effect name="DamageModifier" operation="perc_add" value=".1"/>
+		</effect_group>
+		
+		<!-- lower damage for most melee weapons -->
+		<effect_group>
+			<passive_effect name="EntityDamage" operation="perc_add" value="-.05" tags="perkMiner69r,perkSalvageOperations,perkElectrocutioner,perkJavelinMaster,perkPummelPete,perkSkullCrusher,admin"/>
 		</effect_group>
 			
 		<!-- initialise meds resistance cvars -->
@@ -105,6 +110,11 @@
 		<effect_group>
 			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="researchPoints" operation="set" value="0"/>
 			<requirement name="CVarCompare" cvar="researchPoints" operation="LTE" value="0"/>
+		</effect_group>
+		
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffOnBed" />
+			<requirement name="BlockStandingOn" tags="bedroll" />
 		</effect_group>
 	</append>
 	
@@ -1151,6 +1161,23 @@
 	</append>
 	
 	<append xpath="/buffs">
+		<!-- *** signalling buff when standing on a bed/bedroll -->
+		<buff name="buffOnBed" name_key="buffOnBedName" description_key="buffOnBedDesc" icon="ui_game_symbol_map_bed" icon_color="0,255,0">
+			<stack_type value="replace"/>
+			<duration value="5"/>
+		
+			<effect_group>
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffOnBed">
+					<requirement name="BlockStandingOn" tags="bedroll"/>
+				</passive_effect>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffOnBed">
+					<requirement name="!BlockStandingOn" tags="bedroll"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		
 		<!-- *** buffCampfireAOEEffect -->
 		<!-- TRIGGERED_BY: Buffs = buffCampfireAOE -->
 		<!-- Grants an insulation buff -->

@@ -19,7 +19,7 @@
 	]">
 		<property name="LootDropProb" value="0"/>
 		<property name="LootListOnDeath" value="zPackNormalCorpse"/>
-		<property name="TimeStayAfterDeath" value="1800"/>
+		<property name="TimeStayAfterDeath" value="3600"/>
 		<property name="CorpseBlock" value="goreHumanSkull"/>
 		<property name="CorpseBlockChance" value=".1"/>
 	</append>
@@ -27,7 +27,7 @@
 	<append xpath="/entity_classes/entity_class[starts-with(@name,'zombiePartyGirl')]">
 		<property name="LootDropProb" value="0"/>
 		<property name="LootListOnDeath" value="zPackPartyGirlCorpse"/>
-		<property name="TimeStayAfterDeath" value="1800"/>
+		<property name="TimeStayAfterDeath" value="3600"/>
 		<property name="CorpseBlock" value="goreBlockHumanBones"/>
 		<property name="CorpseBlockChance" value=".1"/>
 	</append>
@@ -35,7 +35,7 @@
 	<append xpath="/entity_classes/entity_class[starts-with(@name,'zombieNurse')]">
 		<property name="LootDropProb" value="0"/>
 		<property name="LootListOnDeath" value="zPackNurseCorpse"/>
-		<property name="TimeStayAfterDeath" value="1800"/>
+		<property name="TimeStayAfterDeath" value="3600"/>
 		<property name="CorpseBlock" value="goreBlockHumanBones"/>
 		<property name="CorpseBlockChance" value=".1"/>
 	</append>
@@ -43,7 +43,7 @@
 	<append xpath="/entity_classes/entity_class[starts-with(@name,'zombieLab')]">
 		<property name="LootDropProb" value="0"/>
 		<property name="LootListOnDeath" value="zPackLabCorpse"/>
-		<property name="TimeStayAfterDeath" value="1800"/>
+		<property name="TimeStayAfterDeath" value="3600"/>
 		<property name="CorpseBlock" value="goreBlockHumanBones"/>
 		<property name="CorpseBlockChance" value=".1"/>
 	</append>
@@ -51,7 +51,7 @@
 	<append xpath="/entity_classes/entity_class[starts-with(@name,'zombieUtilityWorker')]">
 		<property name="LootDropProb" value="0"/>
 		<property name="LootListOnDeath" value="zPackUtilityCorpse"/>
-		<property name="TimeStayAfterDeath" value="1800"/>
+		<property name="TimeStayAfterDeath" value="3600"/>
 		<property name="CorpseBlock" value="goreBlockHumanBones"/>
 		<property name="CorpseBlockChance" value=".1"/>
 	</append>
@@ -59,7 +59,7 @@
 	<append xpath="/entity_classes/entity_class[starts-with(@name,'zombieJanitor')]">
 		<property name="LootDropProb" value="0"/>
 		<property name="LootListOnDeath" value="zPackJanitorCorpse"/>
-		<property name="TimeStayAfterDeath" value="1800"/>
+		<property name="TimeStayAfterDeath" value="3600"/>
 		<property name="CorpseBlock" value="goreBlockHumanBones"/>
 		<property name="CorpseBlockChance" value=".1"/>
 	</append>
@@ -67,7 +67,7 @@
 	<append xpath="/entity_classes/entity_class[starts-with(@name,'zombieMaleHazmat')]">
 		<property name="LootDropProb" value="0"/>
 		<property name="LootListOnDeath" value="zPackHazmatCorpse"/>
-		<property name="TimeStayAfterDeath" value="1800"/>
+		<property name="TimeStayAfterDeath" value="3600"/>
 		<property name="CorpseBlock" value="goreBlockHumanBones"/>
 		<property name="CorpseBlockChance" value=".1"/>
 	</append>
@@ -75,7 +75,7 @@
 	<append xpath="/entity_classes/entity_class[starts-with(@name,'zombieBusinessMan')]">
 		<property name="LootDropProb" value="0"/>
 		<property name="LootListOnDeath" value="zPackBusinessmanCorpse"/>
-		<property name="TimeStayAfterDeath" value="1800"/>
+		<property name="TimeStayAfterDeath" value="3600"/>
 		<property name="CorpseBlock" value="goreBlockHumanBones"/>
 		<property name="CorpseBlockChance" value=".1"/>
 	</append>
@@ -94,7 +94,7 @@
 	]">
 		<property name="LootDropProb" value="0"/>
 		<property name="LootListOnDeath" value="zPackNormalCorpse"/>
-		<property name="TimeStayAfterDeath" value="1800"/>
+		<property name="TimeStayAfterDeath" value="3600"/>
 		<property name="CorpseBlock" value="goreHumanSkull"/>
 		<property name="CorpseBlockChance" value=".1"/>
 	</append>
@@ -102,7 +102,7 @@
 	<append xpath="/entity_classes/entity_class[starts-with(@name,'zombiePlagueSpitter')]">
 		<property name="LootDropProb" value="0"/>
 		<property name="LootListOnDeath" value="zPackStrongCorpse"/>
-		<property name="TimeStayAfterDeath" value="1800"/>
+		<property name="TimeStayAfterDeath" value="3600"/>
 		<property name="CorpseBlock" value="goreBlockHumanBones"/>
 		<property name="CorpseBlockChance" value=".1"/>
 	</append>
@@ -110,7 +110,7 @@
 	<append xpath="/entity_classes/entity_class[starts-with(@name,'zombieFrostclaw')]">
 		<property name="LootDropProb" value="0"/>
 		<property name="LootListOnDeath" value="zPackStrongCorpse"/>
-		<property name="TimeStayAfterDeath" value="1800"/>
+		<property name="TimeStayAfterDeath" value="3600"/>
 		<property name="CorpseBlock" value="goreBlockHumanBones"/>
 		<property name="CorpseBlockChance" value=".1"/>
 	</append>
@@ -121,7 +121,7 @@
 	]">
 		<property name="LootDropProb" value="0"/>
 		<property name="LootListOnDeath" value="zPackStrongCorpse"/>
-		<property name="TimeStayAfterDeath" value="1800"/>
+		<property name="TimeStayAfterDeath" value="3600"/>
 		<property name="CorpseBlock" value="goreBlockHumanBones"/>
 		<property name="CorpseBlockChance" value=".1"/>
 	</append>
@@ -129,7 +129,7 @@
 	<append xpath="/entity_classes/entity_class[starts-with(@name,'zombieFatHawaiian') or (starts-with(@name,'zombieBowler'))]">
 		<property name="LootDropProb" value="0"/>
 		<property name="LootListOnDeath" value="zPackTouristCorpse"/>
-		<property name="TimeStayAfterDeath" value="1800"/>
+		<property name="TimeStayAfterDeath" value="3600"/>
 		<property name="CorpseBlock" value="goreBlockHumanBones"/>
 		<property name="CorpseBlockChance" value=".1"/>
 	</append>
@@ -137,7 +137,7 @@
 	<append xpath="/entity_classes/entity_class[starts-with(@name,'zombieFatCop')]">
 		<property name="LootDropProb" value="0"/>
 		<property name="LootListOnDeath" value="zPackFatCopCorpse"/>
-		<property name="TimeStayAfterDeath" value="1800"/>
+		<property name="TimeStayAfterDeath" value="3600"/>
 		<property name="CorpseBlock" value="goreBlockHumanBones"/>
 		<property name="CorpseBlockChance" value=".1"/>
 	</append>
@@ -145,7 +145,7 @@
 	<append xpath="/entity_classes/entity_class[starts-with(@name,'zombieLumberjack')]">
 		<property name="LootDropProb" value="0"/>
 		<property name="LootListOnDeath" value="zPackLumberjackCorpse"/>
-		<property name="TimeStayAfterDeath" value="1800"/>
+		<property name="TimeStayAfterDeath" value="3600"/>
 		<property name="CorpseBlock" value="goreBlockHumanBones"/>
 		<property name="CorpseBlockChance" value=".1"/>
 	</append>
@@ -153,7 +153,7 @@
 	<append xpath="/entity_classes/entity_class[starts-with(@name,'zombieBiker')]">
 		<property name="LootDropProb" value="0"/>
 		<property name="LootListOnDeath" value="zPackBikerCorpse"/>
-		<property name="TimeStayAfterDeath" value="1800"/>
+		<property name="TimeStayAfterDeath" value="3600"/>
 		<property name="CorpseBlock" value="goreBlockHumanBones"/>
 		<property name="CorpseBlockChance" value=".1"/>
 	</append>
@@ -161,7 +161,7 @@
 	<append xpath="/entity_classes/entity_class[starts-with(@name,'zombieSkateboarder')]">
 		<property name="LootDropProb" value="0"/>
 		<property name="LootListOnDeath" value="zPackThugCorpse"/>
-		<property name="TimeStayAfterDeath" value="1800"/>
+		<property name="TimeStayAfterDeath" value="3600"/>
 		<property name="CorpseBlock" value="goreBlockHumanBones"/>
 		<property name="CorpseBlockChance" value=".1"/>
 	</append>
@@ -169,7 +169,7 @@
 	<append xpath="/entity_classes/entity_class[starts-with(@name,'zombieSoldier')]">
 		<property name="LootDropProb" value="0"/>
 		<property name="LootListOnDeath" value="zPackSoldierCorpse"/>
-		<property name="TimeStayAfterDeath" value="1800"/>
+		<property name="TimeStayAfterDeath" value="3600"/>
 		<property name="CorpseBlock" value="goreBlockHumanBones"/>
 		<property name="CorpseBlockChance" value=".1"/>
 	</append>
@@ -177,7 +177,7 @@
 	<append xpath="/entity_classes/entity_class[starts-with(@name,'zombieWight')]">
 		<property name="LootDropProb" value="0"/>
 		<property name="LootListOnDeath" value="zPackBossCorpse"/>
-		<property name="TimeStayAfterDeath" value="1800"/>
+		<property name="TimeStayAfterDeath" value="3600"/>
 		<property name="CorpseBlock" value="goreBlockHumanBones"/>
 		<property name="CorpseBlockChance" value=".1"/>
 	</append>
@@ -185,7 +185,7 @@
 	<append xpath="/entity_classes/entity_class[starts-with(@name,'zombieDemolition')]">
 		<property name="LootDropProb" value="0"/>
 		<property name="LootListOnDeath" value="zPackBossCorpse"/>
-		<property name="TimeStayAfterDeath" value="1800"/>
+		<property name="TimeStayAfterDeath" value="3600"/>
 		<property name="CorpseBlock" value="goreBlockHumanBones"/>
 		<property name="CorpseBlockChance" value=".1"/>
 	</append>
@@ -458,7 +458,7 @@
 	<set xpath="/entity_classes/entity_class/effect_group[@name='Base Effects']/passive_effect[@name='HealthMax' and @value='^healthWightInfernal']/@value">^healthWightRadiated</set>
 	
 	<set xpath="/entity_classes/entity_class/effect_group[@name='Base Effects']/passive_effect[@name='HealthMax' and @value='^healthScreamerCharged']/@value">^healthScreamerRadiated</set>
-	<set xpath="/entity_classes/entity_class/effect_group[@name='Base Effects']/passive_effect[@name='HealthMax' and @value='^healthScreamerInfernal']/@value">^healthScreamerRadiated</set>
+	<!-- <set xpath="/entity_classes/entity_class/effect_group[@name='Base Effects']/passive_effect[@name='HealthMax' and @value='^healthScreamerInfernal']/@value">^healthScreamerRadiated</set> -->
 	
 	<!-- *** new zombies -->
 	<append xpath="/entity_classes">
@@ -2129,7 +2129,7 @@
 			<property name="ExperienceGain" value="1200"/><!-- XP grunt feral -->
 			<property name="LootDropProb" value="0"/>
 			<property name="LootListOnDeath" value="zPackBossCorpse"/>
-			<property name="TimeStayAfterDeath" value="1800"/>
+			<property name="TimeStayAfterDeath" value="3600"/>
 			<property name="CorpseBlock" value="goreBlockHumanBones"/>
 			<property name="CorpseBlockChance" value=".1"/><!-- Feral -->
 
@@ -2163,7 +2163,7 @@
 			<property name="ExperienceGain" value="1200"/><!-- XP strong -->
 			<property name="LootDropProb" value="0"/>
 			<property name="LootListOnDeath" value="zPackBossCorpse"/>
-			<property name="TimeStayAfterDeath" value="1800"/>
+			<property name="TimeStayAfterDeath" value="3600"/>
 			<property name="CorpseBlock" value="goreBlockHumanBones"/>
 			<property name="CorpseBlockChance" value=".1"/><!-- Feral -->
 
@@ -2204,7 +2204,7 @@
 			<property name="ExperienceGain" value="1200"/><!-- XP grunt feral -->
 			<property name="LootDropProb" value="0"/>
 			<property name="LootListOnDeath" value="zPackBossCorpse"/>
-			<property name="TimeStayAfterDeath" value="1800"/>
+			<property name="TimeStayAfterDeath" value="3600"/>
 			<property name="CorpseBlock" value="goreBlockHumanBones"/>
 			<property name="CorpseBlockChance" value=".1"/><!-- Feral -->
 
@@ -2245,7 +2245,7 @@
 			<property name="ExperienceGain" value="1750"/><!-- XP grunt feral -->
 			<property name="LootDropProb" value="0"/>
 			<property name="LootListOnDeath" value="zPackBossCorpse"/>
-			<property name="TimeStayAfterDeath" value="1800"/>
+			<property name="TimeStayAfterDeath" value="3600"/>
 			<property name="CorpseBlock" value="goreBlockHumanBones"/>
 			<property name="CorpseBlockChance" value=".1"/><!-- Feral -->
 
@@ -2286,7 +2286,7 @@
 			<property name="ExperienceGain" value="1200"/><!-- XP grunt feral -->
 			<property name="LootDropProb" value="0"/>
 			<property name="LootListOnDeath" value="zPackBossCorpse"/>
-			<property name="TimeStayAfterDeath" value="1800"/>
+			<property name="TimeStayAfterDeath" value="3600"/>
 			<property name="CorpseBlock" value="goreBlockHumanBones"/>
 			<property name="CorpseBlockChance" value=".1"/><!-- Feral -->
 
@@ -2356,7 +2356,7 @@
 			<property name="ExperienceGain" value="1200"/>
 			<property name="LootDropProb" value="0"/>
 			<property name="LootListOnDeath" value="zPackBossCorpse"/>
-			<property name="TimeStayAfterDeath" value="1800"/>
+			<property name="TimeStayAfterDeath" value="3600"/>
 			<property name="CorpseBlock" value="goreBlockHumanBones"/>
 			<property name="CorpseBlockChance" value=".1"/><!-- Feral -->
 			
@@ -2409,7 +2409,7 @@
 			<property name="ExperienceGain" value="1200"/><!-- XP grunt feral -->
 			<property name="LootDropProb" value="0"/>
 			<property name="LootListOnDeath" value="zPackBossCorpse"/>
-			<property name="TimeStayAfterDeath" value="1800"/>
+			<property name="TimeStayAfterDeath" value="3600"/>
 			<property name="CorpseBlock" value="goreBlockHumanBones"/>
 			<property name="CorpseBlockChance" value=".1"/><!-- Feral -->
 
@@ -2451,7 +2451,7 @@
 			<property name="ExperienceGain" value="1200"/><!-- XP grunt feral -->
 			<property name="LootDropProb" value="0"/>
 			<property name="LootListOnDeath" value="zPackBossCorpse"/>
-			<property name="TimeStayAfterDeath" value="1800"/>
+			<property name="TimeStayAfterDeath" value="3600"/>
 			<property name="CorpseBlock" value="goreBlockHumanBones"/>
 			<property name="CorpseBlockChance" value=".1"/><!-- Feral -->
 
@@ -2469,79 +2469,71 @@
 		
 		<!-- <entity_class name="animalMutantBug" extends="animalBear"> -->
 			<!-- <property name="SizeScale" value=".8"/> -->
-			<!-- <property name="Prefab" value="#@modfolder:Resources/mutantbug.unity3d?InsectMonsterSM.prefab"/> -->
+			<!-- <property name="Prefab" value="#@modfolder:Resources/mutantbug.unity3d?InsectMonster.prefab"/> -->
 		<!-- </entity_class> -->
 			
-		<!-- <entity_class name="animalMutantBug" extends="animalTemplateHostile">			 -->
-			<!-- <property name="SizeScale" value=".8"/> -->
-			<!-- <property name="UserSpawnType" value="Menu"/> -->
-			<!-- <property name="Tags" value="entity,animal,hostile,mutant"/> -->
-			<!-- <property name="Prefab" value="#@modfolder:Resources/mutantbug.unity3d?InsectMonsterSM.prefab"/> -->
-			<!-- <property name="PrefabCombined" value="true"/> -->
-			<!-- <property name="MapIcon" value="ui_game_symbol_tracking_bear"/> -->
-			<!-- <property name="TrackerIcon" value="ui_game_symbol_tracking_bear"/> -->
-			<!-- <property name="AvatarController" value="AvatarAnimalController"/> -->
-			<!-- <property name="ModelType" value="Standard"/> -->
-			<!-- <property name="HasRagdoll" value="true"/> -->
-			<!-- <property name="HasDeathAnim" value="true"/> -->
-			<!-- <property name="RootMotion" value="true"/> -->
-			<!-- <property name="RagdollOnDeathChance" value=".5"/> -->
-			<!-- <property name="PhysicsBody" value="mutantBugCustom"/> -->
-			<!-- <property name="Mass" value="180"/> -->
+		<entity_class name="animalMutantBug" extends="animalTemplateHostile">
+			<property name="SizeScale" value=".8"/>
+			<property name="Mesh" value="#@modfolder:Resources/mutantbug.unity3d?InsectMonsterSM"/>
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,animal,hostile,mutant"/>
+			<property name="AvatarController" value="AvatarAnimalController"/>
+			<property name="LookAtAngle" value="0"/>
+			<property name="IsAnimalEntity" value="true"/>
+			<property name="IsEnemyEntity" value="true"/>
+			<property name="Faction" value="animals"/>
+			<property name="AltMats" value="#@modfolder:Resources/mutantbug.unity3d?InsectMonsterBlack.mat,#@modfolder:Resources/mutantbug.unity3d?InsectMonsterBlue.mat,#@modfolder:Resources/mutantbug.unity3d?InsectMonsterBrown.mat"/>
 			
-			<!-- <property name="LookAtAngle" value="0"/> -->
-			<!-- <property name="AltMats" value="#@modfolder:Resources/mutantbug.unity3d?InsectMonsterBlack.mat,#@modfolder:Resources/mutantbug.unity3d?InsectMonsterBlue.mat,#@modfolder:Resources/mutantbug.unity3d?InsectMonsterBrown.mat"/> -->
+			<property name="ModelType" value="Standard"/>
+			<property name="HasRagdoll" value="true"/>
+			<property name="Mass" value="180"/>
+			<property name="HasDeathAnim" value="true"/>
+			<property name="RootMotion" value="false"/>
+			<property name="RagdollOnDeathChance" value=".5"/>
 
-			<!-- <property name="IsAnimalEntity" value="true"/> -->
-			<!-- <property name="IsEnemyEntity" value="true"/> -->
-			<!-- <property name="Faction" value="animals"/> -->
-			
-			
-			<!-- <property name="ModelType" value="Standard"/> -->
+			<property name="SoundRandomTime" value="20"/>
+			<property name="SoundAlertTime" value="10"/>
+			<property name="SoundHurt" value="Animals/Snake/snakepain"/>
+			<property name="SoundDeath" value="Animals/Snake/snakedeath"/>
+			<property name="SoundRandom" value="Animals/Snake/snakeroam"/>
+			<property name="SoundSense" value="Animals/Snake/snakesense"/>
+			<property name="SoundAlert" value="Animals/Snake/snakealert"/>
+			<property name="SoundAttack" value="Animals/Snake/snakeattack"/>
 
-			<!-- <property name="SoundRandomTime" value="20"/> -->
-			<!-- <property name="SoundAlertTime" value="10"/> -->
-			<!-- <property name="SoundHurt" value="Animals/Snake/snakepain"/> -->
-			<!-- <property name="SoundDeath" value="Animals/Snake/snakedeath"/> -->
-			<!-- <property name="SoundRandom" value="Animals/Snake/snakeroam"/> -->
-			<!-- <property name="SoundSense" value="Animals/Snake/snakesense"/> -->
-			<!-- <property name="SoundAlert" value="Animals/Snake/snakealert"/> -->
-			<!-- <property name="SoundAttack" value="Animals/Snake/snakeattack"/> -->
-
-			<!-- <property name="AIFeralSense" value="1.6"/> -->
-			<!-- <property name="AITask-1" value="BreakBlock"/> -->
-			<!-- <property name="AITask-2" value="Territorial"/> -->
-			<!-- <property name="AITask-3" value="ApproachAndAttackTarget" data="class=EntityPlayer,20,EntityBandit,20"/> -->
-			<!-- <property name="AITask-4" value="ApproachSpot"/> -->
-			<!-- <property name="AITask-5" value="Look"/> -->
-			<!-- <property name="AITask-6" value="Wander"/> -->
-			<!-- <property name="AITask-7" value=""/> -->
-			<!-- <property name="AITarget-1" value="SetAsTargetIfHurt" data="class=EntityPlayer,EntityBandit"/> -->
-			<!-- <property name="AITarget-2" value="BlockingTargetTask"/> -->
-			<!-- <property name="AITarget-3" value="SetNearestCorpseAsTarget" data="flags=edible"/> -->
-			<!-- <property name="AITarget-4" value="SetNearestEntityAsTarget" data="class=EntityPlayer,22,20,EntityBandit,0,-8"/> -->
-			<!-- <property name="AITarget-5" value=""/> -->
+			<property name="AIFeralSense" value="1.6"/>
+			<property name="AITask-1" value="BreakBlock"/>
+			<property name="AITask-2" value="Territorial"/>
+			<property name="AITask-3" value="ApproachAndAttackTarget" data="class=EntityPlayer,20,EntityBandit,20"/>
+			<property name="AITask-4" value="ApproachSpot"/>
+			<property name="AITask-5" value="Look"/>
+			<property name="AITask-6" value="Wander"/>
+			<property name="AITask-7" value=""/>
+			<property name="AITarget-1" value="SetAsTargetIfHurt" data="class=EntityPlayer,EntityBandit"/>
+			<property name="AITarget-2" value="BlockingTargetTask"/>
+			<property name="AITarget-3" value="SetNearestCorpseAsTarget" data="flags=edible"/>
+			<property name="AITarget-4" value="SetNearestEntityAsTarget" data="class=EntityPlayer,22,20,EntityBandit,0,-8"/>
+			<property name="AITarget-5" value=""/>
 
 			<!-- Gameplay  -->
-			<!-- <property name="MoveSpeed" value=".2"/> -->
-			<!-- <property name="MoveSpeedNight" value=".25"/> -->
-			<!-- <property name="MoveSpeedAggro" value="1, 1.1"/> -->
-			<!-- <property name="MoveSpeedPanic" value="1.5"/> -->
+			<property name="MoveSpeed" value=".2"/>
+			<property name="MoveSpeedNight" value=".25"/>
+			<property name="MoveSpeedAggro" value="1, 1.1"/>
+			<property name="MoveSpeedPanic" value="1.5"/>
 
-			<!-- <property name="HandItem" value="meleeHandAnimalMutantBug"/> -->
+			<property name="HandItem" value="meleeHandAnimalMutantBug"/>
 
-			<!-- <property name="Immunity" value="sickness;disease;wellness"/> -->
-			<!-- <property name="PainResistPerHit" value=".9"/> -->
+			<property name="Immunity" value="sickness;disease;wellness"/>
+			<property name="PainResistPerHit" value=".9"/>
 
-			<!-- <drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/> -->
-			<!-- <drop event="Harvest" name="venom" count="0" tool_category="Butcher"/> -->
-			<!-- <drop event="Harvest" name="venom" tag="butcherHarvest" count="2"/> -->
-			<!-- <drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="10"/> -->
-			<!-- <drop event="Harvest" name="foodRottingFlesh" count="1" tag="WasteTreasuresCompleteHarvest"/> -->
-			<!-- <effect_group name="Base Effects"> -->
-				<!-- <passive_effect name="HealthMax" operation="base_set" value="250"/> -->
-			<!-- </effect_group> -->
-		<!-- </entity_class> -->
+			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+			<drop event="Harvest" name="venom" count="0" tool_category="Butcher"/>
+			<drop event="Harvest" name="venom" tag="butcherHarvest" count="2"/>
+			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="10"/>
+			<drop event="Harvest" name="foodRottingFlesh" count="1" tag="WasteTreasuresCompleteHarvest"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="250"/>
+			</effect_group>
+		</entity_class>
 		
 		<!-- *** The Hornet -->
 		<entity_class name="vehicleDuneBuggy">

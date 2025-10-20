@@ -756,12 +756,12 @@
 		<!-- *** player heals when standing on player crafted king-size bed -->
 		<block name="bedPlayer">
 			<property name="Class" value="SleepingBag"/>
-			<property name="CustomIcon" value="bed02"/>
+			<property name="CustomIcon" value="bed02White"/>
 			<property name="DescriptionKey" value="bedGroupDesc"/>
 			<property name="DisplayType" value="blockMulti"/>
 			<property name="Material" value="Mfurniture"/>
 			<property name="Shape" value="ModelEntity"/>
-			<property name="Model" value="Entities/Furniture/kingSizedBedPrefab"/>
+			<property name="Model" value="@:Entities/Furniture/kingSizedBedPrefab.prefab"/>
 			<property name="MultiBlockDim" value="2,1,2"/>
 			<property name="WaterFlow" value="permitted"/>
 			<property name="IsTerrainDecoration" value="true"/>
@@ -790,11 +790,11 @@
 		<!-- *** Chicken Coop -->
 		<block name="chickenCoop">
 			<property name="Extends" value="cntDewCollector"/>
-			<property name="CustomIcon" value="chickenCoop"/>
+			<property name="CustomIcon" value="chickenCoopNew"/>
 			<property name="DescriptionKey" value="chickenCoopDesc"/>
 			<property name="Material" value="Mwood_weak"/>
 			<property name="Shape" value="ModelEntity"/>
-			<property name="Model" value="#@modfolder:Resources/ChickenCoop.unity3d?ChickenCoopPrefab.prefab"/>
+			<property name="Model" value="#@modfolder:Resources/ChickenCoop.unity3d?ChickenCoop.prefab"/>
 			<property name="MultiBlockDim" value="2,2,2"/>
 			<property name="ModelOffset" value="0,0,0"/>
 			<property name="OpenSound" value="door_wood_roughcut_open"/>
@@ -895,6 +895,17 @@
 	<append xpath="/blocks/block[@name='bedroll']">
 		<property name="Tags" value="bedroll"/>
 	</append>
+	
+	<!-- *** ground align for goreblocks (test) -->
+	<!-- <append xpath="/blocks/block[@name='goreBlockHumanBones']"> -->
+		<!-- <property name="GndAlign" value="1"/> -->
+		<!-- <property name="ModelOffset" value="0,0.5,0"/> -->
+	<!-- </append> -->
+	
+	<!-- <append xpath="/blocks/block[@name='goreHumanSkull']"> -->
+		<!-- <property name="GndAlign" value="-1"/> -->
+		<!-- <property name="ModelOffset" value="0.2,0,0.2"/> -->
+	<!-- </append> -->
 	
 	<set xpath="//block[@name='wallTorchLight']">
 		<property name="Extends" value="cropsGrowingMaster" param1="CustomIcon,DescriptionKey,MultiBlockDim,OnlySimpleRotations"/>
