@@ -1,5 +1,5 @@
 <HellsJanitor>
-	<!-- *** set base health and stamina to zero for wellness -->
+	<!-- *** set base health and stamina to forty for wellness -->
 	<set xpath="/entity_classes/entity_class[@name='playerMale']/effect_group/passive_effect[@name='HealthMax']/@value">40</set>
 	<set xpath="/entity_classes/entity_class[@name='playerMale']/effect_group/passive_effect[@name='StaminaMax']/@value">40</set>
 	
@@ -223,9 +223,11 @@
 	</append>
 	
 	<!-- *** custom tag for hazmat zombies -->
-	<set xpath="//entity_class[@name='zombieMaleHazmat']//property[@name='Tags']/@value">entity,zombie,walker,hazmat</set>
-	<set xpath="//entity_class[@name='zombieMaleHazmatFeral']//property[@name='Tags']/@value">entity,zombie,walker,feral,hazmat</set>
-	<set xpath="//entity_class[@name='zombieMaleHazmatRadiated']//property[@name='Tags']/@value">entity,zombie,walker,feral,radiated,hazmat</set>
+	<append xpath="/entity_classes/entity_class[starts-with (@name,'zombieMaleHazmat')]/property[@name='Tags']/@value">,hazmat</append>
+	
+	<!-- <set xpath="//entity_class[@name='zombieMaleHazmat']//property[@name='Tags']/@value">entity,zombie,walker,hazmat</set> -->
+	<!-- <set xpath="//entity_class[@name='zombieMaleHazmatFeral']//property[@name='Tags']/@value">entity,zombie,walker,feral,hazmat</set> -->
+	<!-- <set xpath="//entity_class[@name='zombieMaleHazmatRadiated']//property[@name='Tags']/@value">entity,zombie,walker,feral,radiated,hazmat</set> -->
 	
 	<!-- *** anything undead immune to bleed -->
 	<set xpath="//entity_class[@name='zombieTemplateMale']/property[@name='Immunity']/@value">bleeding;sickness;disease;wellness</set>
@@ -1103,7 +1105,7 @@
 		
 		<entity_class name="zombieMaleHazmatWeak" extends="zombieMaleHazmat">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,weak,allbiome"/>
+			<property name="Tags" value="entity,zombie,walker,weak,allbiome,hazmat"/>
 			<!-- <property name="MatColor" value="weak"/> -->
 			
 			<effect_group name="Base Effects">

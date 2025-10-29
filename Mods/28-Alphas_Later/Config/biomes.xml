@@ -1,7 +1,7 @@
 <HellsJanitor>
 	<!-- *** add new lavender block to main biome -->	
 	<insertafter xpath="/worldgeneration/biomes/biome[@name='pine_forest']/subbiome/decorations/decoration[starts-with (@blockname,'planted') and not (contains(@blockname,'Snowberry'))]">
-	<decoration type="block" blockname="forestFlower" prob=".003" rotatemax="7"/>
+	<decoration type="block" blockname="forestFlower" prob=".002" rotatemax="7"/>
 	</insertafter>	
 	
 	<!-- *** biome variants of harvestable plants -->

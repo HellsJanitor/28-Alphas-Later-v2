@@ -94,9 +94,9 @@
 	</insertafter>
 	<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingWorkstations']/effect_group/passive_effect[@level='10,100']/@tags">,playerSawmill</append>
 	
-	<set xpath="/progression/crafting_skills/crafting_skill[@name='craftingWorkstations']/display_entry[@icon='cntDewCollector,forge']/@icon">chickenCoop,beehive</set>
-	<set xpath="/progression/crafting_skills/crafting_skill[@name='craftingWorkstations']/display_entry/unlock_entry[@item='cntDewCollector']/@item">chickenCoop,beehive</set>
-	<set xpath="/progression/crafting_skills/crafting_skill[@name='craftingWorkstations']/effect_group/passive_effect[@level='2,100']/@tags">chickenCoop,beehive</set>
+	<set xpath="/progression/crafting_skills/crafting_skill[@name='craftingWorkstations']/display_entry[@icon='cntDewCollector,forge']/@icon">chickenCoopNew,beehive,butchersBlock</set>
+	<set xpath="/progression/crafting_skills/crafting_skill[@name='craftingWorkstations']/display_entry/unlock_entry[@item='cntDewCollector']/@item">chickenCoop,beehive,butchersTable</set>
+	<set xpath="/progression/crafting_skills/crafting_skill[@name='craftingWorkstations']/effect_group/passive_effect[@level='2,100']/@tags">chickenCoop,beehive,butchersTable</set>
 	
 	<!-- *** solar bank unlocks -->
 	<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingElectrician']/display_entry[@icon='batterybank']/unlock_entry/@item">,solarbank</append>

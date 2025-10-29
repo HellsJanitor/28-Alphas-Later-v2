@@ -79,6 +79,8 @@ antivenomDesc,"Use this to instantly remove the effects of venom.\n\nCan be craf
 armorNerdOutfitDesc,Heavy Armor\nYour lack of fashion sense gives you the ability to focus on your inventions. Increases quantity of research found in loot.\n\nFull Set Bonus: Tools and Weapons degrade slower.
 barbedWireSpindleVariantHelper
 barbedWireSpindleVariantHelperBlock
+bedPlayer,King Size Bed
+bedPlayerDesc,When you place this bed you will see a Bed Icon on your compass and map. This will lead you back to your home and will act as a respawn point if you die.\nYou can only have one bedroll or bed active and your last placed bedroll or bed is the active one. Placing a new bed or picking up the last placed bed will permanently clear all previous respawn points.\n\nA placed and active bedroll will prevent enemy respawn in the area. The size of this area is shown while you place it.
 beehive,Beehive
 beehiveDesc,"Produces honey, requires a bee."
 BowRepairKit,Bow Repair Kit
@@ -214,6 +216,8 @@ buffWeaponLightActive,Battery Status
 buffWeaponLightActiveDesc,"Your Weapon Flashlight is currently powered.\n\nThe battery is being depleted, and when empty, requires replacing."
 buff_NoVehicle,Vehicle Subemerged
 buff_NoVehicleDesc,Internal combustion engines don't work underwater!!\n\nYou'll have to put your vehicle back on dry land before it can be driven again.
+butchersTable,Chopping Board
+butchersTableDesc,"A workstation for preparing animal carcasses for cooking."
 challengeCraftDewCollector,Craft Dew Collector
 challengeCraftDewCollectorDesc,"Water determines how fast your health and stamina bars recover. With empty hands, you can drink from any water source by pressing ""E"". Drinking water that has not been boiled has the risk of contracting dysentery. At a campfire, you can boil jars of water with a cooking pot. Your water level can be found in the character stats menu. An advanced method of collecting water is by crafting a Dew Collector. Water will affect regen speed when it is below 50% and 25%. All drink items will provide a small bonus to stamina regen while the 'drink' buff is visible."
 challengeCraftDewCollectorHint1,[FFB400]Craft a [-][00FF00]Dew Collector[-][FFB400].[-]
@@ -332,8 +336,12 @@ foodGrilledOnionDesc,A much more palatable way to eat onions.
 foodHoney,Honeycomb
 foodMashedTurnip,Mashed Turnip
 foodMashedTurnipDesc,Easier on your teeth than eating it raw ...
+foodRawChicken,Raw Chicken
+foodRawChickenDesc,"A butchered chicken, ready for cooking."
 foodRoastChicken,Roast Chicken
 foodRoastChickenDesc,A whole roast chicken. Hope you plucked it first ...
+foodRawRabbit,Raw Rabbit
+foodRawRabbitDesc,"A butchered rabbit, ready for cooking."
 foodRoastedRabbit,Roasted Rabbit
 foodRoastedRabbitDesc,You caught one? Now cook it! Delicious and filling.
 foodScrambledEggs,Scrambled Eggs
@@ -527,9 +535,9 @@ tableSawDesc,"A workstation for turning logs into wood planks more quickly and e
 tablesawTip,"The Tablesaw unlocks the ability to turn wood logs into wood more quickly & effeciently. Inside your land claim area all workstations can be picked up by holding ''E'' and selecting ''TAKE'' from the radial menu."
 tablesawTip_title,Tablesaw
 tameChicken,Chicken
-tameChickenDesc,"A chicken. Will produce up to 20 eggs when place in a chicken coop.\n\nCan also be used in recipes at a campfire or wood burning stove."
+tameChickenDesc,"A chicken. Will produce up to 20 eggs when place in a chicken coop.\n\nCan be eaten raw, or prepared at the Butcher's Table for cooking."
 tameRabbit,Rabbit
-tameRabbitDesc,Used in recipes at a campfire or wood burning stove.
+tameRabbitDesc,"Can be eaten raw, or prepared at the Butcher's Table for cooking."
 terrOreChromium,Chromium Ore
 terrOreCopper,Copper Ore
 terrOreLimestone,Limestone Ore

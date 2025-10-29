@@ -756,8 +756,12 @@
 		<!-- *** player heals when standing on player crafted king-size bed -->
 		<block name="bedPlayer">
 			<property name="Class" value="SleepingBag"/>
-			<property name="CustomIcon" value="bed02White"/>
 			<property name="DescriptionKey" value="bedGroupDesc"/>
+			<property name="CustomIcon" value="bed02White"/>
+			<property name="TintColor" value="333333"/>
+			<!-- <property name="ItemTypeIcon" value="all_blocks"/> -->
+			<!-- <property name="SelectAlternates" value="true"/> -->
+			<!-- <property name="PlaceAltBlockValue" value="bed02White,bed02Brown,bed02Red,bed02Orange,bed02Yellow,bed02Green,bed02Blue,bed02Purple,bed02Grey,bed02,bed02Pink,bed02ArmyGreen"/> -->
 			<property name="DisplayType" value="blockMulti"/>
 			<property name="Material" value="Mfurniture"/>
 			<property name="Shape" value="ModelEntity"/>
@@ -774,17 +778,19 @@
 				<property name="resourceMetalPipe" value="10"/>
 			</property>
 			<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-			<drop event="Harvest" name="resourceCloth" count="16" tag="allHarvest"/>
-			<drop event="Harvest" name="resourceWood" count="8" tag="allHarvest"/>
-			<drop event="Harvest" name="resourceSpring" count="6" tag="salvageHarvest"/>
-			<drop event="Harvest" name="resourceMetalPipe" count="2,3" tag="salvageHarvest"/>
-			<drop event="Destroy" name="resourceScrapIron" count="10,15"/>
-			<property name="CanPickup" value="true" param1="bedPlayer"/>
+			<drop event="Harvest" name="resourceCloth" count="100" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceCropCottonPlant" count="40" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceWood" count="20" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceSpring" count="20" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceMetalPipe" count="10" tag="salvageHarvest"/>
+			<drop event="Destroy" count="0"/>
 			<property name="SortOrder1" value="B434"/>
-			<property name="SortOrder2" value="0000"/>
+			<property name="SortOrder2" value="9009"/>
 			<property name="Group" value="Decor/Miscellaneous"/>
 			<property name="FilterTags" value="MC_building,SC_decor"/>
-			<property name="Tags" value="bedroll,playercraftedbed"/>
+			<property name="Tags" value="bedroll,challenge_sinks"/>
+			<property name="IndexName" value="challenge_sinks"/>
+			<property name="CanPickup" value="true" param1="bedPlayer"/>
 		</block>
 		
 		<!-- *** Chicken Coop -->
@@ -889,12 +895,81 @@
 			<property name="PR_DurabilityMods" value="honeyBee"/>
 			<property name="PR_DurabilityPerCycle" value="1"/>
 		</block>
+		
+		<!-- *** Butchers table -->
+		<block name="butchersTable">			
+			<!-- Class -->
+			<property name="Class" value="Workstation"/>
+			<property class="Workstation">
+				<property name="Modules" value="output"/>
+				<property name="CraftingAreaRecipes" value="butchersTable"/>
+			</property>
+			<property name="UnlockedBy" value="craftingWorkstations"/>
+			<!-- UI_Info -->
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="butchersBlock"/>
+			<property name="DescriptionKey" value="butchersTableDesc"/>
+			<property name="DisplayType" value="blockMulti"/>
+			<property name="WorkstationIcon" value="ui_game_symbol_workbench"/>
+			<property name="Stacknumber" value="1"/>
+			<!-- Visual -->
+			<property name="Material" value="Mmetal"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/butchersTable.unity3d?butcherBlockPrefab.prefab"/>
+			<property name="ModelOffset" value="0,0.02,0"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="ImposterDontBlock" value="true"/>
+			<property name="WaterFlow" value="permitted"/>
+			<!-- Placement -->
+			<property name="Place" value="TowardsPlacerInverted"/>
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="StabilitySupport" value="false"/>
+			<!-- Value -->
+			<property name="Weight" value="0"/>
+			<property name="EconomicValue" value="2000"/>
+			<property name="TraderStageTemplate" value="midTier1"/><!-- workbench -->
+			<!-- Interaction -->
+			<property name="MaxDamage" value="800"/>
+			<property name="HeatMapStrength" value="5"/>
+			<property name="HeatMapTime" value="5000"/>
+			<property name="HeatMapFrequency" value="1000"/>
+			<property name="OpenSound" value="open_workbench"/>
+			<property name="CloseSound" value="close_workbench"/>
+			<property name="TakeDelay" value="15"/>
+			<property class="RepairItems">
+				<property name="resourceWood" value="5"/>
+				<!-- <property name="resourceMechanicalParts" value="20"/> -->
+				<!-- <property name="resourceWood" value="50"/> -->
+			</property>
+			<drop event="Harvest" name="resourceWood" count="5" tag="allHarvest,perkJunkMiner"/>
+			<!-- <drop event="Harvest" name="resourceWood" count="20" tag="allHarvest,lumberjackHarvest,perkJunkMiner"/> -->
+			<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+			<!-- <drop event="Harvest" name="resourceForgedIron" count="10" tag="salvageHarvest"/> -->
+			<!-- <drop event="Harvest" name="resourceMechanicalParts" count="8" tag="salvageHarvest"/> -->
+			<!-- <drop event="Harvest" name="resourceWood" count="20" tag="salvageHarvest"/> -->
+			<drop event="Destroy" count="0"/>
+			<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
+			<!-- Sorting -->
+			<property name="SortOrder1" value="B281"/>
+			<property name="SortOrder2" value="0300"/>
+			<property name="Group" value="Building,TCScience,advBuilding"/>
+			<property name="Tags" value="workstationSkill,twitch_workstation"/>
+			<property name="FilterTags" value="MC_playerBlocks,SC_decor"/>
+			<property name="SoundPickup" value="workbench_grab"/>
+			<property name="SoundPlace" value="workbench_place"/>
+		</block>
 	</append>
 	
 	<!-- *** bedroll -->
 	<append xpath="/blocks/block[@name='bedroll']">
 		<property name="Tags" value="bedroll"/>
 	</append>
+	
+	<!-- <append xpath="/blocks/block[starts-with (@name,'bed02') and not (@name='bed02') and not (@name='bed02RandomHelper')]"> -->
+		<!-- <property name="CanPickup" value="true" param1="bedPlayer"/> -->
+		<!-- <property name="Tags" value="bedroll"/> -->
+	<!-- </append>	 -->
 	
 	<!-- *** ground align for goreblocks (test) -->
 	<!-- <append xpath="/blocks/block[@name='goreBlockHumanBones']"> -->

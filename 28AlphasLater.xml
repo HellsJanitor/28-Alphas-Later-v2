@@ -10,6 +10,19 @@ Will you survive?
 
 The idea behind this mod is to slow progression, make traders less powerful, and generally extend the time for a playthrough, while keeping the vanilla look and feel.
 
+29/10/25 mod version 2.4.1.4 changelog:
+
+Slightly lowered amount of wild lavender.
+Fixed error with 'In Bed' buff for player-crafted beds.
+Added Chopping Block, a workstation for prepping rabbits and chickens for cooking, unlocked at workstations level 2.
+Slightly decreased damage for melee weapons except knife and knuckles.
+Hazmat zombies are now correctly immune to burning damage.
+Sawblades and ammo press are now scrappable/smeltable/sellable.
+Added recipes for raw rabbits and chickens.
+Edited recipes for the beehive and chicken coop.
+Changes to zombie wild spawning.
+Lowered action skill experience gained for the Physician action skill.
+
 20/10/25 mod version 2.4.1.3 changelog:
 Fixed missing mesh on player-crafted bed.
 Changed chicken coop model.

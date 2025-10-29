@@ -94,7 +94,7 @@
 		
 		<!-- lower damage for most melee weapons -->
 		<effect_group>
-			<passive_effect name="EntityDamage" operation="perc_add" value="-.05" tags="perkMiner69r,perkSalvageOperations,perkElectrocutioner,perkJavelinMaster,perkPummelPete,perkSkullCrusher,admin"/>
+			<passive_effect name="EntityDamage" operation="perc_add" value="-.1" tags="perkMiner69r,perkSalvageOperations,perkElectrocutioner,perkJavelinMaster,perkPummelPete,perkSkullCrusher,admin"/>
 		</effect_group>
 			
 		<!-- initialise meds resistance cvars -->
@@ -350,6 +350,17 @@
 	</append>
 	
 	<append xpath="//buff[@name='buffHazardBurningElement']">
+		<!-- if entity is hazmat, no burning -->
+		<effect_group>
+			<requirement name="EntityTagCompare" tags="hazmat"/>
+			<!-- Start burning cycle -->
+			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffIsOnFire"/>
+			<!-- No health loss -->
+			<passive_effect name="HealthChangeOT" operation="base_set" value="0"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="//buff[@name='buffBurningElement']">
 		<!-- if entity is hazmat, no burning -->
 		<effect_group>
 			<requirement name="EntityTagCompare" tags="hazmat"/>

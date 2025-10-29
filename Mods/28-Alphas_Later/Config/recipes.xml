@@ -76,6 +76,9 @@
 		</effect_group>
 	</set>
 	
+	<!-- *** remove vanilla king size bed -->
+	<remove xpath="//recipe[@name='bed02BlockVariantHelper']"/>
+	
 	<append xpath="/recipes">
 		<!-- *** bioled water from snow (+jar) -->
 		<recipe name="drinkJarBoiledWater" count="1" craft_area="campfire" tags="perkMasterChef">
@@ -99,6 +102,15 @@
 		<!-- <ingredient name="resourceMetalPipe" count="4"/> -->
 		<!-- <ingredient name="resourceDuctTape" count="4"/> -->
 		<!-- </recipe> -->
+		
+		<!-- *** player king-size bed -->
+		<recipe name="bedPlayer" count="1" tags="packMuleCrafting">
+			<ingredient name="resourceCloth" count="100"/>
+			<ingredient name="resourceCropCottonPlant" count="40"/>
+			<ingredient name="resourceSpring" count="20"/>
+			<ingredient name="resourceWood" count="20"/>
+			<ingredient name="resourceMetalPipe" count="10"/>
+		</recipe>
 		
 		<!-- *** bundles for new resources -->
 		<recipe name="resourceChromiumBundle" count="1" craft_time="10" craft_exp_gain="0" tags="learnable,packMuleCrafting">
@@ -517,27 +529,40 @@
 			<!-- <ingredient name="researchPaperBlank10000" count="10"/>			 -->
 		<!-- </recipe> -->
 		
-		<!-- *** chicken coop *** -->
+		<!-- *** chicken coop -->
 		<recipe name="chickenCoop" count="1" craft_time="120" craft_exp_gain="500" tags="learnable,workbenchCrafting">
-			<ingredient name="resourceWood" count="200"/>
-			<ingredient name="resourceForgedIron" count="10"/>
+			<ingredient name="resourceWood" count="100"/>
+			<ingredient name="resourceScrapIron" count="200"/>
 			<ingredient name="resourceNail" count="20"/>
 		</recipe>
 		
-		<!-- *** beehive *** -->
+		<!-- *** beehive -->
 		<recipe name="beehive" count="1" craft_time="120" craft_exp_gain="500" tags="learnable,workbenchCrafting">
-			<ingredient name="resourceWood" count="200"/>
-			<ingredient name="resourceForgedIron" count="10"/>
+			<ingredient name="resourceWood" count="100"/>
+			<ingredient name="resourceScrapIron" count="200"/>
 			<ingredient name="resourceNail" count="20"/>
+		</recipe>
+		
+		<!-- *** butchers table -->
+		<recipe name="butchersTable" count="1" craft_time="30" craft_exp_gain="500" tags="learnable,workbenchCrafting">
+			<ingredient name="resourceWood" count="10"/>
 		</recipe>
 		
 		<!-- *** roast chicken -->
-		<recipe name="foodRoastChicken" count="1" craft_time="60" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef">
+		<recipe name="foodRawChicken" count="1" craft_time="0" craft_area="butchersTable">
 			<ingredient name="tameChicken" count="1"/>			
+		</recipe>
+		
+		<recipe name="foodRoastChicken" count="1" craft_time="60" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef">
+			<ingredient name="foodRawChicken" count="1"/>			
 		</recipe>
 		
 		<!-- *** roast rabbit -->
 		<recipe name="foodRoastedRabbit" count="1" craft_time="60" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef">
+			<ingredient name="foodRawRabbit" count="1"/>			
+		</recipe>
+		
+		<recipe name="foodRawRabbit" count="1" craft_time="0" craft_area="butchersTable">
 			<ingredient name="tameRabbit" count="1"/>			
 		</recipe>
 		
