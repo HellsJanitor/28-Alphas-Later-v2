@@ -486,6 +486,17 @@
 		<!-- animalMutantBug, 30		 -->
 	<!-- </csv> -->
 	
+	<csv xpath="/entitygroups/entitygroup[@name='ZombieBadassGroup']/text()" delim="\n" op="add">
+		zombieHellsHumanExperiment
+		zombieHellsParasite
+		zombieHellsGiantMutant
+		zombieHellsMutant4
+		zombieHellsMutant1
+		zombieHellsMutantBoomer
+		zombieHellsWendigo1
+		zombieHellsWendigo2
+	</csv>
+	
 	<!-- *** lumberjacks GS1 *** -->
 	<csv xpath="/entitygroups/entitygroup[@name='zombieLumberjackGroupGS1']/text()" delim="\n" op="remove">
 	zombieLumberjack
@@ -624,6 +635,47 @@
 	
 	<csv xpath="/entitygroups/entitygroup[starts-with(@name,'feralHordeStage')]/text()" delim="\n" op="add">
 	zombieBunkerBuster, .5
+	</csv>
+	
+	<csv xpath="/entitygroups/entitygroup[@name='ZombieSpecialInfectedGroupGS100']/text()" delim="\n" op="add">
+	zombieHellsHumanExperiment, .2
+	zombieHellsParasite, .2
+	zombieHellsGiantMutant, .2
+	zombieHellsMutant4, .2
+	zombieHellsMutant1, .2
+	zombieHellsMutantBoomer, .2
+	zombieHellsWendigo1, .2
+	zombieHellsWendigo2, .2
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='ZombieSpecialInfectedGroupGS200']/text()" delim="\n" op="add">
+	zombieHellsHumanExperiment, .3
+	zombieHellsParasite, .3
+	zombieHellsGiantMutant, .3
+	zombieHellsMutant4, .3
+	zombieHellsMutant1, .3
+	zombieHellsMutantBoomer, .3
+	zombieHellsWendigo1, .3
+	zombieHellsWendigo2, .3
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='ZombieSpecialInfectedGroupGS400']/text()" delim="\n" op="add">
+	zombieHellsHumanExperiment, .4
+	zombieHellsParasite, .4
+	zombieHellsGiantMutant, .4
+	zombieHellsMutant4, .4
+	zombieHellsMutant1, .4
+	zombieHellsMutantBoomer, .4
+	zombieHellsWendigo1, .4
+	zombieHellsWendigo2, .4
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='ZombieSpecialInfectedGroupGS800']/text()" delim="\n" op="add">
+	zombieHellsHumanExperiment, .5
+	zombieHellsParasite, .5
+	zombieHellsGiantMutant, .5
+	zombieHellsMutant4, .5
+	zombieHellsMutant1, .5
+	zombieHellsMutantBoomer, .5
+	zombieHellsWendigo1, .5
+	zombieHellsWendigo2, .5
 	</csv>
 	
 	<csv xpath="/entitygroups/entitygroup[substring-after(@name,'sleeperHordeStageGS') &lt; 23]/text()" delim="\n" op="remove">zombie*</csv>
